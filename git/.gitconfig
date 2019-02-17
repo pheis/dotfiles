@@ -1,0 +1,20 @@
+[user]
+	email = pyry.heiskanen@gmail.com
+	name = Pyry Heiskanen
+[pull]
+  rebase = true
+[alias]
+  l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  co = checkout
+  r = reset
+  s = status
+  pl = pull
+  ps = push
+  bra = branch -a
+  b = branch
+  df = diff
+  dfmn = diff master --name-only
+  sort = branch -a --sort=committerdate
+[core]
+  editor = nvim
+  autocrlf = input
