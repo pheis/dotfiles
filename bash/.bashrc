@@ -49,6 +49,12 @@ PS1="$YELLOW\$(parse_git_branch) $LIGHT_MAGENTA\w $NO_COLOR\$ "
 # shopt -s globstar
 
 alias g='git'
+alias com='git commit -m'
+alias gco='git co'
+alias gdm='git diff master'
+alias gd='git diff'
+alias gs='git status'
+alias go='git co'
 
 alias m='python3 ~/code/m/m.py'
 
