@@ -26,5 +26,5 @@ colo gruvbox
 "" syn off
 let g:airline_theme='gruvbox'
 
-set foldmethod=indent
+"" set foldmethod=indent
 "" set hidden
