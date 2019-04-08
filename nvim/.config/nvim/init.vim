@@ -2,6 +2,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "" Plug 'scrooloose/nerdtree'
 
+Plug 'mattn/emmet-vim'
+
 Plug 'airblade/vim-gitgutter'
 
 "" Plug 'leafgarland/typescript-vim'
