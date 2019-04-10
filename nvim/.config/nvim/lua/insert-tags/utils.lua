@@ -1,9 +1,3 @@
--- local current_window = vim.api.nvim_get_current_win()
--- local cursor_position = vim.api.nvim_win_get_cursor(current_window)
--- current_line = vim.api.nvim_get_current_line()
---
---
---
 local fp = require "insert-tags.fp"
 
 local function words(line)
@@ -16,7 +10,7 @@ local function words(line)
     return words
 end
 
-function tags(line)
+local function tags(line)
     return fp.reduce(
         function (acc, word)
             return fp.concat({
@@ -29,14 +23,7 @@ function tags(line)
     )
 end
 
-fofo = tags("asdf fii foo")
-
--- for i = 1, #fofo do
---     print(fofo[i])
--- end
-
-
-function io()
+local function io()
     local current_window = vim.api.nvim_get_current_win()
     local cursor_position = vim.api.nvim_win_get_cursor(current_window)
 
@@ -47,16 +34,21 @@ function io()
 
     local current_line = vim.api.nvim_get_current_line()
 
+    local intendation = string.match(current_line, "%s+[^%g]")
+    if intendation == nil then
+        intendation = ''
+    end
+
+
     local new_lines = tags(current_line)
+    new_lines = fp.map(function(line) return intendation .. line end, new_lines)
 
     local current_buffer = vim.api.nvim_get_current_buf()
 
-    -- print(row)
-    -- print(col)
 
     vim.api.nvim_buf_set_lines(
         current_buffer,
-        row,
+        row - 1,
         row,
         true,
         new_lines
@@ -65,7 +57,7 @@ function io()
     vim.api.nvim_win_set_cursor(
         current_window,
         {
-            row + math.floor(#new_lines / 2),
+            row + math.floor(#new_lines / 2) - 1,
             col,
         }
     )
