@@ -16,6 +16,12 @@ function fp.map(fn, list)
     return mapped_list
 end
 
+function fp.for_each(fn, list)
+    for i = 1, #list do
+        fn(list[i])
+    end
+end
+
 function fp.reduce(fn, list, initial_value)
     local acc = initial_value
     local i = 1;
