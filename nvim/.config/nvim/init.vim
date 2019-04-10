@@ -2,7 +2,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "" Plug 'scrooloose/nerdtree'
 
-Plug 'mattn/emmet-vim'
+Plug 'valloric/MatchTagAlways'
 Plug 'Raimondi/delimitMate'
 
 Plug 'airblade/vim-gitgutter'
