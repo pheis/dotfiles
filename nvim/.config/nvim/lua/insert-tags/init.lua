@@ -11,18 +11,17 @@ local function split_string(str, matcher)
 end
 
 local function tags(line)
+    local line = string.match(line, "[^%s+].*")
     local words = fp.reverse(split_string(line, "[^>]+"))
+
     local initial_value = {}
-
     local inner_most = words[1]
-
+    local first_char = string.sub(inner_most, 1, 1)
     local special_characters = {
         ["{"] = true,
         ["'"] = true,
         ['"'] = true
     }
-
-    local first_char = string.sub(inner_most, 1, 1)
     if special_characters[first_char] then
         initial_value = {inner_most}
         words = {unpack(words, 2, #words)}
@@ -40,8 +39,8 @@ local function tags(line)
     )
 end
 
--- local some = 'RN.View style={styles.niceStyle}>RN.Text style={other.style}>"lol"'
-
+-- local some = '     RN.View style={styles.niceStyle}>RN.Text style={other.style}>"lol"'
+--
 -- local foo = tags(some)
 -- for i = 1, #foo do
 --     print(foo[i])
