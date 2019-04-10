@@ -23,7 +23,7 @@ local function tags(line)
     )
 end
 
-local function io()
+function Insert_tags()
     local current_window = vim.api.nvim_get_current_win()
     local cursor_position = vim.api.nvim_win_get_cursor(current_window)
 
@@ -62,5 +62,3 @@ local function io()
         }
     )
 end
-
-io()
