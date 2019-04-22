@@ -55,3 +55,5 @@ nnoremap <M-k> :m .-2<CR>==
 nnoremap <M-j> :m .+1<CR>==
 vnoremap <M-j> :m '>+1<CR>gv=gv
 vnoremap <M-k> :m '<-2<CR>gv=gv
+
+vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>

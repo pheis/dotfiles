@@ -1,5 +1,7 @@
 local fp = {}
 
+
+
 function fp.reverse(list)
     local reversed = {}
     for i = 1, #list do
@@ -16,7 +18,7 @@ function fp.map(fn, list)
     return mapped_list
 end
 
-function fp.for_each(fn, list)
+function fp.each(fn, list)
     for i = 1, #list do
         fn(list[i])
     end
@@ -46,6 +48,19 @@ function fp.concat(lists)
         end
     end
     return acc
+end
+
+function fp.flat_map(fn, list)
+    return fp.concat(fp.map(fn, list))
+end
+
+function fp.iter(t)
+    local i = 0
+    local n = table.getn(t)
+    return function()
+        i = i + 1
+        if i <= n then return t[i] end
+    end
 end
 
 return fp

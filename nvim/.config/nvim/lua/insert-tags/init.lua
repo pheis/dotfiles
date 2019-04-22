@@ -39,8 +39,16 @@ local function tags(line)
     )
 end
 
--- local some = '     RN.View style={styles.niceStyle}>RN.Text style={other.style}>"lol"'
---
+local function parse_equals(line)
+    local line = string.match(line, "[^%s+].*")
+    local words = split_string(line, "[^|]+")
+    return words
+end
+
+local function parse_tags(line)
+    return fp.flat_map(tags, parse_equals(line))
+end
+
 -- local foo = tags(some)
 -- for i = 1, #foo do
 --     print(foo[i])
@@ -63,7 +71,7 @@ function Insert_tags()
     end
 
 
-    local new_lines = tags(current_line)
+    local new_lines = parse_tags(current_line)
     new_lines = fp.map(function(line) return intendation .. line end, new_lines)
 
     local current_buffer = vim.api.nvim_get_current_buf()
