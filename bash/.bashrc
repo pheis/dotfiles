@@ -60,6 +60,10 @@ alias m='python3 ~/code/m/m.py'
 
 alias ls='ls -G'
 
+if [ "$OSTYPE" == "linux-gnu" ]; then
+    alias ls='ls --color'
+fi
+
 alias ypass='PASSWORD_STORE_DIR=$HOME/ylitse-secrets pass'
 
 # git init --bare $HOME/.myconfig
