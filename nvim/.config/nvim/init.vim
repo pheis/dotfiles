@@ -63,6 +63,8 @@ Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'rhysd/vim-clang-format'
+
 "" Plug 'rstacruz/vim-closer'
 
 "" Plug 'justinmk/vim-sneak'
