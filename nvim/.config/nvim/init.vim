@@ -12,6 +12,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 "" Check this at some point:
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
+
+"" fugitive, airline?
 Plug 'skywind3000/asyncrun.vim'
 
 Plug 'rust-lang/rust.vim'
