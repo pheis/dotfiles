@@ -11,8 +11,13 @@ nnoremap <leader><leader> :
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
-nnoremap g; :Denite buffer<CR>
-nnoremap ; :Denite file/old file/rec<CR>
+"" nnoremap g; :Denite buffer<CR>
+"" nnoremap ; :Denite file/old file/rec<CR>
+nnoremap ; :GFiles<CR>
+nnoremap g; :Files<CR>
+
+"" nnoremap ; :Denite file/old file/rec<CR>
+
 
 nnoremap gb :bp<CR>
 nnoremap gB :bn<CR>
@@ -35,14 +40,14 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-l> <C-\><C-n><C-w>l
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
+"" tnoremap <C-h> <C-\><C-n><C-w>h
+"" tnoremap <C-l> <C-\><C-n><C-w>l
+"" tnoremap <C-j> <C-\><C-n><C-w>j
+"" tnoremap <C-k> <C-\><C-n><C-w>k
 
-nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-nnoremap <leader>f :<C-u>Denite grep:. -mode=normal<CR>
-nnoremap <leader>b :Denite file/old<CR>
+"" nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+"" nnoremap <leader>f :<C-u>Denite grep:. -mode=normal<CR>
+"" nnoremap <leader>b :Denite file/old<CR>
 
 nnoremap <C-s> :ToggleResizeMode<CR>
 tnoremap <C-s> <C-\><C-n>:ToggleResizeMode<CR>

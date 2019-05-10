@@ -1,12 +1,12 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-"" Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim',
 
 Plug 'valloric/MatchTagAlways'
 
 Plug 'airblade/vim-gitgutter'
 
-"" Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 
 "" Check this at some point:
@@ -24,7 +24,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/denite.nvim'
 
 Plug 'benmills/vimux'
 
@@ -36,12 +35,6 @@ Plug 'chrisbra/Colorizer'
 Plug 'Vimjas/vim-python-pep8-indent'  "" Fix python indentation
 
 Plug 'morhetz/gruvbox'
-Plug 'icymind/NeoSolarized'
-Plug 'srcery-colors/srcery-vim'
-Plug 'chriskempson/base16-vim'
-Plug 'dracula/vim'
-Plug 'jnurmine/zenburn'
-Plug 'sjl/badwolf'
 
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-eunuch'
@@ -52,8 +45,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-unimpaired'
-
-Plug 'AndrewRadev/splitjoin.vim'
 
 Plug 'junegunn/goyo.vim'
 
@@ -72,6 +63,10 @@ Plug 'rhysd/vim-clang-format'
 
 Plug 'w0rp/ale'
 call plug#end()
+
+"" FZF
+let g:fzf_layout = { 'up': '~40%' }
+
 
 "" nnoremap s <nop>
 "" let g:splitjoin_split_mapping = 'sj'
@@ -186,40 +181,5 @@ let g:deoplete#enable_at_startup = 1
 "" GOYO
 let g:goyo_linenr = 1
 let g:goyo_height = 100
-
-call denite#custom#option('default', {
-    \ 'prompt': '❯'
-    \ })
-
-"" call denite#custom#var('file/rec', 'command',
-"" \ ['rg', '--files', '--glob', '!.git'])
-" Change ignore_globs
-call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
-      \ [ '.git/', '__snapshots__/', '__pycache__/',
-      \   'venv/', 'images/', '*.min.*', 'imgages/', 'fonts/'])
-
-call denite#custom#var('file_rec', 'command',
-    \ ['rg', '--files', '--glob', '!.git', ''])
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts',
-    \ ['--hidden', '--vimgrep', '--no-heading', '-S', '-g', '!*.snap'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-
-call denite#custom#map(
-      \ 'insert',
-      \ '<C-n>',
-      \ '<denite:move_to_next_line>',
-      \ 'noremap'
-      \)
-call denite#custom#map(
-      \ 'insert',
-      \ '<C-p>',
-      \ '<denite:move_to_previous_line>',
-      \ 'noremap'
-      \)
-
 
 "" set textwidth=80

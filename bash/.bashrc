@@ -16,6 +16,10 @@ export PATH=/usr/local/bin:$PATH
 export ANSIBLE_ROLES_PATH=$HOME/debian-ansible/roles
 # export PASSWORD_STORE_DIR=$HOME/ylitse-secrets
 
+
+# FZF
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
@@ -54,7 +58,7 @@ alias gco='git co'
 alias gdm='git diff master'
 alias gd='git diff'
 alias gs='git status'
-alias go='git co'
+alias cat='bat'
 
 alias m='python3 ~/code/m/m.py'
 
@@ -99,3 +103,5 @@ unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 stty -ixon
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
