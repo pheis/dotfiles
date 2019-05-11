@@ -13,10 +13,17 @@ nnoremap <leader>p "+p
 
 "" nnoremap g; :Denite buffer<CR>
 "" nnoremap ; :Denite file/old file/rec<CR>
-nnoremap ; :GFiles<CR>
-nnoremap g; :Files<CR>
+nnoremap <leader>ff :GFiles<CR>
+nnoremap <leader>fg :Files<CR>
+nnoremap <leader>fm :Marks<CR>
+nnoremap <leader>fr :Rg<CR>
 
 "" nnoremap ; :Denite file/old file/rec<CR>
+
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
 
 
 nnoremap gb :bp<CR>
@@ -68,9 +75,9 @@ vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 vnoremap / /\v
 nnoremap / /\v
 
-function! BreakHere()
-	s/^\(\s*\)\(.\{-}\)\(\s*\)\(\%#\)\(\s*\)\(.*\)/\1\2\r\1\4\6
-	call histdel("/", -1)
-endfunction
-
-nnoremap S :<C-u>call BreakHere()<CR>
+"" function! BreakHere()
+"" 	s/^\(\s*\)\(.\{-}\)\(\s*\)\(\%#\)\(\s*\)\(.*\)/\1\2\r\1\4\6
+"" 	call histdel("/", -1)
+"" endfunction
+""
+"" nnoremap S :<C-u>call BreakHere()<CR>

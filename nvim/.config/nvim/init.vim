@@ -1,7 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim',
+Plug 'junegunn/fzf.vim'
 
 Plug 'valloric/MatchTagAlways'
 
@@ -57,6 +57,9 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'rhysd/vim-clang-format'
 
+Plug 'justinmk/vim-sneak'
+Plug 'unblevable/quick-scope'
+
 "" Plug 'rstacruz/vim-closer'
 
 "" Plug 'justinmk/vim-sneak'
@@ -66,9 +69,12 @@ Plug 'rhysd/vim-clang-format'
 Plug 'w0rp/ale'
 call plug#end()
 
-"" FZF
-let g:fzf_layout = { 'up': '~40%' }
+let g:sneak#label = 1
 
+"" FZF
+let g:fzf_files_options =
+  \ '--preview "bat {}"'
+let g:fzf_layout = { 'up': '~40%' }
 
 "" nnoremap s <nop>
 "" let g:splitjoin_split_mapping = 'sj'
@@ -120,8 +126,8 @@ vnoremap o "vy :call VimuxSlime()<CR>
 " " LSP
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rls'],
-    \ 'javascript': ['/Users/pyry/utils/javascript-typescript-langserver/lib/language-server-stdio'],
-    \ 'javascript.jsx': ['/Users/pyry/utils/javascript-typescript-langserver/lib/language-server-stdio'],
+    \ 'javascript': ['node /Users/pyry/utils/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ 'javascript.jsx': ['node /Users/pyry/utils/javascript-typescript-langserver/lib/language-server-stdio.js'],
     \ 'python': ['pyls'],
     \ }
 
