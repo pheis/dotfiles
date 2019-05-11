@@ -51,6 +51,12 @@ LIGHT_MAGENTA="\[\e[35m\]"
 PS1="$YELLOW\$(parse_git_branch) $LIGHT_MAGENTA\w $NO_COLOR\$ "
 
 # shopt -s globstar
+fbr() {
+  local branches branch
+  branches=$(git --no-pager branch -vv --sort=-committerdate) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
 
 alias g='git'
 alias com='git commit -m'
