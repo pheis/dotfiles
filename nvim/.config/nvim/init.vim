@@ -58,7 +58,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'rhysd/vim-clang-format'
 
 Plug 'justinmk/vim-sneak'
-Plug 'unblevable/quick-scope'
 
 "" Plug 'rstacruz/vim-closer'
 

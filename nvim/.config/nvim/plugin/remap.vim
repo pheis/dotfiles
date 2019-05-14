@@ -14,9 +14,12 @@ nnoremap <leader>p "+p
 "" nnoremap g; :Denite buffer<CR>
 "" nnoremap ; :Denite file/old file/rec<CR>
 nnoremap <leader>ff :GFiles<CR>
+nnoremap <C-f> :GFiles<CR>
 nnoremap <leader>fg :Files<CR>
 nnoremap <leader>fm :Marks<CR>
 nnoremap <leader>fr :Rg<CR>
+nnoremap <leader>; :GFiles<CR>
+nnoremap ; :GFiles<CR>
 
 "" nnoremap ; :Denite file/old file/rec<CR>
 
@@ -24,6 +27,8 @@ map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
+
+nnoremap yoa :ALEToggle<CR>
 
 
 nnoremap gb :bp<CR>
