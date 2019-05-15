@@ -13,8 +13,8 @@ nnoremap <leader>p "+p
 
 "" FUGITIVE
 
-nnoremap <leader>gdm :GDiff master<CR>
-nnoremap <leader>gdi :GDiff<CR>
+nnoremap <leader>gdm :Gdiff master<CR>
+nnoremap <leader>gdi :Gdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gw :Gwrite<CR>
