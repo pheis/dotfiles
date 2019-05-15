@@ -5,6 +5,9 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'valloric/MatchTagAlways'
 
+Plug 'cocopon/iceberg.vim'
+Plug 'jnurmine/Zenburn'
+
 Plug 'airblade/vim-gitgutter'
 
 Plug 'HerringtonDarkholme/yats.vim'
@@ -19,11 +22,6 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -59,9 +57,6 @@ Plug 'rhysd/vim-clang-format'
 
 Plug 'justinmk/vim-sneak'
 
-"" Plug 'rstacruz/vim-closer'
-
-"" Plug 'justinmk/vim-sneak'
 "" Plug 'wellle/targets.vim'
 "" Plug 'michaeljsmith/vim-indent-object'
 
@@ -122,19 +117,6 @@ endfunction
 vnoremap o "vy :call VimuxSlime()<CR>
 
 
-" " LSP
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rls'],
-    \ 'javascript': ['node /Users/pyry/utils/javascript-typescript-langserver/lib/language-server-stdio.js'],
-    \ 'javascript.jsx': ['node /Users/pyry/utils/javascript-typescript-langserver/lib/language-server-stdio.js'],
-    \ 'python': ['pyls'],
-    \ }
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 "" set autochdir
 
 "" Plugin Options
@@ -183,10 +165,36 @@ let g:airline_detect_modified=1
 "" DEOPLETE
 
 let g:deoplete#enable_at_startup = 1
-""let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
 
 "" GOYO
 let g:goyo_linenr = 1
 let g:goyo_height = 100
 
 "" set textwidth=80
+
+
+
+" ----------------------------------------------------------------------------
+" DiffRev
+" ----------------------------------------------------------------------------
+let s:git_status_dictionary = {
+            \ "A": "Added",
+            \ "B": "Broken",
+            \ "C": "Copied",
+            \ "D": "Deleted",
+            \ "M": "Modified",
+            \ "R": "Renamed",
+            \ "T": "Changed",
+            \ "U": "Unmerged",
+            \ "X": "Unknown"
+            \ }
+function! s:get_diff_files(rev)
+  let list = map(split(system(
+              \ 'git diff --name-status '.a:rev), '\n'),
+              \ '{"filename":matchstr(v:val, "\\S\\+$"),"text":s:git_status_dictionary[matchstr(v:val, "^\\w")]}'
+              \ )
+  call setqflist(list)
+  copen
+endfunction
+
+command! -nargs=1 DiffRev call s:get_diff_files(<q-args>)

@@ -1,8 +1,8 @@
 import pynvim
 
+
 @pynvim.plugin
 class ResizeMode(object):
-
     def __init__(self, nvim):
         self.nvim = nvim
         self.resize_active = False
@@ -28,17 +28,16 @@ class ResizeMode(object):
         right = '<C-w>l'
 
         mappings = {
-                'h': ':vertical resize -5<CR>',
-                'j': ':resize +5<CR>',
-                'k': ':resize -5<CR>',
-                'l': ':vertical resize +5<CR>',
-
-                's': f'{vs}{end}',
-                'S': f'{sv}{end}',
-                'c': f'{vs}{right}:term<CR>{end}A',
-                'C': f'{sv}{down}:term<CR>{end}A',
-                't': f':tabe<CR>{end}',
-                'q': end,
+            'h': ':vertical resize -5<CR>',
+            'j': ':resize +5<CR>',
+            'k': ':resize -5<CR>',
+            'l': ':vertical resize +5<CR>',
+            's': f'{vs}{end}',
+            'S': f'{sv}{end}',
+            'c': f'{vs}{right}:term<CR>{end}A',
+            'C': f'{sv}{down}:term<CR>{end}A',
+            't': f':tabe<CR>{end}',
+            'q': end,
         }
 
         if self.resize_active:

@@ -2,7 +2,7 @@ let mapleader=" "
 nnoremap c* *Ncgn
 
 
-nnoremap <leader>q :q<CR>
+nnoremap <leader>q :bd<CR>
 nnoremap <leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>:w<CR>
 
 
