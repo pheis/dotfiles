@@ -11,6 +11,19 @@ nnoremap <leader><leader> :
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
+"" FUGITIVE
+
+nnoremap <leader>gdm :GDiff master<CR>
+nnoremap <leader>gdi :GDiff<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <space>gp :Ggrep<Space>
+
+" same bindings for merging diffs as in normal mode
+xnoremap dp :diffput<CR>
+xnoremap do :diffget<CR>
+
 "" nnoremap g; :Denite buffer<CR>
 "" nnoremap ; :Denite file/old file/rec<CR>
 nnoremap <leader>ff :GFiles<CR>
