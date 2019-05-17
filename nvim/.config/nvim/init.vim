@@ -4,6 +4,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'valloric/MatchTagAlways'
+Plug 'neomake/neomake'
 
 Plug 'cocopon/iceberg.vim'
 Plug 'jnurmine/Zenburn'
@@ -36,6 +37,8 @@ Plug 'Vimjas/vim-python-pep8-indent'  "" Fix python indentation
 
 Plug 'morhetz/gruvbox'
 
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
@@ -198,3 +201,12 @@ function! s:get_diff_files(rev)
 endfunction
 
 command! -nargs=1 DiffRev call s:get_diff_files(<q-args>)
+
+autocmd Filetype typescript set makeprg=npx\ tsc
+autocmd Filetype typescript.tsx set makeprg=npx\ tsc
+
+let g:neomake_open_list = 2
+let b:eslint_exe = substitute(system('npm bin') ,'\n', '', 'g') . '/eslint'
+let b:neomake_eslint_exe = b:eslint_exe
+
+let g:neomake_typescript_enabled_makers = ['eslint']
