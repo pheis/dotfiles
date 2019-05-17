@@ -21,8 +21,8 @@ let g:gruvbox_italic=1
 
 set background=dark
 
-colo gruvbox
-"" colo zenburn
+"" colo gruvbox
+colo zenburn
 "" colo goodwolf
 "" syn off
 let g:airline_theme='gruvbox'

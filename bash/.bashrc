@@ -51,11 +51,19 @@ LIGHT_MAGENTA="\[\e[35m\]"
 PS1="$YELLOW\$(parse_git_branch) $LIGHT_MAGENTA\w $NO_COLOR\$ "
 
 # shopt -s globstar
+# fbr() {
+#   local branches branch
+#   branches=$(git --no-pager branch -vv --sort=-committerdate) &&
+#   branch=$(echo "$branches" | fzf +m) &&
+#   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+# }
+# fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
 fbr() {
   local branches branch
-  branches=$(git --no-pager branch -vv --sort=-committerdate) &&
-  branch=$(echo "$branches" | fzf +m) &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
 alias g='git'
