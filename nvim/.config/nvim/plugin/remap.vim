@@ -11,6 +11,12 @@ nnoremap <leader><leader> :
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
+
+"" DiffRev
+nnoremap <leader>drm :DiffRev master<CR>
+nnoremap <leader>dri :DiffRev Head<CR>
+
+
 "" FUGITIVE
 
 nnoremap <leader>gdm :Gdiff master<CR>

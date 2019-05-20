@@ -202,11 +202,42 @@ endfunction
 
 command! -nargs=1 DiffRev call s:get_diff_files(<q-args>)
 
-autocmd Filetype typescript set makeprg=npx\ tsc
-autocmd Filetype typescript.tsx set makeprg=npx\ tsc
+"" npx eslint --quiet --format unix 'src/**/*.{ts,tsx}'
+autocmd Filetype typescript let &makeprg = "(npx tsc && npx eslint --quiet --format unix 'src/**/*.{ts,tsx}')"
+autocmd Filetype typescript.tsx let &makeprg = "(npx tsc && npx eslint --quiet --format unix 'src/**/*.{ts,tsx}')"
+"" autocmd Filetype typescript let &makeprg = "npx tsc"
+"" autocmd Filetype typescript.tsx let &makeprg = "npx tsc"
+"" autocmd Filetype typescript set makeprg=npx\ tsc
+"" autocmd Filetype typescript.tsx set makeprg=npx\ tsc
+
+autocmd Filetype typescript let &errorformat =
+            \ &errorformat . ',' .
+            \ '%A%f:%l:%c:%m,%-G%.%#'
+autocmd Filetype typescript.tsx let &errorformat =
+            \ &errorformat . ',' .
+            \ '%A%f:%l:%c:%m,%-G%.%#'
+
+"" autocmd Filetype typescript let errorformat = &errorformat
+"" autocmd Filetype typescript let errorformat += &errorformat
+""
+"" autocmd Filetype typescript.tsx let errorformat = &errorformat
+
+"" function setTSOptions
+""
+"" endfunction
+
+"" autocmd Filetype typescript let &errorformat =
+""             \ &errorformat + ',' .
+""             \ '%A%f:%l:%c:%m,%-G%.%#'
+"" autocmd Filetype typescript.tsx let &errorformat =
+""             \ &errorformat + ',' .
+""             \ '%A%f:%l:%c:%m,%-G%.%#'
 
 let g:neomake_open_list = 2
 let b:eslint_exe = substitute(system('npm bin') ,'\n', '', 'g') . '/eslint'
 let b:neomake_eslint_exe = b:eslint_exe
 
 let g:neomake_typescript_enabled_makers = ['eslint']
+
+let g:startify_change_to_vcs_root = 1
+let g:startify_change_to_dir = 0
