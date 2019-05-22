@@ -2,15 +2,16 @@ let mapleader=" "
 nnoremap c* *Ncgn
 
 
-nnoremap <leader>q :bd<CR>
 nnoremap <leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>:w<CR>
 
 
 nnoremap <leader><leader> :
 
+"" nnoremap <leader>qo :copen<CR>
+"" nnoremap <leader>ql :ccl<CR>
+
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
-
 
 "" DiffRev
 nnoremap <leader>drm :DiffRev master<CR>
@@ -24,7 +25,7 @@ nnoremap <leader>gdi :Gdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gw :Gwrite<CR>
-nnoremap <space>gp :Ggrep<Space>
+nnoremap <space>gr :Ggrep<Space>
 
 " same bindings for merging diffs as in normal mode
 xnoremap dp :diffput<CR>
@@ -32,6 +33,7 @@ xnoremap do :diffget<CR>
 
 "" nnoremap g; :Denite buffer<CR>
 "" nnoremap ; :Denite file/old file/rec<CR>
+nnoremap <leader>r :Rg<CR>
 nnoremap <leader>ff :GFiles<CR>
 nnoremap <C-f> :GFiles<CR>
 nnoremap <leader>fg :Files<CR>
@@ -105,3 +107,23 @@ nnoremap / /\v
 "" endfunction
 ""
 "" nnoremap S :<C-u>call BreakHere()<CR>
+
+"" function! ToggleQuickFix()
+""   if exists("g:qwindow_toggler")
+""     cclose
+""     unlet g:qwindow_toggler
+""   else
+""     try
+""       copen
+""       let g:qwindow_toggler = 1
+""     catch
+""       echo "No Errors found!"
+""     endtry
+""   endif
+"" endfunction
+
+"" nmap <script> <silent> <leader>q :call ToggleQuickFix()<CR>
+nnoremap <leader>q :copen<CR>
+
+
+nnoremap <leader>e :Neomake!<CR>

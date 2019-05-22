@@ -6,7 +6,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'valloric/MatchTagAlways'
 Plug 'neomake/neomake'
 
-Plug 'cocopon/iceberg.vim'
 Plug 'jnurmine/Zenburn'
 
 Plug 'airblade/vim-gitgutter'
@@ -130,23 +129,26 @@ vnoremap o "vy :call VimuxSlime()<CR>
 
 let g:airline#extensions#ale#enabled = 1
 
+
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 "" let g:ale_linters = { 'cpp': ['clang', 'gcc', 'cppcheck'] }
-let g:ale_lint_on_enter = 0
+let g:ale_enabled = 0
+let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 1
+
+let g:nvim_typescript#diagnostics_enable = 0
 
 " Ale linter / fixers
 let g:ale_linters = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'typescript': ['eslint', 'tslint', 'tsserver'],
+\   'typescript': ['eslint', 'tsserver'],
 \   'javascript': ['eslint'],
 \   'cpp': ['gcc'],
 \}
 let g:ale_fixers = {
   \   'typescript': [
-  \       'tslint',
   \       'prettier',
   \   ],
   \}
@@ -155,7 +157,6 @@ let g:ale_fix_on_save = 1
 " Set this. Airline will handle the rest.
 "" let g:airline#extensions#ale#enabled = 1
 let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_lint_on_text_changed = 1
 let g:ale_echo_msg_format = '%linter%: %s'
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1
@@ -233,7 +234,7 @@ autocmd Filetype typescript.tsx let &errorformat =
 ""             \ &errorformat + ',' .
 ""             \ '%A%f:%l:%c:%m,%-G%.%#'
 
-let g:neomake_open_list = 2
+"" let g:neomake_open_list = 2
 let b:eslint_exe = substitute(system('npm bin') ,'\n', '', 'g') . '/eslint'
 let b:neomake_eslint_exe = b:eslint_exe
 
@@ -241,3 +242,7 @@ let g:neomake_typescript_enabled_makers = ['eslint']
 
 let g:startify_change_to_vcs_root = 1
 let g:startify_change_to_dir = 0
+
+nnoremap x :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
