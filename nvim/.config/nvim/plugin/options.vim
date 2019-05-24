@@ -27,7 +27,7 @@ set background=dark
 "" syn off
 let g:airline_theme='gruvbox'
 let g:zenburn_disable_Label_underline = 1
-colo zenburn
+colo gruvbox
 
 "" set foldmethod=indent
 "" set hidden

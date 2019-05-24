@@ -1,5 +1,4 @@
 call plug#begin('~/.local/share/nvim/plugged')
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -7,6 +6,7 @@ Plug 'valloric/MatchTagAlways'
 Plug 'neomake/neomake'
 
 Plug 'jnurmine/Zenburn'
+Plug 'morhetz/gruvbox'
 
 Plug 'airblade/vim-gitgutter'
 
@@ -34,7 +34,6 @@ Plug 'chrisbra/Colorizer'
 
 Plug 'Vimjas/vim-python-pep8-indent'  "" Fix python indentation
 
-Plug 'morhetz/gruvbox'
 
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-projectionist'
@@ -133,7 +132,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 "" let g:ale_linters = { 'cpp': ['clang', 'gcc', 'cppcheck'] }
-let g:ale_enabled = 0
+let g:ale_enabled = 1
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 1
@@ -243,6 +242,6 @@ let g:neomake_typescript_enabled_makers = ['eslint']
 let g:startify_change_to_vcs_root = 1
 let g:startify_change_to_dir = 0
 
-nnoremap x :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+"" nnoremap x :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+"" \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+"" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
