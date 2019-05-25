@@ -24,6 +24,7 @@ nmap gj <Plug>GitGutterNextHunk
 nmap gk <Plug>GitGutterPrevHunk
 nmap ga <Plug>GitGutterStageHunk
 nmap gu <Plug>GitGutterUndoHunk
+nmap gz :GitGutterFold<CR>
 
 "" FUGITIVE
 nnoremap <leader>gdm :Gdiff master<CR>
