@@ -15,16 +15,10 @@ set hlsearch
 
 set termguicolors
 
-"" let g:gruvbox_contrast_light='hard'
-"" let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
+let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_italic=1
-
-
 set background=dark
-
-""colo gruvbox
-"" colo goodwolf
-"" syn off
 let g:airline_theme='gruvbox'
 let g:zenburn_disable_Label_underline = 1
 colo gruvbox
