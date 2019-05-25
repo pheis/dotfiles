@@ -18,8 +18,14 @@ nnoremap <leader>drm :DiffRev master<CR>
 nnoremap <leader>dri :DiffRev Head<CR>
 
 
-"" FUGITIVE
+" GIT GUTTER
+"
+nmap gj <Plug>GitGutterNextHunk
+nmap gk <Plug>GitGutterPrevHunk
+nmap ga <Plug>GitGutterStageHunk
+nmap gu <Plug>GitGutterUndoHunk
 
+"" FUGITIVE
 nnoremap <leader>gdm :Gdiff master<CR>
 nnoremap <leader>gdi :Gdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
