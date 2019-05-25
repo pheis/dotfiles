@@ -31,7 +31,8 @@ nnoremap <leader>gdi :Gdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gw :Gwrite<CR>
-nnoremap <space>gr :Ggrep<Space>
+nnoremap <leader>gr :Ggrep<Space>
+nnoremap <leader>gc :Gcommit<CR>
 
 " same bindings for merging diffs as in normal mode
 xnoremap dp :diffput<CR>
