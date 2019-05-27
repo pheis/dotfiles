@@ -115,7 +115,7 @@ function! VimuxSlime()
 endfunction
 
   " If text is selected, save it in the v buffer and send that buffer it to tmux
-vnoremap o "vy :call VimuxSlime()<CR>
+"" vnoremap o "vy :call VimuxSlime()<CR>
 
 
 "" set autochdir
