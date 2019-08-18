@@ -10,6 +10,11 @@ Plug 'morhetz/gruvbox'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 Plug 'HerringtonDarkholme/yats.vim'
 
 "" Check this at some point:
@@ -245,3 +250,8 @@ let g:startify_change_to_dir = 0
 "" nnoremap x :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 "" \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 "" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
+let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
+let g:LanguageClient_diagnosticsSignsMax = 0
+let g:LanguageClient_useVirtualText = 0
+

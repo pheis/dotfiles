@@ -9,6 +9,14 @@ nnoremap <leader><leader> :
 
 "" nnoremap <leader>qo :copen<CR>
 "" nnoremap <leader>ql :ccl<CR>
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
+map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
+map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
+map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
+map <Leader>lb :call LanguageClient#textDocument_references()<CR>
+map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
+map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
 
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
@@ -49,6 +57,7 @@ nnoremap <leader>fm :Marks<CR>
 nnoremap <leader>fr :Rg<CR>
 nnoremap <leader>; :GFiles<CR>
 nnoremap ; :GFiles<CR>
+nnoremap g; :call fzf#run({'source': 'git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)"', 'sink': 'Git checkout'})<CR>
 
 "" nnoremap ; :Denite file/old file/rec<CR>
 
@@ -80,6 +89,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
+
 
 "" tnoremap <C-h> <C-\><C-n><C-w>h
 "" tnoremap <C-l> <C-\><C-n><C-w>l

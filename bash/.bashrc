@@ -9,6 +9,7 @@ source ~/.cargo/env
 eval "$(pyenv init -)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
