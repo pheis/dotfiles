@@ -191,8 +191,8 @@ endfunction
 "" nmap <silent> [c :call PrevHunkAllBuffers()<CR>
 " Use `[c` and `]c` to navigate diagnostics
 "
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <leader>ak <Plug>(coc-diagnostic-prev)
+nmap <leader>aj <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
