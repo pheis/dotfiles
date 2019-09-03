@@ -1,3 +1,4 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["Typescript"]
+    "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact"],
+    "eslint.filetypes": ["typescript", "typescriptreact", "javascript", "javascriptreact"]
 }

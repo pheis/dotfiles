@@ -66,7 +66,7 @@ map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
-nnoremap yoa :ALEToggle<CR>
+"" nnoremap yoa :ALEToggle<CR>
 
 
 nnoremap gb :bp<CR>
@@ -74,8 +74,8 @@ nnoremap gB :bn<CR>
 
 vnoremap // y/<C-R>"<CR>
 
-nnoremap <leader>aj :ALENext<CR>
-nnoremap <leader>ak :ALEPrevious<CR>
+"" nnoremap <leader>aj :ALENext<CR>
+"" nnoremap <leader>ak :ALEPrevious<CR>
 nnoremap <leader>o :Goyo<CR>
 
 nnoremap [ol :set linebreak<CR>
@@ -140,8 +140,7 @@ nnoremap / /\v
 ""   endif
 "" endfunction
 
-"" nmap <script> <silent> <leader>q :call ToggleQuickFix()<CR>
-nnoremap <leader>q :copen<CR>
+"" nmap <script> <silent> <leader>q :call ToggleQuickFix()<CR> nnoremap <leader>q :copen<CR>
 
 
 nnoremap <leader>e :Neomake!<CR>
@@ -188,5 +187,15 @@ function! PrevHunkAllBuffers()
   endwhile
 endfunction
 
-nmap <silent> ]c :call NextHunkAllBuffers()<CR>
-nmap <silent> [c :call PrevHunkAllBuffers()<CR>
+"" nmap <silent> ]c :call NextHunkAllBuffers()<CR>
+"" nmap <silent> [c :call PrevHunkAllBuffers()<CR>
+" Use `[c` and `]c` to navigate diagnostics
+"
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)

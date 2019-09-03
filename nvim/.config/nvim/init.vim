@@ -63,7 +63,7 @@ Plug 'justinmk/vim-sneak'
 "" Plug 'wellle/targets.vim'
 "" Plug 'michaeljsmith/vim-indent-object'
 
-Plug 'w0rp/ale'
+"" Plug 'w0rp/ale'
 call plug#end()
 
 let g:sneak#label = 1
@@ -128,39 +128,39 @@ endfunction
 
 "" ALE
 
-let g:airline#extensions#ale#enabled = 1
+"" let g:airline#extensions#ale#enabled = 1
 
 
-let g:ale_sign_error = '●' " Less aggressive than the default '>>'
-let g:ale_sign_warning = '.'
-"" let g:ale_linters = { 'cpp': ['clang', 'gcc', 'cppcheck'] }
-let g:ale_enabled = 1
-let g:ale_lint_on_enter = 1
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 1
+"" let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+"" let g:ale_sign_warning = '.'
+"" "" let g:ale_linters = { 'cpp': ['clang', 'gcc', 'cppcheck'] }
+"" let g:ale_enabled = 1
+"" let g:ale_lint_on_enter = 1
+"" let g:ale_lint_on_save = 1
+"" let g:ale_lint_on_text_changed = 1
 
-let g:nvim_typescript#diagnostics_enable = 0
+"" let g:nvim_typescript#diagnostics_enable = 0
 
 " Ale linter / fixers
-let g:ale_linters = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'typescript': ['eslint', 'tsserver'],
-\   'javascript': ['eslint'],
-\   'cpp': ['gcc'],
-\}
-let g:ale_fixers = {
-  \   'typescript': [
-  \       'prettier',
-  \   ],
-  \}
-
-let g:ale_fix_on_save = 1
-" Set this. Airline will handle the rest.
-"" let g:airline#extensions#ale#enabled = 1
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_echo_msg_format = '%linter%: %s'
-" Only run linters named in ale_linters settings.
-let g:ale_linters_explicit = 1
+"" let g:ale_linters = {
+"" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+"" \   'typescript': ['eslint', 'tsserver'],
+"" \   'javascript': ['eslint'],
+"" \   'cpp': ['gcc'],
+"" \}
+"" let g:ale_fixers = {
+""   \   'typescript': [
+""   \       'prettier',
+""   \   ],
+""   \}
+""
+"" let g:ale_fix_on_save = 1
+"" " Set this. Airline will handle the rest.
+"" "" let g:airline#extensions#ale#enabled = 1
+"" let g:ale_javascript_prettier_use_local_config = 1
+"" let g:ale_echo_msg_format = '%linter%: %s'
+"" " Only run linters named in ale_linters settings.
+"" let g:ale_linters_explicit = 1
 
 "" AIRLINE
 
@@ -169,11 +169,11 @@ let g:airline_detect_modified=1
 
 "" DEOPLETE
 
-let g:deoplete#enable_at_startup = 1
+"" let g:deoplete#enable_at_startup = 1
 
 "" GOYO
 let g:goyo_linenr = 1
-let g:goyo_height = 100
+let g:goyo_width = 120
 
 "" set textwidth=80
 
@@ -252,3 +252,4 @@ let g:startify_change_to_dir = 0
 "" let g:LanguageClient_diagnosticsSignsMax = 0
 "" let g:LanguageClient_useVirtualText = 0
 
+autocmd CursorHold * silent call CocActionAsync('highlight')
