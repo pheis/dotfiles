@@ -173,7 +173,7 @@ let g:airline_detect_modified=1
 
 "" GOYO
 let g:goyo_linenr = 1
-let g:goyo_width = 120
+let g:goyo_width = 80
 
 "" set textwidth=80
 

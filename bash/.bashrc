@@ -73,7 +73,6 @@ alias gco='git co'
 alias gdm='git diff master'
 alias gd='git diff'
 alias gs='git status'
-alias cat='bat'
 
 alias m='python3 ~/code/m/m.py'
 
@@ -104,6 +103,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Hom
 export ANDROID_HOME=$HOME/Library/android/sdk
 
 export PATH=$(pyenv root):$PATH
+export PATH=~/script:$PATH
 export PATH=~/bin:$PATH
 export PATH=/opt/android-sdk/:$PATH
 export PATH=/opt/android-sdk/emulator:$PATH

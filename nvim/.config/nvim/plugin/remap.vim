@@ -1,3 +1,6 @@
+nnoremap <silent>j gj
+nnoremap <silent>k gk
+
 let mapleader=" "
 nnoremap c* *Ncgn
 
