@@ -21,6 +21,11 @@ nnoremap <leader><leader> :
 "" map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
 "" map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
 
+"" ANDROID DEV
+
+nnoremap <leader>ar :!adb shell input text "RR"<CR>
+nnoremap <leader>as :!adb reverse tcp:8081 tcp:8081<CR>
+
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
@@ -31,10 +36,10 @@ nnoremap <leader>dri :DiffRev Head<CR>
 
 " GIT GUTTER
 "
-nmap gj <Plug>GitGutterNextHunk
-nmap gk <Plug>GitGutterPrevHunk
-nmap ga <Plug>GitGutterStageHunk
-nmap gu <Plug>GitGutterUndoHunk
+nmap gj <Plug>(GitGutterNextHunk)
+nmap gk <Plug>(GitGutterPrevHunk)
+nmap ga <Plug>(GitGutterStageHunk)
+nmap gu <Plug>(GitGutterUndoHunk)
 nmap gz :GitGutterFold<CR>
 
 "" FUGITIVE
