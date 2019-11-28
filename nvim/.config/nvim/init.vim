@@ -23,7 +23,7 @@ Plug 'skywind3000/asyncrun.vim'
 
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
