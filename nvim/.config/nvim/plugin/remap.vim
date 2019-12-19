@@ -217,3 +217,11 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+nnoremap <Leader>t :call VimuxRunCommand("clear; npx jest --coverage=false" . bufname("%"))<CR>
+nnoremap <Leader>vp :VimuxPromptCommand<CR>
+nnoremap <Leader>vl :VimuxRunLastCommand<CR>
+nnoremap <Leader>vi :VimuxInspectRunner<CR>
+nnoremap <Leader>vq :VimuxCloseRunner<CR>
+nnoremap <Leader>vx :VimuxInterruptRunner<CR>
+nnoremap <Leader>vz :call VimuxZoomRunner()<CR>

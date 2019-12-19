@@ -36,3 +36,26 @@ let g:gitgutter_sign_modified_removed = '<'
 let g:gitgutter_override_sign_column_highlight = 1
 highlight SignColumn guibg=bg
 highlight SignColumn ctermbg=bg
+
+
+let g:airline_detect_modified=1
+
+
+let g:goyo_linenr = 1
+let g:goyo_width = 80
+
+
+let g:VimuxOrientation = "h"
+let g:VimuxHeight = "40"
+
+
+let g:rustfmt_autosave = 1
+
+
+let g:sneak#label = 1
+
+
+let g:fzf_files_options =
+  \ '--preview "bat {}"'
+let g:fzf_layout = { 'up': '~40%' }
+
