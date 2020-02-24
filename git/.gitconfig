@@ -18,5 +18,3 @@
 [core]
   editor = nvim
   autocrlf = input
-[commit]
-	gpgsign = true

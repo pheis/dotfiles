@@ -18,6 +18,15 @@ export ANSIBLE_ROLES_PATH=$HOME/debian-ansible/roles
 # export PASSWORD_STORE_DIR=$HOME/ylitse-secrets
 
 
+
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f'
 
@@ -99,7 +108,7 @@ alias p='python3'
 
 export EDITOR=nvim
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 export ANDROID_HOME=$HOME/Library/android/sdk
 
 export PATH=$(pyenv root):$PATH

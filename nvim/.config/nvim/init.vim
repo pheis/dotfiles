@@ -1,4 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'jceb/vim-orgmode'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
