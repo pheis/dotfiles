@@ -108,8 +108,13 @@ alias p='python3'
 
 export EDITOR=nvim
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-export ANDROID_HOME=$HOME/Library/android/sdk
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    export JAVA_HOME=/usr/lib/jvm/default
+    export ANDROID_HOME=$HOME/Library/android/sdk
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+    export ANDROID_HOME=$HOME/Library/android/sdk
+fi
 
 export PATH=$(pyenv root):$PATH
 export PATH=~/script:$PATH
