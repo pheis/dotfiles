@@ -9,11 +9,10 @@ Plug 'junegunn/goyo.vim'
 Plug 'valloric/MatchTagAlways'
 Plug 'neomake/neomake'
 
-Plug 'numirias/semshi'
-Plug 'psf/black'
-
 Plug 'jnurmine/Zenburn'
+
 Plug 'morhetz/gruvbox'
+Plug 'icymind/NeoSolarized'
 
 Plug 'airblade/vim-gitgutter'
 
