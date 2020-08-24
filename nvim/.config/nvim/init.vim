@@ -8,11 +8,12 @@ Plug 'junegunn/goyo.vim'
 
 Plug 'valloric/MatchTagAlways'
 Plug 'neomake/neomake'
+Plug 'psf/black', { 'tag': '19.10b0' }
 
 Plug 'jnurmine/Zenburn'
-
 Plug 'morhetz/gruvbox'
 Plug 'icymind/NeoSolarized'
+Plug 'sjl/badwolf'
 
 Plug 'airblade/vim-gitgutter'
 

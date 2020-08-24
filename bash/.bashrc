@@ -10,6 +10,9 @@ eval "$(pyenv init -)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+export PATH=$HOME/.poetry/bin:$PATH
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -92,6 +95,8 @@ if [ "$OSTYPE" == "linux-gnu" ]; then
 fi
 
 alias ypass='PASSWORD_STORE_DIR=$HOME/ylitse-secrets pass'
+
+eval "$(pyenv init -)"
 
 # git init --bare $HOME/.myconfig
 # alias c='git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'

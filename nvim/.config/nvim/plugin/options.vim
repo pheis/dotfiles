@@ -17,8 +17,8 @@ set termguicolors
 set winblend=10
 set pumblend=10
 
-let g:gruvbox_contrast_light='hard'
-let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='medium'
+let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_italic=1
 set background=dark
 let g:airline_theme='gruvbox'
