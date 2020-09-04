@@ -1,8 +1,18 @@
+set-option global grepcmd 'rg'
+
+colorscheme gruvbox
+
+add-highlighter global/ number-lines -relative
+
 hook global InsertChar d %{ try %{
   exec -draft hH <a-k>fd<ret> d
   exec <esc>
 }}
 
-colorscheme gruvbox
+map global normal '#' ':tmux-terminal-horizontal kak -c %val{session}<ret>'
 
-add-highlighter global/ number-lines -relative
+map global normal <space> ,
+map global normal , <space> map global user y '<a-|>wl-copy<ret>'
+
+map global user w ':w<ret>'
+map global user q ':q<ret>'

@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-source ~/.cargo/env
+# source ~/.cargo/env
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -121,20 +121,14 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export ANDROID_HOME=$HOME/Library/android/sdk
 fi
 
+export npm_config_prefix=~/.node_modules
+
+export PATH=$HOME/.node_modules/bin:$PATH
 export PATH=$(pyenv root):$PATH
 export PATH=~/script:$PATH
 export PATH=~/bin:$PATH
 export PATH=/opt/android-sdk/:$PATH
 export PATH=/opt/android-sdk/emulator:$PATH
-
-NPM_PACKAGES="${HOME}/.npm-pkgs"
-
-PATH="$NPM_PACKAGES/bin:$PATH"
-# PATH="$~/bin:$PATH"
-
-# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-unset MANPATH # delete if you already modified MANPATH elsewhere in your config
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 stty -ixon
 
@@ -142,3 +136,4 @@ stty -ixon
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+# eval "$(starship init bash)"
