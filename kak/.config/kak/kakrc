@@ -11,8 +11,6 @@ hook global InsertChar d %{ try %{
 
 map global normal '#' ':tmux-terminal-horizontal kak -c %val{session}<ret>'
 
-map global normal <space> ,
-map global normal , <space>
 map global user y '<a-|>wl-copy<ret>'
 
 map global user w ':w<ret>'

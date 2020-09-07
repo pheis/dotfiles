@@ -86,8 +86,6 @@ alias gdm='git diff master'
 alias gd='git diff'
 alias gs='git status'
 
-alias m='python3 ~/code/m/m.py'
-
 alias ls='ls -G'
 
 if [ "$OSTYPE" == "linux-gnu" ]; then
@@ -107,7 +105,7 @@ alias t='tmux'
 alias npm-exec='PATH=$(npm bin):$PATH'
 
 # alias ls='ls --color=auto'
-alias v='nvim'
+alias v=$EDITOR
 alias p='python3'
 # PS1='[\u@\h \W]\$ '
 
