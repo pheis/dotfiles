@@ -105,11 +105,11 @@ alias t='tmux'
 alias npm-exec='PATH=$(npm bin):$PATH'
 
 # alias ls='ls --color=auto'
-alias v=$EDITOR
 alias p='python3'
 # PS1='[\u@\h \W]\$ '
 
 export EDITOR=nvim
+alias v='nvim'
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export JAVA_HOME=/usr/lib/jvm/default
