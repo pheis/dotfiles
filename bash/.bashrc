@@ -8,6 +8,12 @@
 [[ $- != *i* ]] && return
 eval "$(pyenv init -)"
 
+
+# shopt {{{
+shopt -s globstar
+shopt -s extglob
+# }}}
+
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -63,7 +69,6 @@ LIGHT_MAGENTA="\[\e[35m\]"
 # PS1="$NO_COLOR[\t] $YELLOW\$(parse_git_branch) $DARKGREEN\u@\h:$LIGHT_MAGENTA\w $NO_COLOR\$ "
 PS1="$YELLOW\$(parse_git_branch) $LIGHT_MAGENTA\w $NO_COLOR\$ "
 
-# shopt -s globstar
 # fbr() {
 #   local branches branch
 #   branches=$(git --no-pager branch -vv --sort=-committerdate) &&
