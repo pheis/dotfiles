@@ -18,15 +18,12 @@ alias g='git'
 alias p='python'
 alias t='tmux'
 alias v='nvim'
+alias lg='g l | head -20'
+alias gr='git rev-list --all | xargs git grep'
 # }}}
 
 # Prevent Ctrl-S, Dunno if needed with zsh?
 stty -ixon
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-    export ANDROID_HOME=$HOME/Library/android/sdk
-fi
 
 alias ypass='PASSWORD_STORE_DIR=$HOME/ylitse-secrets pass'
 
@@ -36,9 +33,23 @@ autoload -Uz compinit
 compinit
 setopt COMPLETE_ALIASES
 
-# scriptit
+# scripts
 export PATH="$HOME/scripts:$PATH"
 
+# poetry  {{{
 # curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-# poetry
 export PATH="$HOME/.poetry/bin:$PATH"
+# }}}
+
+# Pyenv {{{
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+# }}}
+
+# Java, Android
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+    export ANDROID_HOME=$HOME/Library/android/sdk
+fi
+
