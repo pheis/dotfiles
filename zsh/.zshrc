@@ -20,6 +20,7 @@ alias t='tmux'
 alias v='nvim'
 alias lg='g l | head -20'
 alias gr='git rev-list --all | xargs git grep'
+alias cdgr='cd $(git rev-parse --show-toplevel)'
 # }}}
 
 # Prevent Ctrl-S, Dunno if needed with zsh?
@@ -38,7 +39,7 @@ export PATH="$HOME/scripts:$PATH"
 
 # poetry  {{{
 # curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 # }}}
 
 # Pyenv {{{
