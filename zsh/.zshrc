@@ -15,6 +15,7 @@ eval "$(starship init zsh)"
 # {{{ Aliases
 alias ls='exa'
 alias g='git'
+alias gs='git status'
 alias p='python'
 alias t='tmux'
 alias v='nvim'
