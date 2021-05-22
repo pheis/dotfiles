@@ -1,0 +1,34 @@
+{
+    "!root-password": "<root_password>",
+    "audio": null,
+    "bootloader": "systemd-bootctl",
+    "filesystem": "ext4",
+    "hostname": "dipper",
+    "kernels": [
+        "linux"
+    ],
+    "keyboard-language": "us",
+    "nic": {
+        "NetworkManager": true
+    },
+    "packages": [
+      "sway",
+      "firefox",
+      "zsh",
+      "starship",
+      "xorg-drivers",
+      "alacritty",
+      "xorg",
+      "interception-tools",
+      "interception-caps2esc",
+      "alsa-utils",
+      "vim",
+      "intel-ucode",
+      "bluez-utils",
+      "otf-fira-mono",
+      "ttf-fira-mono",
+      "stow",
+    ],
+    "profile": null,
+    "timezone": "Europe/helsinki"
+}
