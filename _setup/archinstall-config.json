@@ -35,7 +35,10 @@
       "python",
       "go",
       "pass",
-      "ripgrep"
+      "ripgrep",
+      "pulseaudio",
+      "pulseaudio-alsa",
+      "pulseaudio-bluetooth"
     ],
     "profile": null,
     "timezone": "Europe/helsinki"
