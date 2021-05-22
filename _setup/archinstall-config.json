@@ -13,6 +13,7 @@
     },
     "packages": [
       "sway",
+      "acpi",
       "firefox",
       "zsh",
       "starship",
@@ -28,6 +29,13 @@
       "otf-fira-mono",
       "ttf-fira-mono",
       "stow",
+      "exa",
+      "nodejs",
+      "yarn",
+      "python",
+      "go",
+      "pass",
+      "ripgrep"
     ],
     "profile": null,
     "timezone": "Europe/helsinki"
