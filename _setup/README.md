@@ -3,7 +3,7 @@
 `/etc/security/faillock.conf`
 deny = num (0 disables)
 
-or 
+or
 
 `unlock_time = 30`
 
@@ -16,3 +16,9 @@ or
 # edit locale.gen
 `/etc/locale.gen`
 `sudo locale-gen`
+
+
+# import gpg-keys
+`gpg --card-status`
+`gpg --import pubkey.asc`
+
