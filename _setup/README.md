@@ -1,0 +1,18 @@
+# faillock configure
+
+`/etc/security/faillock.conf`
+deny = num (0 disables)
+
+or 
+
+`unlock_time = 30`
+
+
+
+# caps2esc
+
+`sudo cp udevmon.yaml /etc/udevmon/udevmon.yaml`
+
+# edit locale.gen
+`/etc/locale.gen`
+`sudo locale-gen`
