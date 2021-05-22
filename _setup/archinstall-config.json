@@ -38,7 +38,8 @@
       "ripgrep",
       "pulseaudio",
       "pulseaudio-alsa",
-      "pulseaudio-bluetooth"
+      "pulseaudio-bluetooth",
+      "pulsemixer"
     ],
     "profile": null,
     "timezone": "Europe/helsinki"
