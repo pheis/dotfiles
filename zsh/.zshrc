@@ -1,3 +1,8 @@
+# {{{ Start sway on login with linux laptop
+if [ $(uname -n) = "dipper" ] && [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+  exec sway
+fi
+# }}}
 
 # {{{ GPG
 unset SSH_AGENT_PID
