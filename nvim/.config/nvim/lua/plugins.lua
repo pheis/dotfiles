@@ -150,4 +150,6 @@ return require('packer').startup(function(use)
     use 'jnurmine/Zenburn'
 
     use 'romainl/vim-qf'
+
+    use 'terminalnode/sway-vim-syntax'
 end)
