@@ -1,8 +1,3 @@
-# {{{ Start sway on login with linux laptop
-if [ $(uname -n) = "dipper" ] && [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-  exec sway
-fi
-# }}}
 
 # {{{ GPG
 unset SSH_AGENT_PID
@@ -62,3 +57,33 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export ANDROID_HOME=$HOME/Library/android/sdk
 fi
 
+function go_wl() {
+  # export DISPLAY=":0.0"
+  # export WAYLAND_DISPLAY=wayland-0
+  export XDG_RUNTIME_DIR=/run/user/1000
+  export SDL_VIDEODRIVER=wayland
+  export QT_QPA_PLATFORM=wayland-egl
+  #export ELM_DISPLAY=wl
+  #export ECORE_EVAS_ENGINE=wayland_egl
+  #export ELM_ENGINE=wayland_egl
+  #export ELM_ACCEL=opengl
+  #export GDK_BACKEND=wayland
+  #unset GDK_BACKEND
+  #export DBUS_SESSION_BUS_ADDRESS
+  #export DBUS_SESSION_BUS_PID
+  export MOZ_ENABLE_WAYLAND=1
+  #unset WAYLAND_DISPLAY
+  export XDG_CURRENT_DESKTOP=sway
+  export XDG_SESSION_TYPE=wayland
+}
+
+function start_sway() {
+  go_wl
+  exec sway
+}
+
+# {{{ Start sway on login with linux laptop
+if [ $(uname -n) = "dipper" ] && [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+  start_sway
+fi
+# }}}
