@@ -1,15 +1,11 @@
 [[block]]
-block = "keyboard_layout"
-driver = "sway"
-
-[[block]]
-block = "sound"
-format = "{output_name} {volume}"
-
-[[block]]
 block = "battery"
 interval = 10
 format = "{percentage:6#100} {percentage} {time}"
+
+[[block]]
+block = "sound"
+format = "{volume}"
 
 [[block]]
 block = "networkmanager"
@@ -22,3 +18,7 @@ ap_format = "{ssid^10}"
 block = "time"
 format = "%a %d/%m %R"
 interval = 60
+
+[[block]]
+block = "keyboard_layout"
+driver = "sway"
