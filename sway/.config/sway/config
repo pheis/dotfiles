@@ -1,7 +1,7 @@
+exec swaymsg "workspace 2; exec firefox;"
 exec swaymsg "workspace 1; exec alacritty;"
-exec swaymsg "workspace 2; exec MOZ_ENABLE_WAYLAND=1 firefox;"
-exec swaymsg "workspace 8; exec MOZ_ENABLE_WAYLAND=1 thunderbird;"
 
+# For pipewire?
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 
@@ -17,7 +17,7 @@ set $right l
 set $term alacritty
 set $menu dmenu_path | bemenu | xargs swaymsg exec --
 
-output * bg /home/pyry/backgrounds/water_and_foam.jpg fill
+output * bg /home/pyry/backgrounds/dock.jpg fill
 
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
@@ -27,6 +27,7 @@ exec swayidle -w \
 exec_always {
     kanshi
     gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'Arc'
 }
 
 input * {
@@ -140,8 +141,8 @@ input * {
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+    bindsym XF86MonBrightnessDown exec brightnessctl set 1%-
+    bindsym XF86MonBrightnessUp exec brightnessctl set +1%
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
@@ -171,11 +172,9 @@ bindsym $mod+r mode "resize"
 
 bar {
     position top
-
     # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
     status_command i3status-rs
     font pango:Fira Mono, FontAwesome 10
-    position top
     colors {
         separator #666666
         background #000000
@@ -192,5 +191,7 @@ bar {
     #     inactive_workspace #000000 #000000 #777777
     # }
 }
+
+hide_edge_borders smart
 
 include /etc/sway/config.d/*

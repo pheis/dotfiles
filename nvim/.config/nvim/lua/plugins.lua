@@ -151,4 +151,6 @@ return require('packer').startup(function(use)
     use 'romainl/vim-qf'
 
     use 'terminalnode/sway-vim-syntax'
+
+    use 'pearofducks/ansible-vim'
 end)

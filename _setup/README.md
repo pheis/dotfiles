@@ -11,7 +11,7 @@ or
 
 # caps2esc
 
-`sudo cp udevmon.yaml /etc/udevmon/udevmon.yaml`
+`sudo cp udevmon.yaml /etc/interception/udevmon.yaml`
 
 # edit locale.gen
 `/etc/locale.gen`

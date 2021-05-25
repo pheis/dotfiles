@@ -1,24 +1,28 @@
+theme = "space-villain"
+icons = "awesome"
+
+# [[block]]
+# block = "networkmanager"
+# on_click = "alacritty -e nmtui"
+# interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+# interface_name_include = []
+# ap_format = "{ssid^10}"
+
 [[block]]
-block = "battery"
-interval = 10
-format = "{percentage:6#100} {percentage} {time}"
+block = "keyboard_layout"
+driver = "sway"
 
 [[block]]
 block = "sound"
 format = "{volume}"
 
 [[block]]
-block = "networkmanager"
-on_click = "alacritty -e nmtui"
-interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
-interface_name_include = []
-ap_format = "{ssid^10}"
+block = "battery"
+interval = 10
+format = "{percentage}"
 
 [[block]]
 block = "time"
 format = "%a %d/%m %R"
 interval = 60
 
-[[block]]
-block = "keyboard_layout"
-driver = "sway"

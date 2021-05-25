@@ -2,3 +2,7 @@ profile {
 	output eDP-1 disable
 	output "Lenovo Group Limited LEN P27h-10 0x00000101" mode 2560x1440 position 0,0
 }
+
+profile {
+	output eDP-1 enable scale 2
+}
