@@ -11,6 +11,10 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 # Starship propmpt
 eval "$(starship init zsh)"
 
+# Archlinux stuf TODO: guard with if uname
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # {{{ Aliases
 alias ls='exa'

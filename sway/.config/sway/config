@@ -17,7 +17,7 @@ set $right l
 set $term alacritty
 set $menu dmenu_path | bemenu | xargs swaymsg exec --
 
-output * bg /home/pyry/backgrounds/dock.jpg fill
+output * bg /home/pyry/backgrounds/dark.jpg fill
 
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
