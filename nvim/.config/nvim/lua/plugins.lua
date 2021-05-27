@@ -83,6 +83,7 @@ return require('packer').startup(function(use)
         'neoclide/coc.nvim',
         branch = 'release',
         opt = true,
+        ft = {'javascript', 'typescript', 'typescriptreact', 'rust'},
         run = function()
           vim.cmd [[
           CocInstall coc-tsserver
