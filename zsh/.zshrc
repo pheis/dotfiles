@@ -67,12 +67,11 @@ function go_wl() {
   # export WAYLAND_DISPLAY=wayland-0
   export XDG_RUNTIME_DIR=/run/user/1000
   export SDL_VIDEODRIVER=wayland
-  export QT_QPA_PLATFORM=wayland-egl
-  #export ELM_DISPLAY=wl
-  #export ECORE_EVAS_ENGINE=wayland_egl
+  export QT_QPA_PLATFORM=wayland
+  #export ELM_DISPLAY=wl export ECORE_EVAS_ENGINE=wayland_egl
   #export ELM_ENGINE=wayland_egl
   #export ELM_ACCEL=opengl
-  #export GDK_BACKEND=wayland
+  export GDK_BACKEND=wayland
   #unset GDK_BACKEND
   #export DBUS_SESSION_BUS_ADDRESS
   #export DBUS_SESSION_BUS_PID
