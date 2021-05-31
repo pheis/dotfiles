@@ -17,7 +17,7 @@ set $right l
 set $term alacritty
 set $menu dmenu_path | bemenu | xargs swaymsg exec --
 
-output * bg /home/pyry/backgrounds/window.jpg fill
+output * bg /home/pyry/backgrounds/water.jpg fill
 
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
@@ -26,6 +26,7 @@ exec swayidle -w \
 
 exec mako
 exec gammastep -l 0:24
+# exec kanshi
 
 exec_always {
     kanshi
