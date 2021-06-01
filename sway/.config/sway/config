@@ -1,4 +1,5 @@
 exec swaymsg "workspace 2; exec firefox;"
+exec swaymsg "workspace 5; exec slack --enable-features=UseOzonePlatform --ozone-platform=wayland;"
 exec swaymsg "workspace 1; exec alacritty -e tmux new-session -A -s main;"
 
 # For pipewire?
