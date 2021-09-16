@@ -15,6 +15,7 @@
   df = diff
   dfmn = diff master --name-only
   sort = branch -a --sort=committerdate
+  amend = commit -C HEAD --amend
 [core]
   editor = nvim
   autocrlf = input

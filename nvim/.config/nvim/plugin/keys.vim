@@ -14,10 +14,10 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Easier Moving between splits
-nnoremap <Up> :resize +10<CR>
-nnoremap <Down> :resize -10<CR>
-nnoremap <Right> :vertical resize +10<CR>
-nnoremap <Left> :vertical resize -10<CR>
+" nnoremap <Up> :resize +10<CR>
+" nnoremap <Down> :resize -10<CR>
+" nnoremap <Right> :vertical resize +10<CR>
+" nnoremap <Left> :vertical resize -10<CR>
 
 " Map leader to space
 let mapleader=" "

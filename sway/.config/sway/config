@@ -34,8 +34,8 @@ exec gammastep -l 0:24
 
 exec_always {
     kanshi
-    gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
-    gsettings set org.gnome.desktop.interface icon-theme 'Arc'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
 }
 
 input * {

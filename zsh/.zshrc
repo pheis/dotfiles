@@ -39,12 +39,17 @@ autoload -Uz compinit
 compinit
 setopt COMPLETE_ALIASES
 
+
+export EDITOR=nvim
 # scripts
 export PATH="$HOME/scripts:$PATH"
 
+# cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # poetry  {{{
 # curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.poetry/bin"
 # }}}
 #
 # yarn globals
@@ -87,7 +92,15 @@ function start_sway() {
 }
 
 # {{{ Start sway on login with linux laptop
-if [ $(uname -n) = "dipper" ] && [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-  start_sway
-fi
+# if [ $(uname -n) = "dipper" ] && [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+#   start_sway
+# fi
 # }}}
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+# NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+bindkey -e
+
+export PATH="$HOME/.poetry/bin:$PATH"

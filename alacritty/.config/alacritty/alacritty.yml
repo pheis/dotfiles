@@ -10,3 +10,6 @@ font:
 
 key_bindings:
   - { key: F,              mods: Command|Control,            action: ToggleFullscreen }
+
+window:
+  decorations: None
