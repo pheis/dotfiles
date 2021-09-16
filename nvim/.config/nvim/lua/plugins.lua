@@ -96,11 +96,13 @@ return require('packer').startup(function(use)
     -- }
 
     use {
+        'mhinz/vim-grepper',
+    }
+
+    use {
         'TimUntersberger/neogit',
         config = [[require('neogit').setup{}]]
     }
-
-
 
     use "tversteeg/registers.nvim"
 

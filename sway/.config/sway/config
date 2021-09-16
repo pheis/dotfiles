@@ -19,7 +19,9 @@ set $right l
 set $term alacritty
 set $menu dmenu_path | bemenu | xargs swaymsg exec --
 
-output * bg /home/pyry/backgrounds/water.jpg fill
+set $lock_command swaylock -f -c 000000
+
+# output * bg /home/pyry/backgrounds/water.jpg fill
 
 exec swayidle -w \
          timeout 300 'swaylock -f -i /home/pyry/backgrounds/dark.jpg' \
@@ -44,7 +46,7 @@ input * {
 
 
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec $lock_command
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -147,8 +149,8 @@ input * {
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    bindsym XF86MonBrightnessDown exec brightnessctl set 1%-
-    bindsym XF86MonBrightnessUp exec brightnessctl set +1%
+    bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+    bindsym XF86MonBrightnessUp exec brightnessctl set +10%
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
