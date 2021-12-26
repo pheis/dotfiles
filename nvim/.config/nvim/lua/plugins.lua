@@ -50,12 +50,6 @@ return require('packer').startup(function(use)
         config = [[require'colorizer'.setup()]],
     }
 
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = 'vim.cmd [[ TSUpdate ]]',
-        config =  [[require'config.treesitter']],
-    }
-
     -- js/ts {
     use {
         'pangloss/vim-javascript',
@@ -72,13 +66,7 @@ return require('packer').startup(function(use)
         opt = true,
         ft = {'javascript', 'typescript', 'typescriptreact'}
     }
-    use {
-        'windwp/nvim-ts-autotag',
-        opt = true,
-        ft = {'javascript', 'typescript', 'typescriptreact'},
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-        config = [[require('nvim-ts-autotag').setup()]]
-    }
+
     use {
         'neoclide/coc.nvim',
         branch = 'release',
@@ -99,15 +87,11 @@ return require('packer').startup(function(use)
         'mhinz/vim-grepper',
     }
 
-    use {
-        'TimUntersberger/neogit',
-        config = [[require('neogit').setup{}]]
-    }
 
     use "tversteeg/registers.nvim"
 
     use {
-        'npxbr/glow.nvim',
+        'ellisonleao/glow.nvim',
         opt = true,
         ft = 'markdown',
         config = 'vim.cmd [[ nnoremap <leader>p :Glow<CR> ]]'
@@ -119,13 +103,6 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'edluffy/specs.nvim',
-        config = [[require'config.specs']]
-    }
-
-    use 'AndrewRadev/splitjoin.vim' -- gJ gS, could treesitter do something like this?
-
-    use {
       'hoob3rt/lualine.nvim',
       requires = {
         'kyazdani42/nvim-web-devicons',
@@ -134,26 +111,18 @@ return require('packer').startup(function(use)
       config = [[require'config.lualine']]
     }
 
+    -- colorthemes
     use {
-      'kyazdani42/nvim-tree.lua' ,
-      requires = {
-        'kyazdani42/nvim-web-devicons',
-        opt = true,
-      },
-      config = [[require'config.nvim-tree']]
-    }
-
-    -- colorthemes {
-    use {
-        "npxbr/gruvbox.nvim",
+        "ellisonleao/gruvbox.nvim",
         requires = {"rktjmp/lush.nvim"},
         config = [[require'config.gruvbox']],
     }
     use 'jnurmine/Zenburn'
 
+    -- quicfix fix
     use 'romainl/vim-qf'
 
+    -- special syntaxes
     use 'terminalnode/sway-vim-syntax'
-
     use 'pearofducks/ansible-vim'
 end)
