@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
 
     use {
       'preservim/vimux',
-        config = [[require'config.vimux']]
+        config = [[require'config.vimux']],
     }
 
     use {
@@ -67,21 +67,27 @@ return require('packer').startup(function(use)
         ft = {'javascript', 'typescript', 'typescriptreact'}
     }
 
-    use {
-        'neoclide/coc.nvim',
-        branch = 'release',
-        opt = true,
-        ft = {'javascript', 'typescript', 'typescriptreact', 'rust'},
-        run = function()
-          vim.cmd [[
-          CocInstall coc-tsserver
-          CocInstall coc-eslint
-          CocInstall coc-rust-analyzer
-          ]]
-        end,
-        config = [[require'config.coc']]
+
+    -- lsp?
+     use {
+       'neovim/nvim-lspconfig',
+       config = [[require'config.lsp']]
     }
-    -- }
+    -- completion
+     use {
+       'hrsh7th/nvim-cmp',
+       requires = {
+          'hrsh7th/cmp-nvim-lsp',
+          'hrsh7th/cmp-buffer',
+          'hrsh7th/cmp-path',
+          'hrsh7th/cmp-cmdline',
+          -- vsnip
+          'hrsh7th/cmp-vsnip',
+          'hrsh7th/vim-vsnip',
+          'rafamadriz/friendly-snippets'
+       },
+       config = [[require'config.cmp']]
+    }
 
     use {
         'mhinz/vim-grepper',
