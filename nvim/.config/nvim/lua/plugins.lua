@@ -77,6 +77,12 @@ return require("packer").startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim",
 		config = [[require'config.null-ls']],
 	})
+
+	use({
+		"jose-elias-alvarez/nvim-lsp-ts-utils",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+
 	-- completion
 	use({
 		"hrsh7th/nvim-cmp",
@@ -98,13 +104,6 @@ return require("packer").startup(function(use)
 	})
 
 	use("tversteeg/registers.nvim")
-
-	use({
-		"ellisonleao/glow.nvim",
-		opt = true,
-		ft = "markdown",
-		config = "vim.cmd [[ nnoremap <leader>p :Glow<CR> ]]",
-	})
 
 	use({
 		"mhinz/vim-signify",

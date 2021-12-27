@@ -1,7 +1,10 @@
-require("null-ls").setup({
+local null_ls = require("null-ls")
+
+null_ls.setup({
 	sources = {
-		require("null-ls").builtins.formatting.stylua,
-		require("null-ls").builtins.diagnostics.eslint,
-		require("null-ls").builtins.completion.spell,
+		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.formatting.prettier.with({
+			only_local = "node_modules/.bin",
+		}),
 	},
 })
