@@ -8,83 +8,72 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	execute("packadd packer.nvim")
 end
 
-return require("packer").startup(function(use)
-	use("wbthomason/packer.nvim")
-	use("justinmk/vim-dirvish")
-
-	use({
+local plugins = {
+	"wbthomason/packer.nvim",
+	"justinmk/vim-dirvish",
+	{
 		"mhinz/vim-startify",
 		config = [[require'config.startify']],
-	})
-
-	use({
+	},
+	{
 		"junegunn/goyo.vim",
 		config = "vim.cmd[[nnoremap <leader>o :Goyo<CR>]]",
-	})
-
-	use("tpope/vim-repeat")
-	use("tpope/vim-eunuch")
-	use("tpope/vim-rsi")
-	use("tpope/vim-abolish")
-	use("tpope/vim-surround")
-	use("tpope/vim-commentary")
-	use({
+	},
+	"tpope/vim-repeat",
+	"tpope/vim-eunuch",
+	"tpope/vim-rsi",
+	"tpope/vim-abolish",
+	"tpope/vim-surround",
+	"tpope/vim-commentary",
+	{
 		"tpope/vim-fugitive",
 		config = [[require'config.fugitive']],
-	})
-
-	use({
+	},
+	{
 		"preservim/vimux",
 		config = [[require'config.vimux']],
-	})
-
-	use({
+	},
+	{
 		"nvim-telescope/telescope.nvim",
-		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+		requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
 		config = [[require'config.telescope']],
-	})
-
-	use({
+	},
+	{
 		"norcalli/nvim-colorizer.lua",
 		config = [[require'colorizer'.setup()]],
-	})
-
+	},
 	-- js/ts {
-	use({
+	{
 		"pangloss/vim-javascript",
 		opt = true,
 		ft = { "javascript", "typescript", "typescriptreact" },
-	})
-	use({
+	},
+	{
 		"MaxMEllon/vim-jsx-pretty",
 		opt = true,
 		ft = { "javascript", "typescript", "typescriptreact" },
-	})
-	use({
+	},
+	{
 		"HerringtonDarkholme/yats.vim",
 		opt = true,
 		ft = { "javascript", "typescript", "typescriptreact" },
-	})
-
+	},
 	-- lsp?
-	use({
+	{
 		"neovim/nvim-lspconfig",
 		config = [[require'config.lsp']],
-	})
-
+	},
 	-- extra lsp like stuff
-	use({
+	{
 		"jose-elias-alvarez/null-ls.nvim",
 		config = [[require'config.null-ls']],
-	})
-
-	use({
+	},
+	{
 		"jose-elias-alvarez/nvim-lsp-ts-utils",
 		requires = { { "nvim-lua/plenary.nvim" } },
-	})
-
+	},
 	-- completion
-	use({
+	{
 		"hrsh7th/nvim-cmp",
 		requires = {
 			"hrsh7th/cmp-nvim-lsp",
@@ -97,40 +86,36 @@ return require("packer").startup(function(use)
 			"rafamadriz/friendly-snippets",
 		},
 		config = [[require'config.cmp']],
-	})
-
-	use({
+	},
+	{
 		"mhinz/vim-grepper",
-	})
-
-	use("tversteeg/registers.nvim")
-
-	use({
+	},
+	"tversteeg/registers.nvim",
+	{
 		"mhinz/vim-signify",
 		config = [[require'config.signify']],
-	})
-
-	use({
+	},
+	{
 		"hoob3rt/lualine.nvim",
 		requires = {
 			"kyazdani42/nvim-web-devicons",
 			opt = true,
 		},
 		config = [[require'config.lualine']],
-	})
-
-	-- colorthemes
-	use({
-		"ellisonleao/gruvbox.nvim",
+	},
+	{
+		"ellisonleao/gruvbox.nvim", -- colortheme
 		requires = { "rktjmp/lush.nvim" },
 		config = [[require'config.gruvbox']],
-	})
-	use("jnurmine/Zenburn")
+	},
+	"jnurmine/Zenburn",
+	"romainl/vim-qf",
+	"terminalnode/sway-vim-syntax",
+	"pearofducks/ansible-vim",
+}
 
-	-- quicfix fix
-	use("romainl/vim-qf")
-
-	-- special syntaxes
-	use("terminalnode/sway-vim-syntax")
-	use("pearofducks/ansible-vim")
+return require("packer").startup(function(use)
+	for _, v in ipairs(plugins) do
+		use(v)
+	end
 end)
