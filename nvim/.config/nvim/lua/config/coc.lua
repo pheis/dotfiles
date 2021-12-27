@@ -1,4 +1,4 @@
-vim.cmd [[
+vim.cmd([[
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap <leader>ak <Plug>(coc-diagnostic-prev)
@@ -10,4 +10,4 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 nnoremap K :call CocAction('doHover')<CR>
-]]
+]])
