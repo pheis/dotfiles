@@ -91,6 +91,10 @@ local plugins = {
 		},
 		config = [[require'config.cmp']],
 	},
+  {
+    'kosayoda/nvim-lightbulb',
+    config = [[require'config.nvim-lightbulb']]
+  },
 	{
 		"mhinz/vim-grepper",
 	},
