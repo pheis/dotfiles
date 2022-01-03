@@ -11,6 +11,32 @@ end
 local plugins = {
 	"wbthomason/packer.nvim",
 	"justinmk/vim-dirvish",
+	"tpope/vim-repeat",
+	"tpope/vim-eunuch",
+	"tpope/vim-rsi",
+	"tpope/vim-abolish",
+	"tpope/vim-surround",
+	"tpope/vim-commentary",
+	"tversteeg/registers.nvim",
+	"jnurmine/Zenburn",
+	"romainl/vim-qf",
+	"terminalnode/sway-vim-syntax",
+	"pearofducks/ansible-vim",
+	{
+		"pangloss/vim-javascript",
+		opt = true,
+		ft = { "javascript", "typescript", "typescriptreact" },
+	},
+	{
+		"MaxMEllon/vim-jsx-pretty",
+		opt = true,
+		ft = { "javascript", "typescript", "typescriptreact" },
+	},
+	{
+		"HerringtonDarkholme/yats.vim",
+		opt = true,
+		ft = { "javascript", "typescript", "typescriptreact" },
+	},
 	{
 		"mhinz/vim-startify",
 		config = [[require'config.startify']],
@@ -19,12 +45,6 @@ local plugins = {
 		"junegunn/goyo.vim",
 		config = "vim.cmd[[nnoremap <leader>o :Goyo<CR>]]",
 	},
-	"tpope/vim-repeat",
-	"tpope/vim-eunuch",
-	"tpope/vim-rsi",
-	"tpope/vim-abolish",
-	"tpope/vim-surround",
-	"tpope/vim-commentary",
 	{
 		"tpope/vim-fugitive",
 		config = [[require'config.fugitive']],
@@ -41,22 +61,6 @@ local plugins = {
 	{
 		"norcalli/nvim-colorizer.lua",
 		config = [[require'colorizer'.setup()]],
-	},
-	-- js/ts {
-	{
-		"pangloss/vim-javascript",
-		opt = true,
-		ft = { "javascript", "typescript", "typescriptreact" },
-	},
-	{
-		"MaxMEllon/vim-jsx-pretty",
-		opt = true,
-		ft = { "javascript", "typescript", "typescriptreact" },
-	},
-	{
-		"HerringtonDarkholme/yats.vim",
-		opt = true,
-		ft = { "javascript", "typescript", "typescriptreact" },
 	},
 	-- lsp?
 	{
@@ -90,7 +94,6 @@ local plugins = {
 	{
 		"mhinz/vim-grepper",
 	},
-	"tversteeg/registers.nvim",
 	{
 		"mhinz/vim-signify",
 		config = [[require'config.signify']],
@@ -108,10 +111,6 @@ local plugins = {
 		requires = { "rktjmp/lush.nvim" },
 		config = [[require'config.gruvbox']],
 	},
-	"jnurmine/Zenburn",
-	"romainl/vim-qf",
-	"terminalnode/sway-vim-syntax",
-	"pearofducks/ansible-vim",
 }
 
 return require("packer").startup(function(use)
