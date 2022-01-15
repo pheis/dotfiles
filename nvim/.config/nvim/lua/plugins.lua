@@ -98,10 +98,7 @@ local plugins = {
 	{
 		"mhinz/vim-grepper",
 	},
-	{
-		"mhinz/vim-signify",
-		config = [[require'config.signify']],
-	},
+  { "lewis6991/gitsigns.nvim", config = [[require'config.gitsigns']]},
 	{
 		"hoob3rt/lualine.nvim",
 		requires = {
