@@ -85,3 +85,11 @@ require("lspconfig").sumneko_lua.setup({
 		},
 	},
 })
+
+vim.cmd[[
+autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.json lua vim.lsp.buf.formatting_sync()
+]]

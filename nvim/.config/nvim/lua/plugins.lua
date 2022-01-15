@@ -91,14 +91,14 @@ local plugins = {
 		},
 		config = [[require'config.cmp']],
 	},
-  {
-    'kosayoda/nvim-lightbulb',
-    config = [[require'config.nvim-lightbulb']]
-  },
+	{
+		"kosayoda/nvim-lightbulb",
+		config = [[require'config.nvim-lightbulb']],
+	},
 	{
 		"mhinz/vim-grepper",
 	},
-  { "lewis6991/gitsigns.nvim", config = [[require'config.gitsigns']]},
+	{ "lewis6991/gitsigns.nvim", config = [[require'config.gitsigns']] },
 	{
 		"hoob3rt/lualine.nvim",
 		requires = {
@@ -112,11 +112,12 @@ local plugins = {
 		requires = { "rktjmp/lush.nvim" },
 		config = [[require'config.gruvbox']],
 	},
-  {
-    "nvim-pack/nvim-spectre",
+	{
+		"nvim-pack/nvim-spectre",
 		requires = { { "nvim-lua/plenary.nvim" } },
-    config = [[require'config.spectre']]
-  }
+		config = [[require'config.spectre']],
+	},
+	{ "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
 }
 
 return require("packer").startup(function(use)
