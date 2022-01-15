@@ -115,6 +115,11 @@ local plugins = {
 		requires = { "rktjmp/lush.nvim" },
 		config = [[require'config.gruvbox']],
 	},
+  {
+    "nvim-pack/nvim-spectre",
+		requires = { { "nvim-lua/plenary.nvim" } },
+    config = [[require'config.spectre']]
+  }
 }
 
 return require("packer").startup(function(use)

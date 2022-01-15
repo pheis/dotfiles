@@ -6,10 +6,12 @@ font:
     family: FiraMono Nerd Font
     style: Regular
 
-  size: 11.0
+  size: 16.0
+
+  use_thin_strokes: true
 
 key_bindings:
   - { key: F,              mods: Command|Control,            action: ToggleFullscreen }
 
 window:
-  decorations: None
+  decorations: full
