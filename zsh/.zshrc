@@ -12,9 +12,11 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 eval "$(starship init zsh)"
 
 # Archlinux stuf TODO: guard with if uname
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/doc/pkgfile/command-not-found.zsh
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source /usr/share/doc/pkgfile/command-not-found.zsh
+fi
 
 # {{{ Aliases
 alias ls='exa'
@@ -39,6 +41,15 @@ autoload -Uz compinit
 compinit
 setopt COMPLETE_ALIASES
 
+# brew
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PATH=/opt/homebrew/bin:$PATH
+fi
+
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PATH=$HOME/Library/Python/3.9/bin:$PATH
+fi
 
 export EDITOR=nvim
 # scripts
@@ -104,3 +115,4 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 bindkey -e
 
 export PATH="$HOME/.poetry/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
