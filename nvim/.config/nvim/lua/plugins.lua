@@ -118,6 +118,7 @@ local plugins = {
 		config = [[require'config.spectre']],
 	},
 	{ "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
+	{ "meain/vim-printer", config = [[require'config.vim-printer']] },
 }
 
 return require("packer").startup(function(use)
