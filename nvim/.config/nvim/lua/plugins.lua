@@ -23,6 +23,9 @@ local plugins = {
 	"terminalnode/sway-vim-syntax",
 	"pearofducks/ansible-vim",
 	{
+		"nvim-treesitter/nvim-treesitter",
+	},
+	{
 		"pangloss/vim-javascript",
 		opt = true,
 		ft = { "javascript", "typescript", "typescriptreact" },
