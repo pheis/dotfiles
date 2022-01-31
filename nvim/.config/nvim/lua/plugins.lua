@@ -112,9 +112,14 @@ local plugins = {
 	},
 	{
 		"ellisonleao/gruvbox.nvim", -- colortheme
-		requires = { "rktjmp/lush.nvim" },
 		config = [[require'config.gruvbox']],
 	},
+	{
+		"eddyekofo94/gruvbox-flat.nvim", -- colortheme
+		config = [[require'config.gruvbox-flat']],
+	},
+	{ "EdenEast/nightfox.nvim" },
+	{ "shaunsingh/solarized.nvim", config = [[require'config.solarized']] },
 	{
 		"nvim-pack/nvim-spectre",
 		requires = { { "nvim-lua/plenary.nvim" } },
@@ -122,6 +127,7 @@ local plugins = {
 	},
 	{ "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
 	{ "meain/vim-printer", config = [[require'config.vim-printer']] },
+	{ "rcarriga/nvim-notify", config = [[require'config.nvim-notify']] },
 }
 
 return require("packer").startup(function(use)
