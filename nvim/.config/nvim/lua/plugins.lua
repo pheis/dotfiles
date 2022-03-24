@@ -128,6 +128,7 @@ local plugins = {
 	{ "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
 	{ "meain/vim-printer", config = [[require'config.vim-printer']] },
 	{ "rcarriga/nvim-notify", config = [[require'config.nvim-notify']] },
+	{ "rebelot/kanagawa.nvim" },
 }
 
 return require("packer").startup(function(use)
