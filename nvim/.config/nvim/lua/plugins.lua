@@ -116,7 +116,6 @@ local plugins = {
 	},
 	{
 		"eddyekofo94/gruvbox-flat.nvim", -- colortheme
-		config = [[require'config.gruvbox-flat']],
 	},
 	{ "EdenEast/nightfox.nvim" },
 	{ "shaunsingh/solarized.nvim", config = [[require'config.solarized']] },
