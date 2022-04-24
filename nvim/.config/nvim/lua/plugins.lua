@@ -114,10 +114,10 @@ local plugins = {
 		"ellisonleao/gruvbox.nvim", -- colortheme
 		config = [[require'config.gruvbox']],
 	},
-	{
-		"eddyekofo94/gruvbox-flat.nvim", -- colortheme
-	},
-	{ "EdenEast/nightfox.nvim" },
+	-- {
+	-- 	"eddyekofo94/gruvbox-flat.nvim", -- colortheme
+	-- },
+	-- { "EdenEast/nightfox.nvim" },
 	{ "shaunsingh/solarized.nvim", config = [[require'config.solarized']] },
 	{
 		"nvim-pack/nvim-spectre",
