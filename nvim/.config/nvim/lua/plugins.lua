@@ -66,20 +66,6 @@ local plugins = {
     "norcalli/nvim-colorizer.lua",
     config = [[require'colorizer'.setup()]],
   },
-  -- lsp?
-  {
-    "neovim/nvim-lspconfig",
-    config = [[require'config.lsp']],
-  },
-  -- extra lsp like stuff
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    config = [[require'config.null-ls']],
-  },
-  {
-    "jose-elias-alvarez/nvim-lsp-ts-utils",
-    requires = { { "nvim-lua/plenary.nvim" } },
-  },
   -- completion
   {
     "hrsh7th/nvim-cmp",
@@ -94,6 +80,23 @@ local plugins = {
       "rafamadriz/friendly-snippets",
     },
     config = [[require'config.cmp']],
+  },
+  -- lsp?
+  {
+    "neovim/nvim-lspconfig",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp",
+    },
+    config = [[require'config.lsp']],
+  },
+  -- extra lsp like stuff
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = [[require'config.null-ls']],
+  },
+  {
+    "jose-elias-alvarez/nvim-lsp-ts-utils",
+    requires = { { "nvim-lua/plenary.nvim" } },
   },
   {
     "kosayoda/nvim-lightbulb",

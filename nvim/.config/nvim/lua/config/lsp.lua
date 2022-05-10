@@ -96,11 +96,15 @@ for key, value in pairs(servers) do
   local lsp = has_config and key or value
   local extra_config = has_config and value or {}
 
+  -- cmp?
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
   local base_config = {
     on_attach = on_attach(lsp),
     flags = {
       debounce_text_changes = 150,
     },
+    capabilities = capabilities
   }
 
   local config = vim.tbl_extend("error", base_config, extra_config)
