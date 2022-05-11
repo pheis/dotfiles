@@ -26,21 +26,21 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     config = [[require'config.treesitter']]
   },
-  {
-    "pangloss/vim-javascript",
-    opt = true,
-    ft = { "javascript", "typescript", "typescriptreact" },
-  },
-  {
-    "MaxMEllon/vim-jsx-pretty",
-    opt = true,
-    ft = { "javascript", "typescript", "typescriptreact" },
-  },
-  {
-    "HerringtonDarkholme/yats.vim",
-    opt = true,
-    ft = { "javascript", "typescript", "typescriptreact" },
-  },
+  -- {
+  --   "pangloss/vim-javascript",
+  --   opt = true,
+  --   ft = { "javascript", "typescript", "typescriptreact" },
+  -- },
+  -- {
+  --   "MaxMEllon/vim-jsx-pretty",
+  --   opt = true,
+  --   ft = { "javascript", "typescript", "typescriptreact" },
+  -- },
+  -- {
+  --   "HerringtonDarkholme/yats.vim",
+  --   opt = true,
+  --   ft = { "javascript", "typescript", "typescriptreact" },
+  -- },
   {
     "mhinz/vim-startify",
     config = [[require'config.startify']],
@@ -123,13 +123,13 @@ local plugins = {
   -- },
   -- { "EdenEast/nightfox.nvim" },
   { "shaunsingh/solarized.nvim", config = [[require'config.solarized']] },
-  {
-    "nvim-pack/nvim-spectre",
-    requires = { { "nvim-lua/plenary.nvim" } },
-    config = [[require'config.spectre']],
-  },
-  { "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
-  { "meain/vim-printer", config = [[require'config.vim-printer']] },
+  -- {
+  --   "nvim-pack/nvim-spectre",
+  --   requires = { { "nvim-lua/plenary.nvim" } },
+  --   config = [[require'config.spectre']],
+  -- },
+  -- { "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
+  -- { "meain/vim-printer", config = [[require'config.vim-printer']] },
   { "rcarriga/nvim-notify", config = [[require'config.nvim-notify']] },
   { "rebelot/kanagawa.nvim" },
 }

@@ -9,6 +9,29 @@ local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
+
+local next = cmp.mapping(function(fallback)
+  if cmp.visible() then
+    cmp.select_next_item()
+  elseif vim.fn["vsnip#available"](1) == 1 then
+    feedkey("<Plug>(vsnip-expand-or-jump)", "")
+  elseif has_words_before() then
+    cmp.complete()
+  else
+    fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+  end
+end, { "i", "s" })
+
+local prev = cmp.mapping(function()
+  if cmp.visible() then
+    cmp.select_prev_item()
+  elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+    feedkey("<Plug>(vsnip-jump-prev)", "")
+  end
+end, { "i", "s" })
+
+vim.cmd [[set completeopt=menu,menuone,noselect]]
+
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -19,6 +42,7 @@ cmp.setup({
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
     end,
   },
+
   mapping = {
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
@@ -29,26 +53,10 @@ cmp.setup({
       c = cmp.mapping.close(),
     }),
     ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif vim.fn["vsnip#available"](1) == 1 then
-        feedkey("<Plug>(vsnip-expand-or-jump)", "")
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
-      end
-    end, { "i", "s" }),
-
-    ["<S-Tab>"] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        feedkey("<Plug>(vsnip-jump-prev)", "")
-      end
-    end, { "i", "s" }),
+    ["<Tab>"] = next,
+    ["<S-Tab>"] = prev
   },
+
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "vsnip" }, -- For vsnip users.
@@ -67,6 +75,7 @@ cmp.setup.cmdline("/", {
   },
 })
 
+
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
   sources = cmp.config.sources({
@@ -75,10 +84,3 @@ cmp.setup.cmdline(":", {
     { name = "cmdline" },
   }),
 })
-
--- Setup lspconfig.
--- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
--- require("lspconfig")["<YOUR_LSP_SERVER>"].setup({
--- 	capabilities = capabilities,
--- })

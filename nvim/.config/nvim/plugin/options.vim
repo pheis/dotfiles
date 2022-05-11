@@ -25,5 +25,5 @@ set termguicolors
 
 set winblend=10
 set pumblend=10
-set completeopt=menu,menuone,noselect
+"" set completeopt=menu,menuone,noselect
 set signcolumn=yes
