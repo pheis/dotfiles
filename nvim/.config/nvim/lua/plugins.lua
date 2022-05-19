@@ -17,11 +17,14 @@ local plugins = {
   "tpope/vim-abolish",
   "tpope/vim-surround",
   "tpope/vim-commentary",
+  "tpope/vim-unimpaired",
   "tversteeg/registers.nvim",
   "jnurmine/Zenburn",
   "romainl/vim-qf",
   "terminalnode/sway-vim-syntax",
   "pearofducks/ansible-vim",
+  "nvim-lua/plenary.nvim",
+  "rhysd/conflict-marker.vim",
   {
     "nvim-treesitter/nvim-treesitter",
     config = [[require'config.treesitter']]
@@ -132,6 +135,11 @@ local plugins = {
   -- { "meain/vim-printer", config = [[require'config.vim-printer']] },
   { "rcarriga/nvim-notify", config = [[require'config.nvim-notify']] },
   { "rebelot/kanagawa.nvim" },
+  { "NTBBloodbath/rest.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = [[require'config.rest']]
+  },
+  "stevearc/dressing.nvim",
 }
 
 return require("packer").startup(function(use)
