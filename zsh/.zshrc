@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 
 # {{{ GPG
 unset SSH_AGENT_PID
@@ -5,6 +6,7 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 export GPG_TTY=$(tty)
+
 gpg-connect-agent updatestartuptty /bye >/dev/null
 # }}}
 
@@ -102,9 +104,10 @@ function start_sway() {
 # fi
 # }}}
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-# NVM
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# NVM THIS IS VERY SLOW????
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 bindkey -e
 
@@ -114,7 +117,8 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+ eval "$(pyenv init --path)"
+
 # Pyenv {{{
 # if command -v pyenv 1>/dev/null 2>&1; then
 #   eval "$(pyenv init -)"
@@ -123,3 +127,12 @@ eval "$(pyenv init --path)"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/pyry.heiskanen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pyry.heiskanen/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/pyry.heiskanen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pyry.heiskanen/google-cloud-sdk/completion.zsh.inc'; fi
+
+# zprof
+eval "$(direnv hook zsh)"

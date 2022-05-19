@@ -19,3 +19,4 @@
 [core]
   editor = nvim
   autocrlf = input
+	excludesfile = /Users/pyry.heiskanen/.gitignore
