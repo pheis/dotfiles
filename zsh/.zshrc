@@ -66,7 +66,7 @@ export PATH="$PATH:$HOME/.poetry/bin"
 # }}}
 #
 # yarn globals
-export PATH="$PATH:$(yarn global bin)"
+# export PATH="$PATH:$(yarn global bin)"
 
 # Java, Android
 if [[ "$OSTYPE" == "darwin"* ]]; then
