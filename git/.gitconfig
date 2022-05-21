@@ -29,10 +29,10 @@
   path = ~/.config/delta/themes.gitconfig
 
 [delta]
-  features = collared-trogon
+  # features = collared-trogon
   # features = villsau
   # features = woolly-mammoth
-  # features = chameleon
+  features = chameleon
   # features = calochortus-lyallii
 
   navigate = true  # use n and N to move between diff sections
