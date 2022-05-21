@@ -136,5 +136,6 @@ if [ -f '/Users/pyry.heiskanen/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
+eval $(thefuck --alias)
 
 # zprof
