@@ -112,7 +112,7 @@ function start_sway() {
 bindkey -e
 
 export PATH="$HOME/.poetry/bin:$PATH"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 export PYENV_ROOT="$HOME/.pyenv"
