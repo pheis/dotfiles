@@ -10,8 +10,6 @@ export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 # }}}
 
-# Starship propmpt
-eval "$(starship init zsh)"
 
 # Archlinux stuf TODO: guard with if uname
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -134,6 +132,8 @@ if [ -f '/Users/pyry.heiskanen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/pyry.heiskanen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pyry.heiskanen/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Starship propmpt
+eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 eval $(thefuck --alias)
