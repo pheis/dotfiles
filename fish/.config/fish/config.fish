@@ -3,6 +3,8 @@ if status is-interactive
 
 end
 
+set fish_greeting
+
 abbr -a -U -- f fuck
 abbr -a -U -- g git
 abbr -a -U -- gs 'git status'
