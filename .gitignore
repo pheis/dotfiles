@@ -1,2 +1,6 @@
 .netrwhist
 *__pycache__
+fish/.config/fish/completions/
+fish/.config/fish/conf.d/
+fish/.config/fish/fish_variables
+fish/.config/fish/functions/
