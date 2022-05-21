@@ -1,5 +1,0 @@
-{
-    "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "rust"],
-    "eslint.filetypes": ["typescript", "typescriptreact", "javascript", "javascriptreact"],
-    "suggest.enablePreview": true
-}
