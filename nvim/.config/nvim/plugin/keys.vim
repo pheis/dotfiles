@@ -36,8 +36,8 @@ vnoremap / /\v
 nnoremap / /\v
 
 "" bufs like tabs
-nnoremap gb :bnext<CR>
-nnoremap gB :bprevious<CR>
+" nnoremap gb :bnext<CR>
+" nnoremap gB :bprevious<CR>
 
 nnoremap <silent> yon :set invnumber<CR>:set invrelativenumber<CR>
 nnoremap <silent> yoh :set invhlsearch<CR>
