@@ -38,6 +38,7 @@ abbr -a -U -- ls exa
 abbr -a -U -- p python3
 abbr -a -U -- t tmux
 abbr -a -U -- v nvim
+abbr -a -U -- lg lazygit
 
 direnv hook fish | source
 zoxide init fish | source
