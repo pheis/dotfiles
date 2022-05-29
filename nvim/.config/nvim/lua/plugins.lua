@@ -140,7 +140,11 @@ local plugins = {
     config = [[require'config.rest']]
   },
   "stevearc/dressing.nvim",
-  "ThePrimeagen/harpoon",
+  { "ThePrimeagen/harpoon",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = [[require'config.harpoon']]
+
+  }
 }
 
 return require("packer").startup(function(use)
