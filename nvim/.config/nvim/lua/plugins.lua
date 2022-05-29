@@ -140,6 +140,7 @@ local plugins = {
     config = [[require'config.rest']]
   },
   "stevearc/dressing.nvim",
+  "ThePrimeagen/harpoon",
 }
 
 return require("packer").startup(function(use)
