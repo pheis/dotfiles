@@ -60,6 +60,7 @@ local servers = {
   "rust_analyzer",
   "ccls",
   "eslint",
+  "gopls",
   -- tsserver = { root_dir = nvim_lsp.util.root_pattern("package.json") },
   "tsserver",
   denols = {
@@ -113,6 +114,7 @@ for key, value in pairs(servers) do
 end
 
 vim.cmd([[
+autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync()
 autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync()
 autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync()
 autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync()
