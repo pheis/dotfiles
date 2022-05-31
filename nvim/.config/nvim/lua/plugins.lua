@@ -145,6 +145,7 @@ local plugins = {
 
   },
   { "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
+  { 'windwp/nvim-autopairs', config = [[require'config.autopairs']] }
 }
 
 return require("packer").startup(function(use)
