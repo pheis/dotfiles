@@ -3,7 +3,7 @@ setlocal shiftwidth=2
 setlocal tabstop=2
 setlocal softtabstop=2
 
-" setlocal makeprg=npx\ tsc
+setlocal makeprg=npx\ tsc\ --noEmit
 
 " autocmd Filetype typescript let &errorformat =
 "             \ &errorformat . ',' .
