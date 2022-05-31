@@ -1,4 +1,9 @@
 vim.cmd([[
-vnoremap <C-x> :SnipRun<CR>
+vnoremap <leader>x :SnipRun<CR>
 nnoremap yox :SnipClose<CR>
 ]])
+
+
+-- local lol = 'lol'
+
+-- print(lol)
