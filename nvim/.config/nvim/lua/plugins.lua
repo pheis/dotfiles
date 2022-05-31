@@ -131,7 +131,6 @@ local plugins = {
   --   requires = { { "nvim-lua/plenary.nvim" } },
   --   config = [[require'config.spectre']],
   -- },
-  -- { "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
   -- { "meain/vim-printer", config = [[require'config.vim-printer']] },
   { "rcarriga/nvim-notify", config = [[require'config.nvim-notify']] },
   { "rebelot/kanagawa.nvim" },
@@ -144,7 +143,8 @@ local plugins = {
     requires = { "nvim-lua/plenary.nvim" },
     config = [[require'config.harpoon']]
 
-  }
+  },
+  { "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
 }
 
 return require("packer").startup(function(use)
