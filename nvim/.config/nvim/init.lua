@@ -2,8 +2,7 @@ vim.g.mapleader = " "
 
 require("plugins")
 
-require("toggle")
-
+require("p.togglers")
 require("p.ts-run")
 require("p.alternative-file")
 require("p.keys")
