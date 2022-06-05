@@ -5,6 +5,7 @@ require("plugins")
 require("p.togglers")
 require("p.ts-run")
 require("p.alternative-file")
+require("p.alt-file")
 require("p.keys")
 
 vim.cmd("colo gruvbox")

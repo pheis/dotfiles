@@ -1,15 +1,9 @@
-(fn mmap [mode]
-  #(vim.keymap.set mode $1 $2 $3))
-
-;; mapping fns
-(local nmap
-  (mmap :n))
-(local imap
-  (mmap :i))
-(local vmap
-  (mmap :v))
-(local tmap
-  (mmap :t))
+(local {
+  : nmap
+  : imap
+  : vmap
+  : tmap
+  } (require :p.utils))
 
 ;; no ex mode
 (nmap :Q :<nop>)
