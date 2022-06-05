@@ -20,7 +20,7 @@
   editor = nvim
   autocrlf = input
 	excludesfile = ~/.gitignore
-  pager = delta
+# pager = delta
 
 [interactive]
   diffFilter = delta --color-only
@@ -29,16 +29,8 @@
   path = ~/.config/delta/themes.gitconfig
 
 [delta]
-  # features = collared-trogon
-  # features = villsau
-  # features = woolly-mammoth
   features = chameleon
-  # features = calochortus-lyallii
-
   navigate = true  # use n and N to move between diff sections
-  # light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-  # line-numbers = true
-  # side-by-side = false
 
 [merge]
   conflictstyle = diff3
