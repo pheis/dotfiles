@@ -8,6 +8,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute("packadd packer.nvim")
 end
 
+
+-- vim-sandwich?? <- looks like better than surround
+-- https://github.com/kevinhwang91/nvim-hlslens (better jumping trough matched instances)
+--- # [smooth scroll](https://github.com/karb95/neoscroll.nvim smooth)
+-- which key, dunno if I need it, could be cool
+
 local plugins = {
   "wbthomason/packer.nvim",
   "justinmk/vim-dirvish",
@@ -145,7 +151,7 @@ local plugins = {
 
   },
   { "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
-  { 'windwp/nvim-autopairs', config = [[require'config.autopairs']] },
+  -- { 'windwp/nvim-autopairs', config = [[require'config.autopairs']] },
 }
 
 return require("packer").startup(function(use)

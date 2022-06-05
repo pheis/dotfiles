@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for FNL_FILE in $(find fnl -name \*.fnl)
+do
+  # Should work with gnu-sed and bsd-sed
+  LUA_FILE=$(echo $FNL_FILE | sed 's/fnl/lua/' | sed 's/\.fnl/.lua/')
+  # ./fennel --compile --correlate $FNL_FILE > $LUA_FILE
+  ./fennel --compile $FNL_FILE > $LUA_FILE
+done
