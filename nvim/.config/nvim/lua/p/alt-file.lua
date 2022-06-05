@@ -1,6 +1,6 @@
 local _local_1_ = require("p.utils")
 local nmap = _local_1_["nmap"]
-local file_mapping = { ["/test/"] = "/src/", [".spec.ts"] = ".ts" }
+local file_mapping = {["/test/"] = "/src/", [".spec.ts"] = ".ts"}
 local function substitute_many(str, subs)
   local s = str
   for k, v in pairs(subs) do
@@ -8,7 +8,6 @@ local function substitute_many(str, subs)
   end
   return s
 end
-
 local flip_tbl
 local function _2_(_241)
   local tbl_12_auto = {}
@@ -23,7 +22,6 @@ local function _2_(_241)
   end
   return tbl_12_auto
 end
-
 flip_tbl = _2_
 local function to_alt_file(file_name)
   local _6_ = substitute_many(file_name, file_mapping)
@@ -36,9 +34,7 @@ local function to_alt_file(file_name)
     return nil
   end
 end
-
 local function _8_()
   return vim.cmd(("edit " .. to_alt_file(vim.fn.expand("%"))))
 end
-
 return nmap("ga", _8_)
