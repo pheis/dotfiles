@@ -13,6 +13,7 @@ require 'nvim-treesitter.configs'.setup {
     "json",
     "http",
     "fish",
+    "fennel",
     "bash",
     "yaml"
   },
