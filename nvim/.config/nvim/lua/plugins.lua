@@ -110,6 +110,7 @@ local plugins = {
   {
     "kosayoda/nvim-lightbulb",
     config = [[require'config.nvim-lightbulb']],
+    requires = "antoinemadec/FixCursorHold.nvim",
   },
   {
     "mhinz/vim-grepper",
@@ -152,6 +153,11 @@ local plugins = {
   },
   { "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
   -- { 'windwp/nvim-autopairs', config = [[require'config.autopairs']] },
+  {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = [[require'config.trouble']]
+  }
 }
 
 return require("packer").startup(function(use)
