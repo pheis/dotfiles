@@ -157,6 +157,10 @@ local plugins = {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
     config = [[require'config.trouble']]
+  },
+  {
+    "karb94/neoscroll.nvim",
+    config = [[require'config.neoscroll']]
   }
 }
 
