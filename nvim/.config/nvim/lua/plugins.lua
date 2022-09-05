@@ -35,6 +35,9 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     config = [[require'config.treesitter']]
   },
+  { 'nvim-treesitter/nvim-treesitter-context',
+    config = [[require'config.treesitter-context']]
+  },
   -- {
   --   "pangloss/vim-javascript",
   --   opt = true,

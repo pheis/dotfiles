@@ -26,6 +26,5 @@
   : imap
   : vmap
   : tmap
-
   : ends-with?
 }
