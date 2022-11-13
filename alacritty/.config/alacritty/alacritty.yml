@@ -8,7 +8,7 @@ font:
 
   size: 16.0
 
-  use_thin_strokes: true
+  AppleFontSmoothing: true
 
 key_bindings:
   - { key: F,              mods: Command|Control,            action: ToggleFullscreen }
