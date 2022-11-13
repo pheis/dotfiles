@@ -31,6 +31,10 @@ end
 
 set fish_greeting
 
+function goto_git_root
+    cd $(git rev-parse --show-toplevel)
+end
+
 abbr -a -U -- f fuck
 abbr -a -U -- g git
 abbr -a -U -- gs 'git status'
@@ -39,6 +43,7 @@ abbr -a -U -- p python3
 abbr -a -U -- t tmux
 abbr -a -U -- v nvim
 abbr -a -U -- lg lazygit
+abbr -a -U -- gr goto_git_root 
 
 direnv hook fish | source
 zoxide init fish | source
