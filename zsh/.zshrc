@@ -68,8 +68,14 @@ export PATH="$PATH:$HOME/.poetry/bin"
 
 # Java, Android
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-    export ANDROID_HOME=$HOME/Library/android/sdk
+    # export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+    # export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
+    # RN recommends zulu11?
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
+    export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+    export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+    export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+    # export ANDROID_HOME=$HOME/Library/android/sdk
 fi
 
 function go_wl() {
