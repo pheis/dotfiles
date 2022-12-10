@@ -99,6 +99,8 @@ local plugins = {
     config = [[require'config.cmp']],
   },
   -- lsp?
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
   {
     "neovim/nvim-lspconfig",
     requires = {
@@ -169,6 +171,10 @@ local plugins = {
   {
     "karb94/neoscroll.nvim",
     config = [[require'config.neoscroll']]
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    config = [[require'config.lazygit']]
   }
 }
 
