@@ -23,7 +23,6 @@ local plugins = {
   "tpope/vim-surround",
   "tpope/vim-commentary",
   "tpope/vim-unimpaired",
-  "tversteeg/registers.nvim",
   "jnurmine/Zenburn",
   "romainl/vim-qf",
   "terminalnode/sway-vim-syntax",
@@ -94,7 +93,9 @@ local plugins = {
   --   }) end
   -- },
   -- lsp?
-  "williamboman/mason.nvim",
+  { "jose-elias-alvarez/typescript.nvim", config = function() require("typescript").setup({}) end },
+
+  { "williamboman/mason.nvim", config = function() require("mason").setup({}) end },
   "williamboman/mason-lspconfig.nvim",
   {
     "neovim/nvim-lspconfig",
@@ -156,7 +157,6 @@ local plugins = {
     config = [[require'config.harpoon']]
 
   },
-  { "michaelb/sniprun", run = "bash ./install.sh", config = [[require'config.sniprun']] },
   -- { 'windwp/nvim-autopairs', config = [[require'config.autopairs']] },
   {
     "folke/trouble.nvim",

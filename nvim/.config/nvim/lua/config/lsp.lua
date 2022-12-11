@@ -80,7 +80,7 @@ local servers = {
   "terraformls",
   "rust_analyzer",
   "ccls",
-  "eslint",
+  -- "eslint",
   "gopls",
   -- tsserver = { root_dir = nvim_lsp.util.root_pattern("package.json") },
   "tsserver",
