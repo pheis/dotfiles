@@ -11,4 +11,7 @@ require("p.reload")
 
 vim.cmd("colo gruvbox")
 
+-- require 'config.cmp'
+
+
 vim.opt.laststatus = 3

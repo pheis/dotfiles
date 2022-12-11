@@ -7,13 +7,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
   execute("packadd packer.nvim")
 end
-
-
 -- vim-sandwich?? <- looks like better than surround
 -- https://github.com/kevinhwang91/nvim-hlslens (better jumping trough matched instances)
 --- # [smooth scroll](https://github.com/karb95/neoscroll.nvim smooth)
 -- which key, dunno if I need it, could be cool
 
+-- https://github.com/kevinhwang91/nvim-bqf
 local plugins = {
   "wbthomason/packer.nvim",
   "justinmk/vim-dirvish",
@@ -83,21 +82,17 @@ local plugins = {
     "norcalli/nvim-colorizer.lua",
     config = [[require'colorizer'.setup()]],
   },
-  -- completion
   {
-    "hrsh7th/nvim-cmp",
-    requires = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      -- vsnip
-      "hrsh7th/cmp-vsnip",
-      "hrsh7th/vim-vsnip",
-      "rafamadriz/friendly-snippets",
-    },
-    config = [[require'config.cmp']],
+    "folke/neodev.nvim",
+    config = function() require('neodev').setup() end
   },
+  -- {
+  --   "folke/neodev.nvim",
+  --   -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+  --   config = function require("neodev").setup({
+  --     -- add any options here, or leave empty to use the default settings
+  --   }) end
+  -- },
   -- lsp?
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
@@ -175,7 +170,22 @@ local plugins = {
   {
     "kdheepak/lazygit.nvim",
     config = [[require'config.lazygit']]
-  }
+  },
+  -- completion this last cos something breaks it othervise :(
+  {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      -- vsnip
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/vim-vsnip",
+      "rafamadriz/friendly-snippets",
+    },
+    config = [[require'config.cmp']],
+  },
 }
 
 return require("packer").startup(function(use)
