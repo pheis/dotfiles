@@ -7,7 +7,8 @@ local lsp_formatting = function(bufnr)
         return false
       end
 
-      return true
+      -- return true
+      vim.lsp.buf.format()
     end,
     bufnr = bufnr,
   })
@@ -80,6 +81,7 @@ local servers = {
   "terraformls",
   "rust_analyzer",
   "ccls",
+  "hls",
   "eslint",
   "gopls",
   -- tsserver = { root_dir = nvim_lsp.util.root_pattern("package.json") },

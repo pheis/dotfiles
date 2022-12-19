@@ -1,6 +1,10 @@
 require("telescope").setup({})
 
 -- TODO <leader>fd --> list files different than base branch (develop/main/master)
+-- User TelescopeFindPre
+--
+-- vim.cmd "autocmd User TelescopePreviewerLoaded redraw!"
+vim.cmd "autocmd User TelescopeFindPre redraw!"
 
 vim.cmd([[
 nnoremap <leader>/ <cmd>Telescope live_grep<cr>

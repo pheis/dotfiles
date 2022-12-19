@@ -138,9 +138,10 @@ if [ -f '/Users/pyry.heiskanen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/pyry.heiskanen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pyry.heiskanen/google-cloud-sdk/completion.zsh.inc'; fi
 
+
 # Dot net lol
-# export DOTNET_ROOT=$HOME/.dotnet
-# export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 
 # Starship propmpt
 # eval "$(starship init zsh)"
@@ -148,6 +149,5 @@ if [ -f '/Users/pyry.heiskanen/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 # eval "$(direnv hook zsh)"
 # eval $(thefuck --alias)
 # zprof
-[ -f "/Users/pyry.heiskanen/.ghcup/env" ] && source "/Users/pyry.heiskanen/.ghcup/env" # ghcup-env
 
 exec fish
