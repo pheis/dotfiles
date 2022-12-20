@@ -26,7 +26,11 @@ null_ls.setup({ sources = sources,
         buffer = bufnr,
         callback = function()
           vim.lsp.buf.format({ bufnr = bufnr })
-          vim.cmd "EslintFixAll"
+
+          if client.name == "eslint" then
+            vim.cmd "EslintFixAll"
+          end
+
         end,
       })
     end
