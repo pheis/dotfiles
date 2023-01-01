@@ -61,9 +61,41 @@ local plugins = {
     "mhinz/vim-startify",
     config = [[require'config.startify']],
   },
+  -- {
+  --   "junegunn/goyo.vim",
+  --   config = "vim.cmd[[nnoremap <leader>o :Goyo<CR>]]",
+  -- },
   {
-    "junegunn/goyo.vim",
-    config = "vim.cmd[[nnoremap <leader>o :Goyo<CR>]]",
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        plugins = {
+          -- disable some global vim options (vim.o...)
+          -- comment the lines to not apply the options
+          options = {
+            enabled = true,
+            ruler = false, -- disables the ruler text in the cmd line area
+            showcmd = false, -- disables the command in the last line of the screen
+          },
+          twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
+          gitsigns = { enabled = false }, -- disables git signs
+          -- tmux = { enabled = true }, -- disables the tmux statusline
+          -- this will change the font size on kitty when in zen mode
+          -- to make this work, you need to set the following kitty options:
+          -- - allow_remote_control socket-only
+          -- - listen_on unix:/tmp/kitty
+          kitty = {
+            enabled = false,
+            font = "+4", -- font size increment
+          },
+        },
+      }
+
+      vim.keymap.set('n', '<leader>o', function() require('zen-mode').toggle() end)
+    end
   },
   {
     "tpope/vim-fugitive",
@@ -185,6 +217,32 @@ local plugins = {
       "rafamadriz/friendly-snippets",
     },
     config = [[require'config.cmp']],
+  },
+  {
+    "nvim-neorg/neorg",
+    run = ":Neorg sync-parsers", -- This is the important bit!
+    config = function()
+      require('neorg').setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.norg.dirman"] = {
+            config = {
+              workspaces = {
+                work = "~/notes/work",
+                home = "~/notes/home",
+              }
+            }
+          }
+        }
+      }
+    end,
+    requires = "nvim-lua/plenary.nvim"
+  },
+  {
+    "ggandor/leap.nvim",
+    config = function()
+      require('leap').add_default_mappings()
+    end,
   },
 }
 
