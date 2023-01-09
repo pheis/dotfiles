@@ -169,7 +169,8 @@ local plugins = {
   -- 	"eddyekofo94/gruvbox-flat.nvim", -- colortheme
   -- },
   -- { "EdenEast/nightfox.nvim" },
-  { "shaunsingh/solarized.nvim", config = [[require'config.solarized']] },
+  -- { "shaunsingh/solarized.nvim", config = [[require'config.solarized']] },
+  "ishan9299/nvim-solarized-lua",
   -- {
   --   "nvim-pack/nvim-spectre",
   --   requires = { { "nvim-lua/plenary.nvim" } },
