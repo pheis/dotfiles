@@ -153,6 +153,7 @@ local plugins = {
     "mhinz/vim-grepper",
   },
   { "lewis6991/gitsigns.nvim", config = [[require'config.gitsigns']] },
+  "nvim-tree/nvim-web-devicons",
   {
     "hoob3rt/lualine.nvim",
     requires = {
@@ -245,6 +246,10 @@ local plugins = {
       require('leap').add_default_mappings()
     end,
   },
+  -- {
+  --   'mrcjkb/haskell-tools.nvim',
+  --   config = [[require'config.haskell-tools']],
+  -- }
 }
 
 return require("packer").startup(function(use)

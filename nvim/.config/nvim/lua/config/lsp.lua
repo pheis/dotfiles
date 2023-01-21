@@ -82,6 +82,15 @@ local servers = {
   "rust_analyzer",
   "ccls",
   "hls",
+  -- hls = {
+  --   settings = {
+  --     haskell = { -- haskell-language-server options
+  --       hlintOn = true,
+  --       formattingProvider = "ormolu",
+  --       -- ...
+  --     }
+  --   }
+  -- },
   "eslint",
   "gopls",
   -- tsserver = { root_dir = nvim_lsp.util.root_pattern("package.json") },
