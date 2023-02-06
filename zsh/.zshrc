@@ -54,6 +54,7 @@ fi
 export EDITOR=nvim
 # scripts
 export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # cargo
 export PATH="$HOME/.cargo/bin:$PATH"

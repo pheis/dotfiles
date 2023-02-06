@@ -250,6 +250,9 @@ local plugins = {
   --   'mrcjkb/haskell-tools.nvim',
   --   config = [[require'config.haskell-tools']],
   -- }
+  { 'akinsho/git-conflict.nvim', tag = "*", config = function()
+    require('git-conflict').setup()
+  end }
 }
 
 return require("packer").startup(function(use)

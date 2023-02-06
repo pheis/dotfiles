@@ -9,6 +9,8 @@ require("p.alt-file")
 require("p.keys")
 require("p.reload")
 
+require("keys")
+
 vim.cmd("colo gruvbox")
 
 -- require 'config.cmp'
