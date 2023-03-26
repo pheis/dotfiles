@@ -24,7 +24,11 @@ local plugins = {
   "tpope/vim-commentary",
   "tpope/vim-unimpaired",
   "tversteeg/registers.nvim",
-  "jnurmine/Zenburn",
+  -- "jnurmine/Zenburn",
+	{
+    "phha/zenburn.nvim",
+    -- config = function() require("zenburn").setup() end
+	},
   "romainl/vim-qf",
   "terminalnode/sway-vim-syntax",
   "pearofducks/ansible-vim",
@@ -252,7 +256,11 @@ local plugins = {
   -- }
   { 'akinsho/git-conflict.nvim', tag = "*", config = function()
     require('git-conflict').setup()
-  end }
+  end
+  },
+  "nyoom-engineering/oxocarbon.nvim",
+	{ "catppuccin/nvim", as = "catppuccin" },
+	'folke/tokyonight.nvim'
 }
 
 return require("packer").startup(function(use)

@@ -7,8 +7,8 @@ local lsp_formatting = function(bufnr)
         return false
       end
 
-      -- return true
-      vim.lsp.buf.format()
+      return true
+      -- vim.lsp.buf.format()
     end,
     bufnr = bufnr,
   })
@@ -93,35 +93,39 @@ local servers = {
   -- },
   "eslint",
   "gopls",
-  -- tsserver = { root_dir = nvim_lsp.util.root_pattern("package.json") },
+  -- tsserver = {
+  --   root_dir = nvim_lsp.util.root_pattern("package.json"),
+  --   autostart = false,
+  -- -- },
+  -- denols = {
+  --   root_dir = nvim_lsp.util.root_pattern("deno.json"),
+  --   -- autostart = false,
+  --   init_options = {
+  --     enable = true,
+  --     lint = true,
+  --     unstable = false
+  --   },
+  -- },
   "tsserver",
-  denols = {
-    autostart = false,
-    init_options = {
-      enable = true,
-      lint = true,
-      unstable = false,
-    },
-  },
-  sumneko_lua = {
-    settings = {
-      Lua = {
-        runtime = {
-          version = "LuaJIT",
-          path = get_nvim_config_rt_path(),
-        },
-        diagnostics = {
-          globals = { "vim" },
-        },
-        workspace = {
-          library = vim.api.nvim_get_runtime_file("", true),
-        },
-        telemetry = {
-          enable = false,
-        },
-      },
-    },
-  },
+  -- sumneko_lua = {
+  --   settings = {
+  --     Lua = {
+  --       runtime = {
+  --         version = "LuaJIT",
+  --         path = get_nvim_config_rt_path(),
+  --       },
+  --       diagnostics = {
+  --         globals = { "vim" },
+  --       },
+  --       workspace = {
+  --         library = vim.api.nvim_get_runtime_file("", true),
+  --       },
+  --       telemetry = {
+  --         enable = false,
+  --       },
+  --     },
+  --   },
+  -- },
 }
 
 for key, value in pairs(servers) do

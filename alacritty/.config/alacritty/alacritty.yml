@@ -14,4 +14,10 @@ key_bindings:
   - { key: F,              mods: Command|Control,            action: ToggleFullscreen }
 
 window:
-  decorations: full
+  # decorations: None
+  # Make `Option` key behave as `Alt` (macOS only):
+  #   - OnlyLeft
+  #   - OnlyRight
+  #   - Both
+  #   - None (default)
+  option_as_alt: OnlyLeft
