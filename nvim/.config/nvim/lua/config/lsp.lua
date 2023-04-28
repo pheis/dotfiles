@@ -1,17 +1,9 @@
 local nvim_lsp = require("lspconfig")
 
-local lsp_formatting = function(bufnr)
-  vim.lsp.buf.format({
-    filter = function(client)
-      if (client.name == "tsserver") then
-        return false
-      end
-
-      return true
-      -- vim.lsp.buf.format()
-    end,
-    bufnr = bufnr,
-  })
+local lsp_formatting = function()
+  vim.lsp.buf.format {
+  	filter = function(client) return client.name ~= "tsserver" end
+  }
 end
 
 -- if you want to set up formatting on save, you can use this as a callback
