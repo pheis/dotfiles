@@ -14,10 +14,22 @@ key_bindings:
   - { key: F,              mods: Command|Control,            action: ToggleFullscreen }
 
 window:
-  # decorations: None
+  decorations: None
   # Make `Option` key behave as `Alt` (macOS only):
   #   - OnlyLeft
   #   - OnlyRight
   #   - Both
   #   - None (default)
   option_as_alt: OnlyLeft
+
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  #double_click: { threshold: 300 }
+  #triple_click: { threshold: 300 }
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: false
