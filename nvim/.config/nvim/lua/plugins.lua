@@ -184,10 +184,6 @@ local plugins = {
   -- { "meain/vim-printer", config = [[require'config.vim-printer']] },
   { "rcarriga/nvim-notify", config = [[require'config.nvim-notify']] },
   { "rebelot/kanagawa.nvim" },
-  { "NTBBloodbath/rest.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
-    config = [[require'config.rest']]
-  },
   "stevearc/dressing.nvim",
   { "ThePrimeagen/harpoon",
     requires = { "nvim-lua/plenary.nvim" },
@@ -225,26 +221,6 @@ local plugins = {
     config = [[require'config.cmp']],
   },
   {
-    "nvim-neorg/neorg",
-    run = ":Neorg sync-parsers", -- This is the important bit!
-    config = function()
-      require('neorg').setup {
-        load = {
-          ["core.defaults"] = {},
-          ["core.norg.dirman"] = {
-            config = {
-              workspaces = {
-                work = "~/notes/work",
-                home = "~/notes/home",
-              }
-            }
-          }
-        }
-      }
-    end,
-    requires = "nvim-lua/plenary.nvim"
-  },
-  {
     "ggandor/leap.nvim",
     config = function()
       require('leap').add_default_mappings()
@@ -260,7 +236,48 @@ local plugins = {
   },
   "nyoom-engineering/oxocarbon.nvim",
 	{ "catppuccin/nvim", as = "catppuccin" },
-	'folke/tokyonight.nvim'
+	'folke/tokyonight.nvim',
+
+	{
+		"rest-nvim/rest.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		  config = function()
+			  require("rest-nvim").setup({
+          -- Open request results in a horizontal split
+          result_split_horizontal = false,
+          -- Keep the http file buffer above|left when split horizontal|vertical
+          result_split_in_place = false,
+          -- Skip SSL verification, useful for unknown certificates
+          skip_ssl_verification = false,
+          -- Encode URL before making request
+          encode_url = true,
+          -- Highlight request on run
+          highlight = {
+            enabled = true,
+            timeout = 150,
+          },
+          result = {
+            -- toggle showing URL, HTTP info, headers at top the of result window
+            show_url = true,
+            show_http_info = true,
+            show_headers = true,
+            -- executables or functions for formatting response body [optional]
+            -- set them to false if you want to disable them
+            formatters = {
+              json = "jq",
+              html = function(body)
+                return vim.fn.system({"tidy", "-i", "-q", "-"}, body)
+              end
+            },
+          },
+          -- Jump to request line on run
+          jump_to_request = false,
+          env_file = '.env',
+          custom_dynamic_variables = {},
+          yank_dry_run = true,
+				})
+  end
+	}
 }
 
 return require("packer").startup(function(use)
