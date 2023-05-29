@@ -85,6 +85,7 @@ local servers = {
   -- },
   "eslint",
   "gopls",
+	"tailwindcss",
   -- tsserver = {
   --   root_dir = nvim_lsp.util.root_pattern("package.json"),
   --   autostart = false,
