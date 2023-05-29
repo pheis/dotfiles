@@ -35,6 +35,24 @@ function goto_git_root
     cd $(git rev-parse --show-toplevel)
 end
 
+function create_git_worktree
+    set worktree_name $argv[1]
+
+    # Check if worktree name is provided
+    if test -z $worktree_name
+        echo "Please provide a name for the Git worktree."
+        return 1
+    end
+
+    # Create the Git worktree in the parent directory
+    set worktree_path "../$worktree_name"
+    git worktree add $worktree_path
+
+    # Optional: Switch to the new worktree directory
+    cd $worktree_path
+end
+
+
 abbr -a -- f fuck
 abbr -a -- g git
 abbr -a -- gs 'git status'
@@ -44,6 +62,9 @@ abbr -a -- t tmux
 abbr -a -- v nvim
 abbr -a -- lg lazygit
 abbr -a -- gr goto_git_root 
+
+abbr -a -- gr goto_git_root 
+abbr -a -- wta create_git_worktree
 
 direnv hook fish | source
 zoxide init fish | source
