@@ -35,8 +35,4 @@ nmap("[q", _5_)
 local function _6_()
   return vim.cmd("make")
 end
-nmap("<leader>m", _6_)
-local function _7_()
-  return vim.cmd("write")
-end
-return nmap("<leader>w", _7_)
+return nmap("<leader>m", _6_)

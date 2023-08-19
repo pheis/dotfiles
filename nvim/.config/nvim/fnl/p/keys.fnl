@@ -39,7 +39,7 @@
 (nmap "[q" #(vim.cmd :cprev))
 
 (nmap :<leader>m #(vim.cmd :make))
-(nmap :<leader>w #(vim.cmd :write))
+;; (nmap :<leader>w #(vim.cmd :write))
 
 ;; "" save and trim white space
 ;; nnoremap <leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>:w<CR>

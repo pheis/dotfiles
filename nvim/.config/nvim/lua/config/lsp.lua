@@ -1,26 +1,28 @@
 local nvim_lsp = require("lspconfig")
 
-local lsp_formatting = function()
-  vim.lsp.buf.format {
-  	filter = function(client) return client.name ~= "tsserver" end
-  }
-end
+-- local lsp_formatting = function()
+--   vim.lsp.buf.format {
+--   	filter = function(client) return client.name ~= "tsserver" end
+--   }
+-- end
 
 -- if you want to set up formatting on save, you can use this as a callback
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
-      buffer = bufnr,
-      callback = function()
-        lsp_formatting(bufnr)
-      end,
-    })
+    -- vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+
+    -- vim.api.nvim_create_autocmd("BufWritePre", {
+    --   group = augroup,
+    --   buffer = bufnr,
+    --   callback = function()
+    --     lsp_formatting(bufnr)
+    --   end,
+    -- })
+
   end
 
   local function buf_set_keymap(...)
@@ -85,7 +87,7 @@ local servers = {
   -- },
   "eslint",
   "gopls",
-	"tailwindcss",
+	-- "tailwindcss",
   -- tsserver = {
   --   root_dir = nvim_lsp.util.root_pattern("package.json"),
   --   autostart = false,
