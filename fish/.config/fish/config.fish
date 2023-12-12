@@ -56,7 +56,7 @@ end
 abbr -a -- f fuck
 abbr -a -- g git
 abbr -a -- gs 'git status'
-abbr -a -- ls exa
+abbr -a -- ls eza
 abbr -a -- p python3
 abbr -a -- t tmux
 abbr -a -- v nvim
@@ -73,3 +73,5 @@ starship init fish | source
 
 # opam configuration
 source /Users/pyry.heiskanen/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+source /Users/pyry.heiskanen/.docker/init-fish.sh || true # Added by Docker Desktop
