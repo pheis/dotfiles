@@ -141,3 +141,5 @@ stty -ixon
 export PATH="$PATH:$HOME/.rvm/bin"
 # eval "$(starship init bash)"
 . "$HOME/.cargo/env"
+
+exec zsh
