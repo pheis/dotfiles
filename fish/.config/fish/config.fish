@@ -52,6 +52,11 @@ function create_git_worktree
     cd $worktree_path
 end
 
+# LLVM 16 on Mac
+if test (uname) = "Darwin"
+    set -x LLVM_SYS_160_PREFIX (brew --prefix llvm@16)
+end
+
 
 abbr -a -- f fuck
 abbr -a -- g git
