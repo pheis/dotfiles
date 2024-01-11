@@ -1,0 +1,21 @@
+[font]
+size = 16.0
+
+[font.normal]
+family = "FiraMono nerd font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F"
+mods = "Command|Control"
+
+[mouse]
+hide_when_typing = false
+
+[scrolling]
+history = 0
+
+[window]
+decorations = "None"
+option_as_alt = "OnlyLeft"
