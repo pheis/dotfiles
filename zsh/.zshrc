@@ -44,6 +44,8 @@ alias ypass='PASSWORD_STORE_DIR=$HOME/ylitse-secrets pass'
 # brew
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH=/opt/homebrew/bin:$PATH
+  # use gnu stuff over bsd stuff
+  export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 fi
 
 

@@ -2452,7 +2452,7 @@ cursor_blink_interval 0
 
 
 # BEGIN_KITTY_THEME
-# Tomorrow Night Bright
+# Tomorrow Night
 include current-theme.conf
 # END_KITTY_THEME
 #
