@@ -18,19 +18,12 @@ require('lazy').setup({
   require 'plugins.lsp',
   require 'plugins.treesitter',
   require 'plugins.telescope',
+  require 'plugins.neo-tree',
+  require 'plugins.gitsigns',
+  require 'plugins.lualine',
+  require 'plugins.vimux',
+  'numToStr/Comment.nvim',
   { 'folke/which-key.nvim', opts = {} },
-  {
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      on_attach = function(bufnr)
-        vim.keymap.set('n', '[c', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
-        vim.keymap.set('n', ']c', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
-        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
-        -- TODO setup undo?
-        -- vim.keymap.set('n', 'gu', require('gitsigns').undo_stage_hunk, { buffer = bufnr, desc = 'Undo hunk' })
-      end,
-    },
-  },
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -45,39 +38,6 @@ require('lazy').setup({
   {
     "ellisonleao/gruvbox.nvim",
     config = function() require("gruvbox").setup({}) end
-  },
-  {
-    'nvim-lualine/lualine.nvim',
-    opts = {
-      options = {
-        icons_enabled = true,
-        theme = 'auto',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
-  {
-    'pwntester/octo.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-      'nvim-tree/nvim-web-devicons',
-    },
-    config = function()
-      require "octo".setup()
-    end
-  },
-  'numToStr/Comment.nvim',
-  {
-    "preservim/vimux",
-    config = function()
-      -- TODO: drop nnoremaps
-      vim.cmd([[
-        nnoremap <leader>vp :VimuxPromptCommand<CR>
-        nnoremap <leader>vl :VimuxRunLastCommand<CR>
-        ]])
-    end,
   },
   "sindrets/diffview.nvim",
   {
