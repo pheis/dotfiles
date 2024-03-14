@@ -1,0 +1,2 @@
+#!/bin/sh
+git log --author=Pyry --all --pretty=format:"%ai %h by %an, %s" | sort -r

@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+import os
+from pathlib import PurePath
+import subprocess
+import sys
+
+if __name__ == "__main__":
+    pw_dir = os.environ.get("PASSWORD_STORE_DIR", ".password-store")
+    pw_path = PurePath(os.environ["HOME"], pw_dir)
+    os.chdir(pw_path)
+    file_name = (
+        subprocess.run(["fzf", "--layout=reverse"], stdout=subprocess.PIPE)
+        .stdout.decode("utf-8", "strict")
+        .replace("\n", "")
+    )
+    if not file_name:
+        sys.exit()
+
+    pass_name, _ = os.path.splitext(file_name)
+    _, *args = sys.argv
+
+    subprocess.run(["pass", *args, pass_name])

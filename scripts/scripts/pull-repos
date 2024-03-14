@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "dotfiles"
+cd $HOME/dotfiles
+git pull
+echo ""
+
+echo "scripts"
+cd $HOME/scripts
+git pull
+
+echo "notes"
+cd $HOME/notes
+git pull
+
+echo "passwords"
+cd $HOME/.password-store
+git pull

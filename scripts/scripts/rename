@@ -1,0 +1,2 @@
+#!/bin/sh
+rg -l $1 | xargs sd $1 $2

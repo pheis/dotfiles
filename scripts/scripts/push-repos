@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "dotfiles"
+cd $HOME/dotfiles
+cd $HOME/dotfiles
+git push
+echo ""
+
+echo "scripts"
+cd $HOME/scripts
+git push
+echo ""
+
+echo "notes"
+cd $HOME/notes
+git push
+echo ""
+
+echo "passwords"
+cd $HOME/.password-store
+git push
