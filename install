@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+use_stow_on_dir() {
+    local directory="$1"
+
+    if [ -d "$directory" ]; then
+        for entry in "$directory"/*; do
+            if [ -d "$entry" ]; then
+                entry="${entry##*/}"
+
+                echo "stowing $entry"
+                stow --dir=$directory --target=$HOME $entry
+            fi
+        done
+    else
+        echo "Directory does not exist: $directory"
+    fi
+}
+
+platform=$(echo $(uname) | tr '[:upper:]' '[:lower:]')
+echo $platform
+
+make -C "nix-$platform"
+use_stow_on_dir "./home/shared"
+use_stow_on_dir "./home/$platform"
