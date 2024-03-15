@@ -41,6 +41,9 @@ local config = function()
         telemetry = { enable = false },
       },
     },
+    denols = {
+      root_dir = require('lspconfig').util.root_pattern("deno.json", "deno.jsonc"),
+    },
   }
 
   -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -54,19 +57,14 @@ local config = function()
     ensure_installed = vim.tbl_keys(servers),
   }
 
-  local disabled_lsps = os.getenv("DISABLED_LSPS") or ""
-
   mason_lspconfig.setup_handlers {
     function(server_name)
-      if (string.find(disabled_lsps, server_name)) then
-        return
-      end
-
       require('lspconfig')[server_name].setup {
         capabilities = capabilities,
         on_attach = on_attach,
         settings = servers[server_name],
         filetypes = (servers[server_name] or {}).filetypes,
+        root_dir = (servers[server_name] or {}).root_dir
       }
     end
   }
