@@ -1,6 +1,5 @@
 require('lazy').setup({
   -- TODO: replace with neo-tree
-  "justinmk/vim-dirvish",
   "tpope/vim-repeat",
   "tpope/vim-eunuch",
   "tpope/vim-rsi",
@@ -22,14 +21,25 @@ require('lazy').setup({
   require 'plugins.gitsigns',
   require 'plugins.lualine',
   require 'plugins.vimux',
-  'numToStr/Comment.nvim',
+  {
+    'numToStr/Comment.nvim',
+    opts = {},
+    config = function()
+      require('Comment').setup()
+    end
+  },
   { 'folke/which-key.nvim', opts = {} },
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   -- colors
-  "rebelot/kanagawa.nvim",
+  {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      vim.cmd 'colo kanagawa'
+    end
+  },
   "shaunsingh/solarized.nvim",
   {
     'rose-pine/neovim',

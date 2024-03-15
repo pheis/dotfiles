@@ -1,13 +1,10 @@
+vim.keymap.set({ 'v', 'i' }, 'fd', '<Esc>', { silent = true })
+
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Remap fd to Esc like Spacemacs
-vim.keymap.set({ 'v', 'i' }, 'fd', '<Esc>', { silent = true })
 
 -- togglers
 vim.keymap.set({ 'n' }, 'yon', function()
@@ -67,7 +64,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
-
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
