@@ -1,18 +1,4 @@
 require('lazy').setup({
-  -- TODO: replace with neo-tree
-  "tpope/vim-repeat",
-  "tpope/vim-eunuch",
-  "tpope/vim-rsi",
-  "tpope/vim-abolish",
-  "tpope/vim-surround",
-  "tpope/vim-unimpaired",
-  -- is this needed? Makes quicklist nicer but are there better alternatives?
-  "romainl/vim-qf",
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
   require 'plugins.cmp',
   require 'plugins.lsp',
   require 'plugins.treesitter',
@@ -21,41 +7,22 @@ require('lazy').setup({
   require 'plugins.gitsigns',
   require 'plugins.lualine',
   require 'plugins.vimux',
-  {
-    'numToStr/Comment.nvim',
-    opts = {},
-    config = function()
-      require('Comment').setup()
-    end
-  },
-  { 'folke/which-key.nvim', opts = {} },
-  {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-  -- colors
-  {
-    "rebelot/kanagawa.nvim",
-    config = function()
-      vim.cmd 'colo kanagawa'
-    end
-  },
-  "shaunsingh/solarized.nvim",
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine'
-  },
-  {
-    "ellisonleao/gruvbox.nvim",
-    config = function() require("gruvbox").setup({}) end
-  },
-  "sindrets/diffview.nvim",
-  {
-    'mrcjkb/haskell-tools.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    version = '^2', -- Recommended
-    ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
-  }
+  require 'plugins.comment',
+  require 'plugins.diffview',
+  require 'plugins.gruvbox',
+  require 'plugins.haskell-tools',
+  require 'plugins.kanagawa',
+  require 'plugins.rosepine',
+  require 'plugins.solarized',
+  require 'plugins.tpope-vim-abolish',
+  require 'plugins.tpope-vim-eunuch',
+  require 'plugins.tpope-vim-fugitive',
+  require 'plugins.tpope-vim-repeat',
+  require 'plugins.tpope-vim-rsi',
+  require 'plugins.tpope-vim-sleuth',
+  require 'plugins.tpope-vim-surround',
+  require 'plugins.tpope-vim-unimpaired',
+  require 'plugins.trouble',
+  require 'plugins.vim-qf',
+  require 'plugins.which-key',
 }, {})
