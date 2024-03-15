@@ -13,11 +13,11 @@ local setup = function()
         end
       end
       require('neo-tree.command').execute({
-        action = "focus",          -- OPTIONAL, this is the default value
-        source = "filesystem",     -- OPTIONAL, this is the default value
-        position = "current",         -- OPTIONAL, this is the default value
-        reveal_file = reveal_file, -- path to file or folder to reveal
-        reveal_force_cwd = true,   -- change cwd without asking if needed
+        action = "focus",
+        source = "filesystem",
+        position = "current",
+        reveal_file = reveal_file,
+        reveal_force_cwd = true,
       })
     end,
     { desc = "Open neo-tree at current file or working directory" }
