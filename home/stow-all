@@ -17,9 +17,11 @@ use_stow_on_dir() {
     fi
 }
 
-platform=$(echo $(uname) | tr '[:upper:]' '[:lower:]')
-echo $platform
+use_stow_on_dir $1
 
-make -C "nix-$platform"
-use_stow_on_dir "./home/shared"
-use_stow_on_dir "./home/$platform"
+# platform=$(echo $(uname) | tr '[:upper:]' '[:lower:]')
+# echo $platform
+
+# make -C "nix-$platform"
+# use_stow_on_dir "./home/shared"
+# use_stow_on_dir "./home/$platform"
