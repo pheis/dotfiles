@@ -202,10 +202,10 @@ relaunch-amethyst:
 
 disable-padding-on-builtin-display: false
 
-window-margins: false
-smart-window-margins: false
+window-margins: true
+smart-window-margins: true
 
-window-margin-size: 0
+window-margin-size: 16
 window-max-count: 0
 
 window-minimum-height: 0
