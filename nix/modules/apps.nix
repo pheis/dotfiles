@@ -58,6 +58,8 @@
       "telegram"
       "slack"
       "karabiner-elements"
+      "portingkit"
+      "element"
     ];
   };
 }
