@@ -1,3 +1,10 @@
+local config = function()
+  local neogit = require('neogit')
+  neogit.setup {}
+
+  vim.keymap.set("n", "<leader>gn", ":Neogit<CR>", { desc = "[n]eogit" })
+end
+
 return {
   "NeogitOrg/neogit",
   dependencies = {
@@ -8,5 +15,5 @@ return {
     "nvim-telescope/telescope.nvim", -- optional
     "ibhagwan/fzf-lua",              -- optional
   },
-  config = true
+  config = config
 }
