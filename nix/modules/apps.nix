@@ -46,6 +46,8 @@
       "pyenv"
       "gnupg"
       "colima"
+      "atuin"
+      "yarn"
     ];
 
     casks = [
