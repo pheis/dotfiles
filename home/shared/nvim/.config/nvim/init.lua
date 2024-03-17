@@ -45,6 +45,5 @@ require('lazy').setup(read_plugin_defs(), {})
 --
 -- Plugins to try-out:
 -- neo-test?
--- conform.lua? formatter
 -- neo-lint
 -- nvim-bfq
