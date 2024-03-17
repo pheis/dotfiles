@@ -60,7 +60,7 @@
       "telegram"
       "slack"
       "karabiner-elements"
-      "portingkit"
+      "porting-kit"
       "element"
     ];
   };
