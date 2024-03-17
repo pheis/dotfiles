@@ -75,11 +75,4 @@ direnv hook fish | source
 zoxide init fish | source
 thefuck --alias | source
 starship init fish | source
-
-# opam configuration
-source /Users/pyry.heiskanen/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
-
-source /Users/pyry.heiskanen/.docker/init-fish.sh || true # Added by Docker Desktop
-
-# Created by `pipx` on 2024-02-15 10:51:39
-set PATH $PATH /Users/pyry.heiskanen/.local/bin
+atuin init fish | source
