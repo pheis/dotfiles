@@ -45,5 +45,5 @@ require('lazy').setup(read_plugin_defs(), {})
 --
 -- Plugins to try-out:
 -- neo-test?
--- neo-lint
 -- nvim-bfq
+-- session manager Shatur/neovim-session-manager
