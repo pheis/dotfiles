@@ -1,1 +1,1 @@
-  return "shaunsingh/solarized.nvim"
+return "shaunsingh/solarized.nvim"

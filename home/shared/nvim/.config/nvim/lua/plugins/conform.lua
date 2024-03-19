@@ -1,5 +1,5 @@
 return {
-  'stevearc/conform.nvim',
+  "stevearc/conform.nvim",
   opts = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
@@ -10,7 +10,10 @@ return {
       python = { "isort", "black" },
       -- Use a sub-list to run only the first available formatter
       typescript = { { "prettierd", "prettier" } },
-      typescriptreact = { {"eslintd", "eslint"}, { "prettierd", "prettier" } },
+      typescriptreact = {
+        { "eslintd", "eslint" },
+        { "prettierd", "prettier" },
+      },
     },
     format_on_save = {
       -- These options will be passed to conform.format()

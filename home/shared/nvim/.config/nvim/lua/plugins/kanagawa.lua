@@ -1,4 +1,4 @@
 return {
-	"rebelot/kanagawa.nvim",
-	config = true,
+  "rebelot/kanagawa.nvim",
+  config = true,
 }
