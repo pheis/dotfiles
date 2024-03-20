@@ -24,6 +24,7 @@
     ];
 
     brews = [
+      "lazygit"
       "docker"
       "docker-compose"
       "jq"
