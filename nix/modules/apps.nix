@@ -24,6 +24,8 @@
     ];
 
     brews = [
+      "docker"
+      "docker-compose"
       "jq"
       "deno"
       "node"
