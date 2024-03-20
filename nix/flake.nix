@@ -26,7 +26,7 @@
   }: let
     username = "pyry";
     system = "aarch64-darwin";
-    hostname = "anser";
+    hostname = "hopeanuoli";
 
 
     specialArgs =

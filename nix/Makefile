@@ -1,3 +1,3 @@
 deploy:
-	nix build .#darwinConfigurations.anser.system
-	./result/sw/bin/darwin-rebuild switch --flake .#anser
+	nix build .#darwinConfigurations.hopeanuoli.system
+	./result/sw/bin/darwin-rebuild switch --flake .#hopeanuoli
