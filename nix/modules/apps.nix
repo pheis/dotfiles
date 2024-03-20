@@ -43,7 +43,7 @@
       "direnv"
       "pyenv"
       "gnupg"
-      "colima"
+      "lima"
       "atuin"
       "yarn"
     ];
