@@ -20,12 +20,10 @@
       "homebrew/services"
       "homebrew/cask-versions"
       # yabai, skhd
-      # "koekeishiya/homebrew-formulae"
+      "koekeishiya/homebrew-formulae"
     ];
 
     brews = [
-      # "yabai"
-      # "skhd"
       "jq"
       "deno"
       "node"
