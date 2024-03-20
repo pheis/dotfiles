@@ -24,6 +24,10 @@
     ];
 
     brews = [
+      "yubikey-personalization"
+      "ykman"
+      "pinentry-mac"
+      "wget"
       "lazygit"
       "yabai"
       "skhd"
