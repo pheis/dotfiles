@@ -25,6 +25,8 @@
 
     brews = [
       "lazygit"
+      "yabai"
+      "skhd"
       "docker"
       "docker-compose"
       "jq"
