@@ -46,6 +46,7 @@
       "lima"
       "atuin"
       "yarn"
+      "arp-scan"
     ];
 
     casks = [
