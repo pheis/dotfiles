@@ -1,22 +1,22 @@
 local setupObj = {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = {
-    "c",
-    "cpp",
-    "go",
-    "lua",
-    "python",
-    "rust",
-    "tsx",
-    "typescript",
-    "vimdoc",
-    "vim",
-    "zig",
-    "scala",
-  },
+  -- ensure_installed = {
+  --   "c",
+  --   "cpp",
+  --   "go",
+  --   "lua",
+  --   "python",
+  --   "rust",
+  --   "tsx",
+  --   "typescript",
+  --   "vimdoc",
+  --   "vim",
+  --   "zig",
+  --   "scala",
+  -- },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  auto_install = true,
 
   highlight = { enable = true },
   indent = { enable = true },
@@ -73,16 +73,11 @@ local setupObj = {
   },
 }
 
-local config = function()
-  ---@diagnostic disable-next-line: missing-fields
-  require("nvim-treesitter.configs").setup(setupObj)
-end
-
 return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
   build = ":TSUpdate",
-  config = config,
+  opts = setupObj,
 }
