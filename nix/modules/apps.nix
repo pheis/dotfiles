@@ -59,6 +59,7 @@
       "atuin"
       "yarn"
       "arp-scan"
+      "difftastic"
     ];
 
     casks = [
