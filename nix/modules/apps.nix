@@ -5,6 +5,7 @@
     neovim
     nil
     shellcheck
+    sequoia-sq
   ];
 
   homebrew = {
