@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# sketchybar --query bar | jq .hidden
+
+if sketchybar --query bar | jq .hidden | grep -q "off"; then
+    sketchybar --bar hidden=on
+else
+    sketchybar --bar hidden=off
+fi
