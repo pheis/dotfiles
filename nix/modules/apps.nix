@@ -6,6 +6,7 @@
     nil
     shellcheck
     sequoia-sq
+    neofetch
   ];
 
   homebrew = {
