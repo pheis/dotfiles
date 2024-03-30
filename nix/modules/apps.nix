@@ -24,9 +24,12 @@
       "homebrew/cask-versions"
       # yabai, skhd
       "koekeishiya/homebrew-formulae"
+      # bar
+      "FelixKratz/formulae"
     ];
 
     brews = [
+      "sketchybar"
       "ncspot"
       "htop"
       "yubikey-personalization"
