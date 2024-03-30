@@ -26,6 +26,7 @@
     ];
 
     brews = [
+      "htop"
       "yubikey-personalization"
       "ykman"
       "pinentry-mac"
