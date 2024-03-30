@@ -20,3 +20,4 @@ history = 0
 decorations = "buttonless"
 # decorations = "none"
 option_as_alt = "OnlyLeft"
+opacity = 0.9
