@@ -19,6 +19,11 @@ yabai -m config mouse_action2 resize
 # when window is dropped in center of another window, swap them (on edges it will split it)
 yabai -m mouse_drop_action swap
 
+# yabai -m config top_padding    20
+# yabai -m config bottom_padding 20
+# yabai -m config left_padding   20
+# yabai -m config right_padding  20
+yabai -m config window_gap     24
 
 # disable specific apps
 yabai -m rule --add app="^System Settings$" manage=off
