@@ -27,6 +27,7 @@
     ];
 
     brews = [
+      "ncspot"
       "htop"
       "yubikey-personalization"
       "ykman"
