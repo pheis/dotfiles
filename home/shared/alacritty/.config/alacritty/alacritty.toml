@@ -17,6 +17,6 @@ hide_when_typing = false
 history = 0
 
 [window]
-# decorations = "buttonless"
-decorations = "none"
+decorations = "buttonless"
+# decorations = "none"
 option_as_alt = "OnlyLeft"
