@@ -67,7 +67,6 @@
     ];
 
     casks = [
-      "amethyst"
       "alacritty"
       "google-chrome"
       "firefox"
