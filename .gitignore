@@ -3,3 +3,5 @@
 home/shared/fish/.config/fish/completions/
 home/shared/fish/.config/fish/fish_variables
 home/shared/fish/.config/fish/functions/
+home/shared/tmux/.tmux/plugins/
+
