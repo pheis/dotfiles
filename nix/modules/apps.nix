@@ -83,6 +83,7 @@
       "porting-kit"
       "element"
       "kitty"
+      "wezterm"
     ];
   };
 }
