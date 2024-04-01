@@ -11,6 +11,8 @@
 alt - j : yabai -m window --focus prev || yabai -m window --focus last
 alt - k : yabai -m window --focus next || yabai -m window --focus first
 
+alt - b : toggle-sketchybar
+
 # swap window
 alt - return : yabai -m window --swap west # swap with "main" tile (simply swap it west)
 
