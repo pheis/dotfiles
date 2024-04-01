@@ -7,6 +7,7 @@
     shellcheck
     sequoia-sq
     neofetch
+    gnused
   ];
 
   homebrew = {
