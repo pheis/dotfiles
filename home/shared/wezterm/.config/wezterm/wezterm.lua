@@ -17,9 +17,7 @@ config.show_new_tab_button_in_tab_bar = false
 config.use_fancy_tab_bar = false
 config.window_background_opacity = 0.9
 
--- config.color_scheme = 'Tomorrow Night (Gogh)'
-
-config.font = wezterm.font 'FiraMono nerd font'
+config.font = wezterm.font('FiraMono nerd font', {weight = "Regular"})
 config.font_size = 16.0
 
 config.keys = {
