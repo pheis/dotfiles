@@ -82,6 +82,7 @@
       "karabiner-elements"
       "porting-kit"
       "element"
+      "kitty"
     ];
   };
 }
