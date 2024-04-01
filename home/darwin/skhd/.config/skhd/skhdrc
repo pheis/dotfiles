@@ -8,8 +8,8 @@
 
 # focus window
 # here the || was added so the selection cycles and doesn't stop at the end or beginning
-alt - j : yabai -m window --focus prev || yabai -m window --focus last
-alt - k : yabai -m window --focus next || yabai -m window --focus first
+alt - j : yabai -m window --focus next || yabai -m window --focus first
+alt - k : yabai -m window --focus prev || yabai -m window --focus last
 
 alt - b : toggle-sketchybar
 
