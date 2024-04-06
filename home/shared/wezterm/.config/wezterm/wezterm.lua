@@ -19,18 +19,12 @@ config.window_background_opacity = 1.0
 config.font = wezterm.font("FiraMono nerd font", { weight = "Regular" })
 config.font_size = 16.0
 
-config.keys = {
-	{
-		key = "m",
-		mods = "CMD",
-		action = wezterm.action.DisableDefaultAssignment,
-	},
-}
-
 local rgb = function(...)
 	local args = { ... }
 	return "rgb(" .. table.concat(args, ",") .. ")"
 end
+
+config.keys = require('keys')
 
 config.colors = {
 	-- The default text color
@@ -104,5 +98,4 @@ config.colors = {
 	quick_select_match_bg = { AnsiColor = "Navy" },
 	quick_select_match_fg = { Color = "#ffffff" },
 }
-
 return config
