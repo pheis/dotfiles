@@ -79,5 +79,5 @@ return {
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
   build = ":TSUpdate",
-  opts = setupObj,
+  config = function() require('nvim-treesitter.configs').setup(setupObj) end
 }
