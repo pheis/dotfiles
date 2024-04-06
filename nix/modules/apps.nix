@@ -8,6 +8,7 @@
     sequoia-sq
     neofetch
     gnused
+    pgcli
   ];
 
   homebrew = {
