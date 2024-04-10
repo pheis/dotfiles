@@ -10,6 +10,7 @@
     gnused
     pgcli
     gh
+    go
   ];
 
   homebrew = {
