@@ -32,6 +32,7 @@
     ];
 
     brews = [
+      "dbmate"
       "sketchybar"
       "ncspot"
       "htop"
