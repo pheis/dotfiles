@@ -9,6 +9,7 @@
     neofetch
     gnused
     pgcli
+    gh
   ];
 
   homebrew = {
