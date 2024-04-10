@@ -1,7 +1,7 @@
-local wezterm = require('wezterm')
+local wezterm = require("wezterm")
 -- local environment = require('environment')
 
--- omit c,v to copy paste :D 
+-- omit c,v to copy paste :D
 -- local all_characters = [[`1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./]]
 local all_characters = [[1234567890]]
 
@@ -14,7 +14,7 @@ end
 local function mappings(maps)
   local result = {}
   local seen = {}
-  local mod_key = 'CMD'
+  local mod_key = "CMD"
 
   -- if environment.os == 'mac' then
   --   mod_key = 'CMD'
@@ -22,19 +22,17 @@ local function mappings(maps)
   --   mod_key = 'ALT'
   -- end
 
-
-
   for _, mapping in ipairs(maps) do
-    mapping.mods = mapping.mods and mapping.mods:gsub('MOD', mod_key)
+    mapping.mods = mapping.mods and mapping.mods:gsub("MOD", mod_key)
     table.insert(result, mapping)
 
     seen[mapping.mods .. " " .. mapping.key:lower()] = true
   end
 
-  if mod_key == 'CMD' then
+  if mod_key == "CMD" then
     for _, key in ipairs(characters) do
-      for _, mods in ipairs({ 'CMD', 'CMD|SHIFT' }) do
-        local combo = mods .. ' ' .. key
+      for _, mods in ipairs({ "CMD", "CMD|SHIFT" }) do
+        local combo = mods .. " " .. key
 
         if not seen[combo] then
           seen[combo] = true
@@ -42,7 +40,10 @@ local function mappings(maps)
           table.insert(result, {
             key = key,
             mods = mods,
-            action = wezterm.action.SendKey { key = key, mods = mods:gsub('CMD', 'ALT') },
+            action = wezterm.action.SendKey({
+              key = key,
+              mods = mods:gsub("CMD", "ALT"),
+            }),
           })
         end
       end
