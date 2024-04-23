@@ -35,6 +35,7 @@ end
 
 require("options")
 require("keymap")
+require("autocmds")
 
 install_plugin_manager()
 require("lazy").setup(read_plugin_defs(), {})

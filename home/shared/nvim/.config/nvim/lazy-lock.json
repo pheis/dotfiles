@@ -11,6 +11,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "1a50b94066def8591d5f65bd60a4233902e9def4" },
   "gruvbox.nvim": { "branch": "main", "commit": "6e4027ae957cddf7b193adfaec4a8f9e03b4555f" },
   "haskell-tools.nvim": { "branch": "master", "commit": "92e097c6832405fb64e4c44a7ce8bebe7836cae6" },
+  "hurl.nvim": { "branch": "main", "commit": "ba2f77ce98cfbeafa55809bd36f360e65a15b952" },
   "image.nvim": { "branch": "master", "commit": "9be5ede323756d7ee2bbef2bc157767b3972cce6" },
   "kanagawa.nvim": { "branch": "master", "commit": "bfa818c7bf6259152f1d89cf9fbfba3554c93695" },
   "lazy.nvim": { "branch": "main", "commit": "31ddbea7c10b6920c9077b66c97951ca8682d5c8" },
