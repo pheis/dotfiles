@@ -1,8 +1,9 @@
-{ pkgs, ...}: {
+{ pkgs, overlays, ...}: {
+  nixpkgs.overlays = overlays;
 
   environment.systemPackages = with pkgs; [
     git
-    neovim
+    neovim-nightly
     nil
     shellcheck
     sequoia-sq
@@ -33,6 +34,7 @@
     ];
 
     brews = [
+      "hurl"
       "dbmate"
       "sketchybar"
       "ncspot"

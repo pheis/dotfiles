@@ -9,6 +9,7 @@
   };
 
   inputs = {
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-23.11-darwin";
     darwin = {
@@ -28,11 +29,15 @@
     system = "aarch64-darwin";
     hostname = "hopeanuoli";
 
+    overlays = [
+      inputs.neovim-nightly-overlay.overlay
+    ];
+
 
     specialArgs =
       inputs
       // {
-        inherit username hostname;
+        inherit username hostname overlays;
       };
   in {
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
