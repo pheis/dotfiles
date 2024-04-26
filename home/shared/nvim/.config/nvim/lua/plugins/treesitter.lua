@@ -64,11 +64,11 @@ local setupObj = {
       },
     },
     swap = {
-      enable = true,
-      swap_next = {
-        ["<leader>a"] = "@parameter.inner",
-      },
-      swap_previous = { ["<leader>A"] = "@parameter.inner" },
+      enable = false,
+      -- swap_next = {
+      --   ["<leader>a"] = "@parameter.inner",
+      -- },
+      -- swap_previous = { ["<leader>A"] = "@parameter.inner" },
     },
   },
 }
