@@ -35,6 +35,7 @@
 
     brews = [
       "hurl"
+      "libpq"
       "dbmate"
       "sketchybar"
       "ncspot"
