@@ -12,6 +12,7 @@
     pgcli
     gh
     go
+    cargo-tarpaulin
   ];
 
   homebrew = {
