@@ -86,7 +86,6 @@
       "font-fira-mono-nerd-font"
       "whatsapp"
       "telegram"
-      "slack"
       "karabiner-elements"
       "porting-kit"
       "element"
