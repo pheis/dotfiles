@@ -41,10 +41,10 @@
       specialArgs = hopeanuoli_specialArgs;
       system = "aarch64-darwin";
       modules = [
-        ./modules/nix-core.nix
-        ./modules/system.nix
-        ./modules/apps.nix
-        ./modules/host-users.nix
+        ./darwin/nix-core.nix
+        ./darwin/system.nix
+        ./darwin/apps.nix
+        ./darwin/host-users.nix
       ];
     };
   };
