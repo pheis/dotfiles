@@ -36,9 +36,27 @@
         username = "pyry";
         hostname = "hopeanuoli";
       };
+
+    FL_specialArgs  =
+      inputs
+      // {
+        inherit overlays;
+        username = "pyry.heiskanen";
+        hostname = "FL";
+      };
   in {
     darwinConfigurations.hopeanuoli = darwin.lib.darwinSystem {
       specialArgs = hopeanuoli_specialArgs;
+      system = "aarch64-darwin";
+      modules = [
+        ./darwin/nix-core.nix
+        ./darwin/system.nix
+        ./darwin/apps.nix
+        ./darwin/host-users.nix
+      ];
+    };
+    darwinConfigurations.FL = darwin.lib.darwinSystem {
+      specialArgs = FL_specialArgs;
       system = "aarch64-darwin";
       modules = [
         ./darwin/nix-core.nix
