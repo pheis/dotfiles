@@ -35,6 +35,7 @@
     ];
 
     brews = [
+      "gh"
       "hurl"
       "libpq"
       "dbmate"
