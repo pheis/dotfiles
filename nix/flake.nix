@@ -24,22 +24,21 @@
     home-manager,
     ...
   }: let
-    username = "pyry";
-    hostname = "hopeanuoli";
-
     overlays = [
       inputs.neovim-nightly-overlay.overlay
     ];
 
 
-    specialArgs =
+    hopeanuoli_specialArgs =
       inputs
       // {
-        inherit username hostname overlays;
+        inherit overlays;
+        username = "pyry";
+        hostname = "hopeanuoli";
       };
   in {
-    darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
-      inherit specialArgs;
+    darwinConfigurations.hopeanuoli = darwin.lib.darwinSystem {
+      specialArgs = hopeanuoli_specialArgs;
       system = "aarch64-darwin";
       modules = [
         ./modules/nix-core.nix
