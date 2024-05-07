@@ -21,7 +21,6 @@
     self,
     nixpkgs,
     darwin,
-    home-manager,
     ...
   }: let
     overlays = [
