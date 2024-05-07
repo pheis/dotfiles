@@ -59,9 +59,7 @@
       system = "aarch64-darwin";
       modules = [
         ./darwin/nix-core.nix
-        ./darwin/system.nix
         ./darwin/apps.nix
-        ./darwin/host-users.nix
       ];
     };
   };
