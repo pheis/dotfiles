@@ -25,7 +25,6 @@
     ...
   }: let
     username = "pyry";
-    system = "aarch64-darwin";
     hostname = "hopeanuoli";
 
     overlays = [
@@ -40,7 +39,8 @@
       };
   in {
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
-      inherit system specialArgs;
+      inherit specialArgs;
+      system = "aarch64-darwin";
       modules = [
         ./modules/nix-core.nix
         ./modules/system.nix
