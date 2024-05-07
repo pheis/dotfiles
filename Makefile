@@ -1,5 +1,5 @@
 .PHONY: install
 
 install:
-	make -C "nix"
+	cd nix && ./deploy.sh
 	make -C "home"
