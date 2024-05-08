@@ -2,6 +2,7 @@
   nixpkgs.overlays = overlays;
 
   environment.systemPackages = with pkgs; [
+    nixfmt-classic
     git
     neovim-nightly
     nil

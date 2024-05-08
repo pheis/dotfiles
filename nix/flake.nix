@@ -44,7 +44,8 @@
         hostname = "FL";
       };
   in {
-    darwinConfigurations.hopeanuoli = darwin.lib.darwinSystem {
+    darwinConfigurations = {
+    hopeanuoli = darwin.lib.darwinSystem {
       specialArgs = hopeanuoli_specialArgs;
       system = "aarch64-darwin";
       modules = [
@@ -54,7 +55,7 @@
         ./darwin/host-users.nix
       ];
     };
-    darwinConfigurations.FL = darwin.lib.darwinSystem {
+    FL = darwin.lib.darwinSystem {
       specialArgs = FL_specialArgs;
       system = "aarch64-darwin";
       modules = [
@@ -63,6 +64,7 @@
         ./darwin/apps.nix
         ./darwin/host-users.nix
       ];
+    };
     };
   };
 }
