@@ -1,13 +1,13 @@
 { ... }:
 
-  ###################################################################################
-  #
-  #  macOS's System configuration
-  #
-  #  All the configuration options are documented here:
-  #    https://daiderd.com/nix-darwin/manual/index.html#sec-options
-  #
-  ###################################################################################
+###################################################################################
+#
+#  macOS's System configuration
+#
+#  All the configuration options are documented here:
+#    https://daiderd.com/nix-darwin/manual/index.html#sec-options
+#
+###################################################################################
 {
 
   system = {
@@ -20,7 +20,7 @@
 
     defaults = {
       dock.autohide = true;
-      menuExtraClock.Show24Hour = true;  # show 24 hour clock
+      menuExtraClock.Show24Hour = true; # show 24 hour clock
 
       NSGlobalDomain._HIHideMenuBar = true;
       NSGlobalDomain."com.apple.keyboard.fnState" = true;

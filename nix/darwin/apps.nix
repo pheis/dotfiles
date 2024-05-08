@@ -1,4 +1,4 @@
-{ pkgs, overlays, ...}: {
+{ pkgs, overlays, ... }: {
   nixpkgs.overlays = overlays;
 
   environment.systemPackages = with pkgs; [
