@@ -11,13 +11,6 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 # }}}
 
 
-# Archlinux stuf TODO: guard with if uname
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-  source /usr/share/doc/pkgfile/command-not-found.zsh
-fi
-
 # {{{ Aliases
 alias ls='exa'
 alias g='git'
@@ -118,13 +111,7 @@ function start_sway() {
 
 bindkey -e
 
-export PATH="$HOME/.poetry/bin:$PATH"
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
- eval "$(pyenv init --path)"
 
 # Pyenv {{{
 # if command -v pyenv 1>/dev/null 2>&1; then
