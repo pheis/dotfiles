@@ -51,5 +51,14 @@
           ];
         };
       };
+      colmena = {
+        meta = {
+          nixpkgs = import nixpkgs { system = "x86_64-linux"; };
+          specialArgs = {
+
+          };
+        };
+        koti = import ./hosts/koti/default.nix;
+      };
     };
 }
