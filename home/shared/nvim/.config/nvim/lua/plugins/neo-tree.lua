@@ -35,6 +35,10 @@ local setup = function()
       },
       use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
     },
+    sort_function = function(a, b)
+      -- only sort by path
+      return a.path < b.path
+    end
   })
 end
 
@@ -47,7 +51,7 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
-    "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   config = setup,
 }

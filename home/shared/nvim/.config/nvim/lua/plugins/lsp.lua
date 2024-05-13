@@ -61,12 +61,12 @@ local config = function()
 				telemetry = { enable = false },
 			},
 		},
-		-- denols = {
-		--   root_dir = require("lspconfig").util.root_pattern(
-		--     "deno.json",
-		--     "deno.jsonc"
-		--   ),
-		-- },
+		denols = {
+			root_dir = require("lspconfig").util.root_pattern(
+				"deno.json",
+				"deno.jsonc"
+			),
+		},
 	}
 
 	-- nvim-cmp supports additional completion capabilities, so broadcast that to servers

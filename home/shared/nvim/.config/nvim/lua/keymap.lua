@@ -17,8 +17,13 @@ vim.keymap.set({ "n" }, "yoh", function()
 end, { silent = true })
 
 local function toggle_bg()
-  local bg = vim.o.background == "dark" and "light" or "dark"
-  vim.o.background = bg
+  if vim.o.background == "dark" then
+    vim.cmd("colo solarized")
+    vim.o.background = "light"
+  else
+    vim.cmd("colo gruvbox")
+    vim.o.background = "dark"
+  end
 end
 
 vim.keymap.set("n", "yob", toggle_bg)
@@ -71,7 +76,7 @@ vim.keymap.set(
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group =
-  vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+    vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank()
