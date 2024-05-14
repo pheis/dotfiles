@@ -37,6 +37,7 @@
     ];
 
     brews = [
+      "tokei"
       "gh"
       "hurl"
       "libpq"
