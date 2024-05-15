@@ -52,10 +52,9 @@
       "lazygit"
       "yabai"
       "skhd"
-      "docker"
-      "docker-compose"
       "docker-ls"
       "docker-buildx"
+      "docker-compose"
       "jq"
       "deno"
       "node"
@@ -95,6 +94,7 @@
       "element"
       "kitty"
       "wezterm"
+      "docker"
     ];
   };
 }
