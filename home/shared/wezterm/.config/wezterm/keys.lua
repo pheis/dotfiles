@@ -4,8 +4,8 @@ local wezterm = require("wezterm")
 -- omit c,v to copy paste :D
 -- local all_characters = [[`1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./]]
 -- local all_characters = [[1234567890]]
--- omit c,v
-local all_characters = [[`1234567890qwertyuiop[]\asdfghjkl;'zxbnm,./]]
+-- omit c,v, w
+local all_characters = [[`1234567890qertyuiop[]\asdfghjkl;'zxbnm,./]]
 
 local characters = {}
 
