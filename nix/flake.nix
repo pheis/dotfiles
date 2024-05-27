@@ -5,7 +5,6 @@
   nixConfig = { substituters = [ "https://cache.nixos.org" ]; };
 
   inputs = {
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -15,7 +14,7 @@
 
   outputs = inputs@{ self, nixpkgs, darwin, ... }:
     let
-      overlays = [ inputs.neovim-nightly-overlay.overlay ];
+      overlays = [];
 
       hopeanuoli_specialArgs = inputs // {
         inherit overlays;

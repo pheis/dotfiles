@@ -5,7 +5,7 @@
     colmena
     nixfmt-classic
     git
-    neovim-nightly
+    neovim
     nil
     shellcheck
     sequoia-sq
