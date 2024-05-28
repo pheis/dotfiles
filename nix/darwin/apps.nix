@@ -37,6 +37,7 @@
     ];
 
     brews = [
+      "openssl@3" # required for native openssl stuff
       "tokei"
       "gh"
       "hurl"
