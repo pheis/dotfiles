@@ -35,16 +35,12 @@ alias ypass='PASSWORD_STORE_DIR=$HOME/ylitse-secrets pass'
 # setopt COMPLETE_ALIASES
 
 # brew
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ $(uname) == "Darwin" ]]; then
   export PATH=/opt/homebrew/bin:$PATH
   # use gnu stuff over bsd stuff
   export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 fi
 
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  export PATH=$HOME/Library/Python/3.9/bin:$PATH
-fi
 
 export EDITOR=nvim
 # scripts
