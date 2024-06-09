@@ -97,6 +97,7 @@
       "wezterm"
       "docker"
       "vmware-fusion"
+      "zed"
     ];
   };
 }
