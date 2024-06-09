@@ -96,6 +96,7 @@
       "kitty"
       "wezterm"
       "docker"
+      "vmware-fusion"
     ];
   };
 }
