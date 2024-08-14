@@ -67,6 +67,9 @@ local config = function()
 				"deno.jsonc"
 			),
 		},
+		harper_ls = {
+			autostart = false,
+		},
 	}
 
 	-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
