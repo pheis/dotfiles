@@ -9,3 +9,9 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.opt_local.filetype = "sh"
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "typescript,typescriptreact",
+  group = augroup("tsc"),
+  command = "compiler tsc | setlocal makeprg=npx\\ tsc\\ --noEmit",
+})
