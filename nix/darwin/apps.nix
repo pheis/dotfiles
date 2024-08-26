@@ -15,6 +15,7 @@
     gh
     go
     cargo-tarpaulin
+    aerc
   ];
 
   homebrew = {
@@ -98,6 +99,7 @@
       "docker"
       "vmware-fusion"
       "zed"
+      "slack"
     ];
   };
 }
