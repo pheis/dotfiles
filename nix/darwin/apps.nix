@@ -83,6 +83,7 @@
       "arp-scan"
       "difftastic"
       "glow"
+      "azure-cli"
     ];
 
     casks = [
