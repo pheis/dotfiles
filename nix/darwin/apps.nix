@@ -82,6 +82,7 @@
       "yarn"
       "arp-scan"
       "difftastic"
+      "glow"
     ];
 
     casks = [
