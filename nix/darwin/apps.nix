@@ -84,6 +84,7 @@
       "difftastic"
       "glow"
       "azure-cli"
+      "tenv"
     ];
 
     casks = [
