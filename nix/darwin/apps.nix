@@ -85,6 +85,7 @@
       "glow"
       "azure-cli"
       "tenv"
+      "pnpm"
     ];
 
     casks = [
