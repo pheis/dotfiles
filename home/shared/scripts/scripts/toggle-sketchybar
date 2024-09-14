@@ -2,9 +2,11 @@
 # sketchybar --query bar | jq .hidden
 
 if sketchybar --query bar | jq .hidden | grep -q "off"; then
+    sketchybar --reload
     sketchybar --bar hidden=on
     yabai -m config external_bar all:0:0
 else
+    sketchybar --reload
     sketchybar --bar hidden=off
     yabai -m config external_bar all:32:0
 fi
