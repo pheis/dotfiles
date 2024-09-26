@@ -44,7 +44,7 @@ require("lazy").setup(read_plugin_defs(), {})
 -- could just be after/options.lua
 vim.cmd("set invnumber")
 vim.cmd("set invrelativenumber")
-vim.cmd("colo gruvbox")
+vim.cmd("colo kanagawa-dragon")
 
 -- TODO: map '-' on neo-tree to "Close node"
 -- Currently 'C' closes node
