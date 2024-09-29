@@ -12,7 +12,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=32 blur_radius=0 color=0xFF000000
+sketchybar --bar position=top height=28 blur_radius=4 color=0xff000000
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -22,14 +22,16 @@ sketchybar --bar position=top height=32 blur_radius=0 color=0xFF000000
 default=(
   padding_left=5
   padding_right=5
-  icon.font="FiraMono nerd font:Bold:17.0"
-  label.font="FiraMono Nerd Font:Bold:14.0"
-  icon.color=0xffffffff
-  label.color=0xffffffff
-  icon.padding_left=4
-  icon.padding_right=4
-  label.padding_left=4
-  label.padding_right=4
+  icon.font="Liga SFMono Nerd Font:Normal:14.0"
+  label.font="Liga SFMono Nerd Font:Normal:14.0"
+  icon.color=0xffdddddd
+  label.color=0xffdddddd
+  icon.padding_left=8
+  icon.padding_right=8
+  label.padding_left=8
+  label.padding_right=8
+  # background.color=0xff333333
+  # background.corner_radius=0
 )
 sketchybar --default "${default[@]}"
 
@@ -45,11 +47,11 @@ do
   space=(
     space="$sid"
     icon="${SPACE_ICONS[i]}"
-    icon.padding_left=7
-    icon.padding_right=7
-    background.color=0x40ffffff
-    background.corner_radius=5
-    background.height=25
+    icon.padding_left=8
+    icon.padding_right=8
+    background.color=0xff444444
+    background.corner_radius=4
+    background.height=20
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
     click_script="yabai -m space --focus $sid"
@@ -61,11 +63,11 @@ done
 # We add some regular items to the left side of the bar, where
 # only the properties deviating from the current defaults need to be set
 
-sketchybar --add item chevron left \
-           --set chevron icon= label.drawing=off \
-           --add item front_app left \
-           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-           --subscribe front_app front_app_switched
+# sketchybar --add item chevron left \
+#            --set chevron icon= label.drawing=off \
+#            --add item front_app left \
+#            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+#            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
