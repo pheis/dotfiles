@@ -35,6 +35,8 @@
       "koekeishiya/homebrew-formulae"
       # bar
       "FelixKratz/formulae"
+      # Font
+      "shaunsingh/SFMono-Nerd-Font-Ligaturized"
     ];
 
     brews = [
@@ -104,6 +106,7 @@
       "vmware-fusion"
       "zed"
       "slack"
+      "font-sf-mono-nerd-font-ligaturized"
     ];
   };
 }
