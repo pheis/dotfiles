@@ -88,6 +88,7 @@
       "azure-cli"
       "tenv"
       "pnpm"
+      "stylua"
     ];
 
     casks = [
