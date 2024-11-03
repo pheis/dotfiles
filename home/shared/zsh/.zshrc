@@ -45,7 +45,6 @@ fi
 export EDITOR=nvim
 # scripts
 export PATH="$HOME/scripts:$PATH"
-export PATH="$HOME/bin:$PATH"
 
 # cargo
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -70,70 +69,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # export ANDROID_HOME=$HOME/Library/android/sdk
 fi
 
-function go_wl() {
-  # export DISPLAY=":0.0"
-  # export WAYLAND_DISPLAY=wayland-0
-  export XDG_RUNTIME_DIR=/run/user/1000
-  export SDL_VIDEODRIVER=wayland
-  export QT_QPA_PLATFORM=wayland
-  #export ELM_DISPLAY=wl export ECORE_EVAS_ENGINE=wayland_egl
-  #export ELM_ENGINE=wayland_egl
-  #export ELM_ACCEL=opengl
-  export GDK_BACKEND=wayland
-  #unset GDK_BACKEND
-  #export DBUS_SESSION_BUS_ADDRESS
-  #export DBUS_SESSION_BUS_PID
-  export MOZ_ENABLE_WAYLAND=1
-  #unset WAYLAND_DISPLAY
-  export XDG_CURRENT_DESKTOP=sway
-  export XDG_SESSION_TYPE=wayland
-}
-
-function start_sway() {
-  go_wl
-  exec sway
-}
-
-# {{{ Start sway on login with linux laptop
-# if [ $(uname -n) = "dipper" ] && [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-#   start_sway
-# fi
-# }}}
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-
-# NVM THIS IS VERY SLOW????
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 bindkey -e
 
 
 
-# Pyenv {{{
-# if command -v pyenv 1>/dev/null 2>&1; then
-#   eval "$(pyenv init -)"
-# fi
-# }}}
-
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/pyry.heiskanen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pyry.heiskanen/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/pyry.heiskanen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pyry.heiskanen/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Dot net lol
-# export DOTNET_ROOT=$HOME/.dotnet
-# export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
-
-# Starship propmpt
-# eval "$(starship init zsh)"
-# eval "$(zoxide init zsh)"
-# eval "$(direnv hook zsh)"
-# eval $(thefuck --alias)
-# zprof
 [ -f "/Users/pyry.heiskanen/.ghcup/env" ] && source "/Users/pyry.heiskanen/.ghcup/env" # ghcup-env
 
 exec fish
