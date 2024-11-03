@@ -32,9 +32,9 @@
       "homebrew/services"
       "homebrew/cask-versions"
       # yabai, skhd
-      "koekeishiya/homebrew-formulae"
+      # "koekeishiya/homebrew-formulae"
       # bar
-      "FelixKratz/formulae"
+      # "FelixKratz/formulae"
       # Font
       "shaunsingh/SFMono-Nerd-Font-Ligaturized"
     ];
@@ -105,8 +105,6 @@
       "element"
       "kitty"
       "wezterm"
-      "docker"
-      "vmware-fusion"
       "zed"
       "slack"
       "font-sf-mono-nerd-font-ligaturized"
