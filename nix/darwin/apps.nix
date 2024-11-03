@@ -67,6 +67,7 @@
       "magic-wormhole"
       "bat"
       "eza"
+      "sd"
       "fish"
       "fnm"
       "fzf"
