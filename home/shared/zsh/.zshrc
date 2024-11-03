@@ -1,4 +1,12 @@
 # zmodload zsh/zprof
+# brew
+if [[ $(uname) == "Darwin" ]]; then
+  export PATH=/opt/homebrew/bin:$PATH
+  # use gnu stuff over bsd stuff
+  export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+fi
+
+
 
 # {{{ GPG
 unset SSH_AGENT_PID
@@ -33,14 +41,6 @@ alias ypass='PASSWORD_STORE_DIR=$HOME/ylitse-secrets pass'
 # autoload -Uz compinit
 # compinit
 # setopt COMPLETE_ALIASES
-
-# brew
-if [[ $(uname) == "Darwin" ]]; then
-  export PATH=/opt/homebrew/bin:$PATH
-  # use gnu stuff over bsd stuff
-  export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-fi
-
 
 export EDITOR=nvim
 # scripts
