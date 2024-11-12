@@ -31,11 +31,8 @@
       "homebrew/cask-fonts"
       "homebrew/services"
       "homebrew/cask-versions"
-      # yabai, skhd
-      # "koekeishiya/homebrew-formulae"
-      # bar
-      # "FelixKratz/formulae"
-      # Font
+      "koekeishiya/homebrew-formulae" # yabai skhd
+      "FelixKratz/formulae" # sketchybar
       "shaunsingh/SFMono-Nerd-Font-Ligaturized"
     ];
 
@@ -57,9 +54,6 @@
       "lazygit"
       "yabai"
       "skhd"
-      "docker-ls"
-      "docker-buildx"
-      "docker-compose"
       "jq"
       "deno"
       "node"
@@ -91,6 +85,7 @@
       "tenv"
       "pnpm"
       "stylua"
+      "borders"
     ];
 
     casks = [
@@ -108,6 +103,7 @@
       "zed"
       "slack"
       "font-sf-mono-nerd-font-ligaturized"
+      "docker"
     ];
   };
 }
