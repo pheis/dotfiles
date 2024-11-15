@@ -46,6 +46,12 @@ vim.cmd("set invnumber")
 vim.cmd("set invrelativenumber")
 vim.cmd("colo gruvbox")
 
+vim.cmd([[
+  augroup strdr4605
+    autocmd FileType typescript,typescriptreact compiler tsc | setlocal makeprg=npx\ tsc
+  augroup END
+]])
+
 -- TODO: map '-' on neo-tree to "Close node"
 -- Currently 'C' closes node
 -- --> Should be trivial
