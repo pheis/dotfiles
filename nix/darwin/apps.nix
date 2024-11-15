@@ -86,6 +86,7 @@
       "pnpm"
       "stylua"
       "borders"
+      "steamcmd"
     ];
 
     casks = [
@@ -104,6 +105,7 @@
       "slack"
       "font-sf-mono-nerd-font-ligaturized"
       "docker"
+      "steam"
     ];
   };
 }
