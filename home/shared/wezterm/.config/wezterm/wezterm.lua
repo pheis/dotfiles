@@ -98,4 +98,5 @@ config.colors = {
   quick_select_match_bg = { AnsiColor = "Navy" },
   quick_select_match_fg = { Color = "#ffffff" },
 }
+
 return config
