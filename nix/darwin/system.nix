@@ -18,6 +18,8 @@
       /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
     '';
 
+    stateVersion = 5;
+
     defaults = {
       dock.autohide = true;
       menuExtraClock.Show24Hour = true; # show 24 hour clock
