@@ -87,6 +87,7 @@
       "stylua"
       "borders"
       "steamcmd"
+      "sqlcmd"
     ];
 
     casks = [
