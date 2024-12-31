@@ -86,8 +86,9 @@
       "pnpm"
       "stylua"
       "borders"
-      "steamcmd"
       "sqlcmd"
+      "zig"
+      "ghcup"
     ];
 
     casks = [
