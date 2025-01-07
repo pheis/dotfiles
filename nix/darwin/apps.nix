@@ -89,6 +89,7 @@
       "sqlcmd"
       "zig"
       "ghcup"
+      "zls"
     ];
 
     casks = [
