@@ -55,7 +55,7 @@ local function mappings(maps)
 
   table.insert(result, {
     key='f',
-    mods = 'SHIFT|CMD',
+    mods = 'CTRL|CMD',
     action = wezterm.action.ToggleFullScreen,
   })
 
