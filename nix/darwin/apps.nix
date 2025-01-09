@@ -109,6 +109,7 @@
       "font-sf-mono-nerd-font-ligaturized"
       "docker"
       "steam"
+      "visual-studio-code"
     ];
   };
 }
