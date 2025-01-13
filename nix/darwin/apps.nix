@@ -90,6 +90,8 @@
       "zig"
       "ghcup"
       "zls"
+      "tectonic"
+      "tree-sitter"
     ];
 
     casks = [
