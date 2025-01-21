@@ -92,6 +92,7 @@
       "zls"
       "tectonic"
       "tree-sitter"
+      "pandoc"
     ];
 
     casks = [

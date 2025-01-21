@@ -24,7 +24,7 @@
       dock.autohide = true;
       menuExtraClock.Show24Hour = true; # show 24 hour clock
 
-      NSGlobalDomain._HIHideMenuBar = true;
+      NSGlobalDomain._HIHideMenuBar = false;
       NSGlobalDomain."com.apple.keyboard.fnState" = true;
 
       # other macOS's defaults configuration.
