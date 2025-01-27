@@ -113,6 +113,7 @@
       "docker"
       "steam"
       "visual-studio-code"
+      "sioyek"
     ];
   };
 }
