@@ -93,6 +93,7 @@
       "tectonic"
       "tree-sitter"
       "pandoc"
+      "lua-language-server"
     ];
 
     casks = [
@@ -114,6 +115,7 @@
       "steam"
       "visual-studio-code"
       "sioyek"
+      "virtualbox"
     ];
   };
 }
