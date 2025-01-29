@@ -95,6 +95,7 @@
       "pandoc"
       "lua-language-server"
       "openconnect"
+      "uv"
     ];
 
     casks = [
