@@ -94,6 +94,7 @@
       "tree-sitter"
       "pandoc"
       "lua-language-server"
+      "openconnect"
     ];
 
     casks = [
