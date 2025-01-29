@@ -118,6 +118,7 @@
       "visual-studio-code"
       "sioyek"
       "virtualbox"
+      "ollama"
     ];
   };
 }
