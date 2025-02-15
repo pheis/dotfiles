@@ -32,6 +32,7 @@ local is_diagnostics_hidden = false
 
 local function toggle_diagnostics()
   if is_diagnostics_hidden then
+
     vim.diagnostic.show()
   else
     vim.diagnostic.hide()
@@ -77,6 +78,7 @@ vim.keymap.set(
 -- See `:help vim.highlight.on_yank()`
 local highlight_group =
     vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank()
