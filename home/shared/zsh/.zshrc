@@ -7,6 +7,7 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # {{{ GPG
 unset SSH_AGENT_PID
