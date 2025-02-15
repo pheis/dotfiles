@@ -99,6 +99,7 @@
       "uv"
       "age"
       "age-plugin-yubikey"
+      "aichat"
     ];
 
     casks = [
