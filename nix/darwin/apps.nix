@@ -100,6 +100,7 @@
       "age"
       "age-plugin-yubikey"
       "aichat"
+      "oath-toolkit"
     ];
 
     casks = [
