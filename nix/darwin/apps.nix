@@ -96,6 +96,8 @@
       "lua-language-server"
       "openconnect"
       "uv"
+      "age"
+      "age-plugin-yubikey"
     ];
 
     casks = [
