@@ -16,6 +16,7 @@
     go
     cargo-tarpaulin
     aerc
+    passage
   ];
 
   homebrew = {
