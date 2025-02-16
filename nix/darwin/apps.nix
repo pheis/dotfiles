@@ -101,6 +101,7 @@
       "age-plugin-yubikey"
       "aichat"
       "oath-toolkit"
+      "ansible"
     ];
 
     casks = [
