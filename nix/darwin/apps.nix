@@ -17,6 +17,7 @@
     cargo-tarpaulin
     aerc
     passage
+    vtsls
   ];
 
   homebrew = {
