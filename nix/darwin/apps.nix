@@ -18,6 +18,7 @@
     aerc
     passage
     vtsls
+    mermaid-cli
   ];
 
   homebrew = {
