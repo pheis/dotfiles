@@ -127,6 +127,7 @@
       "sioyek"
       "vmware-fusion"
       "ollama"
+      "chromium"
     ];
   };
 }
