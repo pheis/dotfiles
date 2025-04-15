@@ -81,3 +81,5 @@ export LC_ALL=en_US.UTF-8
 [ -f "/Users/pyry.heiskanen/.ghcup/env" ] && source "/Users/pyry.heiskanen/.ghcup/env" # ghcup-env
 
 exec fish
+
+source /Users/pyry/.config/broot/launcher/bash/br
