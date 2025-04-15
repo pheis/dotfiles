@@ -128,6 +128,7 @@
       "vmware-fusion"
       "ollama"
       "chromium"
+      "pgadmin4"
     ];
   };
 }
