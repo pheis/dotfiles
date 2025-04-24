@@ -1,6 +1,9 @@
-local install_plugin_manager = function()
+vim.g.mapleader = " "
+
+local install_lazy = function()
   local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
+  ---@diagnostic disable-next-line: undefined-field
   if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
       "git",
@@ -14,50 +17,48 @@ local install_plugin_manager = function()
 
   vim.opt.rtp:prepend(lazypath)
 end
+install_lazy()
 
-local read_plugin_defs = function()
-  local file_names = vim.fs.dir("~/.config/nvim/lua/plugins")
+local function is_array(t)
+  if type(t) ~= "table" then
+    return false
+  end
+
+  local maxIndex = 0
+  local count = 0
+
+  for k, _ in pairs(t) do
+    if type(k) ~= "number" or k <= 0 or math.floor(k) ~= k then
+      return false
+    end
+
+    maxIndex = math.max(maxIndex, k)
+    count = count + 1
+  end
+
+  return count == maxIndex -- No gaps if count equals highest index
+end
+
+local get_plugin_cfgs = function()
+  local dir = vim.fn.stdpath("config") .. "/lua"
+  local file_names = vim.fs.dir(dir)
 
   local plugins = {}
 
   for file_name in file_names do
     local wo_suffix = file_name:gsub("%.lua$", "")
-    local w_prefix = "plugins" .. "." .. wo_suffix
-    local plugin = require(w_prefix)
+    local plugin = require(wo_suffix)
 
-    table.insert(plugins, plugin)
+    if is_array(plugin) then
+      for _, v in ipairs(plugin) do
+        table.insert(plugins, v)
+      end
+    else
+      table.insert(plugins, plugin)
+    end
   end
 
   return plugins
 end
 
-require("options")
-require("keymap")
-require("autocmds")
-
-install_plugin_manager()
-require("lazy").setup(read_plugin_defs(), {})
-
--- after loading plugins
--- could just be after/options.lua
-vim.cmd("set invnumber")
-vim.cmd("set invrelativenumber")
-vim.cmd("colo gruvbox")
-
-vim.cmd([[
-  augroup strdr4605
-    autocmd FileType typescript,typescriptreact compiler tsc | setlocal makeprg=npx\ tsc
-  augroup END
-]])
-
--- TODO: map '-' on neo-tree to "Close node"
--- Currently 'C' closes node
--- --> Should be trivial
---
--- Plugins to try-out:
--- neo-test?
--- nvim-bfq
--- session manager Shatur/neovim-session-manager
---
--- THIS GOOD
--- https://github.com/yioneko/nvim-vtsls
+require("lazy").setup(get_plugin_cfgs())

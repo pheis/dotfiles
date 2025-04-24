@@ -1,9 +1,7 @@
-local function augroup(name)
-  return vim.api.nvim_create_augroup("my_own_autocmds" .. name, { clear = true })
-end
+-- local group = vim.api.nvim_create_augroup("mine", {clear = true})
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  group = augroup("env_filetype"),
+  -- group = group,
   pattern = { "*.env", ".env.*" },
   callback = function()
     vim.opt_local.filetype = "sh"
@@ -12,6 +10,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "typescript,typescriptreact",
-  group = augroup("tsc"),
+  -- group = group,
   command = "compiler tsc | setlocal makeprg=npx\\ tsc\\ --noEmit",
 })
