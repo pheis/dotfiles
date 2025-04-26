@@ -19,6 +19,7 @@
     passage
     vtsls
     mermaid-cli
+    nixos-rebuild
   ];
 
   homebrew = {
