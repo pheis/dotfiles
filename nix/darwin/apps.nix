@@ -105,6 +105,7 @@
       "aichat"
       "oath-toolkit"
       "ansible"
+			"nmap"
     ];
 
     casks = [
@@ -130,6 +131,8 @@
       "ollama"
       "chromium"
       "pgadmin4"
+			"google-cloud-sdk"
+			"spotify"
     ];
   };
 }
