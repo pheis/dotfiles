@@ -1,0 +1,60 @@
+#!/bin/bash
+REPO_URL=$(git config --get remote.origin.url)
+OWNER=$(echo "$REPO_URL" | sed -E 's|.*[:/]([^/]+)/([^/]+)(\.git)?$|\1|')
+REPO=$(echo "$REPO_URL" | sed -E 's|.*[:/]([^/]+)/([^/]+)(\.git)?$|\2|' | sed 's/\.git$//')
+
+gh pr list --repo "$OWNER/$REPO" --state open --search "review-requested:@me"
+
+# Check if OWNER and REPO are correctly extracted
+if [ -z "$OWNER" ] || [ -z "$REPO" ]; then
+  echo "Could not extract repository owner or name from remote URL: $REPO_URL"
+  exit 1
+fi
+
+echo "Operating on repository: $OWNER/$REPO"
+
+# List open pull requests requesting your review, authored by dependabot,
+# and extract their numbers.
+# Common Dependabot author names are "dependabot[bot]" or "dependabot".
+# We will search for PRs where the author is "dependabot[bot]"
+# The --json flag allows us to get structured output, making it easier to parse.
+# We filter for PRs authored by "dependabot[bot]" and where your review is requested.
+
+echo "Fetching pull requests authored by dependabot and requesting your review..."
+gh pr list --repo "$OWNER/$REPO" --state open --author "dependabot[bot]" --search "review-requested:@me" --json number,title --jq '.[] | .number' | while read pr_number; do
+  if [ -n "$pr_number" ]; then
+    echo "Processing PR #$pr_number"
+
+    # Approve the pull request
+    echo "Approving PR #$pr_number..."
+    if gh pr review "$pr_number" --repo "$OWNER/$REPO" --approve; then
+      echo "Successfully approved PR #$pr_number."
+
+			#    echo "Merging PR #$pr_number..."
+			# # FIX THIS LINE
+			#    if gh pr merge "$pr_number" --repo "$OWNER/$REPO" --auto --delete-branch; then
+			#      echo "Successfully merged PR #$pr_number and deleted its branch."
+			#    else
+			#      echo "Failed to merge PR #$pr_number or delete its branch."
+			#    fi
+    else
+      echo "Failed to approve PR #$pr_number."
+    fi
+
+    merge_output=$(gh pr merge "$pr_number" --repo "$OWNER/$REPO" --auto --squash --delete-branch 2>&1)
+    merge_status=$?
+
+    if [ $merge_status -eq 0 ]; then
+      echo "Successfully merged PR #$pr_number."
+    else
+      echo "Failed to merge PR #$pr_number."
+      echo "Reason:"
+      echo "$merge_output"
+      echo "You may need to merge it manually or resolve issues."
+    fi
+  else
+    echo "No Dependabot PRs awaiting your review found matching the criteria."
+  fi
+done
+
+echo "Script finished."
