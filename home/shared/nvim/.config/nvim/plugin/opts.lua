@@ -23,9 +23,11 @@ vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 
-vim.o.winborder = "rounded"
+-- vim.o.winborder = "rounded" Breaks lsp stuff etc
 
-vim.diagnostic.config({
-  virtual_text = { current_line = true },
-})
+-- vim.diagnostic.config({
+--   -- virtual_text = { current_line = true },
+--   -- virtual_lines = true,
+--   -- float = true,
+-- })
 -- vim.diagnostic.config({ virtual_text = true })

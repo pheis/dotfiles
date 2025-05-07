@@ -19,6 +19,8 @@ local keymaps = {
     k = { "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true } },
     j = { "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true } },
 
+    ge = '<cmd>lua vim.diagnostic.open_float(0, { scope = "line", border = "single" })<CR>',
+
     yoh = function()
       vim.cmd("set invhlsearch")
     end,
