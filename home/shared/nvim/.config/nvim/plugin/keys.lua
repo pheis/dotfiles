@@ -66,3 +66,18 @@ for mode, keymap in pairs(keymaps) do
     end
   end
 end
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    -- builtin keys:
+    -- gri --> implementation
+    -- gra --> code actions
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { silent = true })
+
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+    if client == nil then
+      return
+    end
+  end,
+})
