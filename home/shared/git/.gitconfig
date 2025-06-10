@@ -21,6 +21,7 @@
   editor = nvim
   autocrlf = input
 	excludesFile = ~/.gitignore
+	ignorecase = false
 # pager = delta
 
 [interactive]
