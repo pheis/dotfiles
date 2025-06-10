@@ -1,0 +1,10 @@
+#!/bin/bash
+git diff --name-only --diff-filter=U | while read file; do
+    # Check if the file is deleted in 'theirs' (stage 3 missing)
+    if ! git ls-files -u | grep -q "3.*$file"; then
+        git rm "$file"
+    else
+        git checkout --theirs "$file"
+        git add "$file"
+    fi
+done
