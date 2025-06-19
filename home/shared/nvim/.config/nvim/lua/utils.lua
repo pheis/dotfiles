@@ -7,6 +7,8 @@ return {
   -- themes
   "shaunsingh/solarized.nvim",
   "sjl/badwolf",
+  "webhooked/kanso.nvim",
+  "rebelot/kanagawa.nvim",
   {
     "ellisonleao/gruvbox.nvim",
     config = true,
