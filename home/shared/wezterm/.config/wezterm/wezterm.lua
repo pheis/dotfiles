@@ -21,6 +21,12 @@ config.font_size = 16.0
 
 config.keys = require("keys")
 
-config.colors = require("my-colors")
+-- config.colors = require("my-colors")
+config.force_reverse_video_cursor = true
+if wezterm.gui.get_appearance():find("Dark") then
+  config.colors = require("kanso-ink")
+else
+  config.colors = require("kanso-pearl")
+end
 
 return config
