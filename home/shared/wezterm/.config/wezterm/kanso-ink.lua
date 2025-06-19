@@ -33,4 +33,34 @@ return {
             "#7AA89F",
             "#C5C9C7",
         },
+
+tab_bar = {
+	background = "#14171d", -- match overall background
+	active_tab = {
+		bg_color = "#393B44", -- match selection bg or scrollbar thumb
+		fg_color = "#C5C9C7", -- match foreground
+		intensity = "Bold",
+		underline = "None",
+		italic = false,
+		strikethrough = false,
+	},
+	inactive_tab = {
+		bg_color = "#1a1d23", -- slightly lighter than background
+		fg_color = "#6c7086", -- muted gray-blue
+	},
+	inactive_tab_hover = {
+		bg_color = "#2a2d33", -- hover highlight
+		fg_color = "#C5C9C7",
+		italic = true,
+	},
+	new_tab = {
+		bg_color = "#1a1d23",
+		fg_color = "#6c7086",
+	},
+	new_tab_hover = {
+		bg_color = "#2a2d33",
+		fg_color = "#C5C9C7",
+		italic = true,
+	},
+}
 }
