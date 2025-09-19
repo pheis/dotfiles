@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -xeuo pipefail
+
+pr_number=
+owner=
+repo=
+
+gh api graphql -f query="
+{
+  repository(owner: \"$owner\", name: \"$repo\") {
+    pullRequest(number: $pr_number) {
+      reviewThreads(first: 100) {
+        nodes {
+          id
+          isResolved
+        }
+      }
+    }
+  }
+}" | jq -r '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false) | .id' |
+while read -r id; do
+  gh api graphql -f query="
+    mutation ResolveThread(\$id: ID!) {
+      resolveReviewThread(input: {threadId: \$id}) {
+        thread { isResolved }
+      }
+    }" -f id="$id"
+done
