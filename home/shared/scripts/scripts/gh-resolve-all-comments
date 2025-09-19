@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-set -xeuo pipefail
+set -euo pipefail
 
-pr_number=
-owner=
-repo=
+repo_full_name=$(gh api repos/:owner/:repo --jq .full_name)
+owner=$(dirname "$repo_full_name")
+repo=$(basename "$repo_full_name")
+pr_number=$(gh pr view --json number --jq .number)
 
 gh api graphql -f query="
 {
@@ -18,11 +19,11 @@ gh api graphql -f query="
     }
   }
 }" | jq -r '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false) | .id' |
-while read -r id; do
-  gh api graphql -f query="
+	while read -r id; do
+		gh api graphql -f query="
     mutation ResolveThread(\$id: ID!) {
       resolveReviewThread(input: {threadId: \$id}) {
         thread { isResolved }
       }
     }" -f id="$id"
-done
+	done
