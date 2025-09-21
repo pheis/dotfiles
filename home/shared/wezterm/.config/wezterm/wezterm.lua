@@ -25,7 +25,7 @@ config.use_fancy_tab_bar = false
 -- config.macos_window_background_blur = 30
 
 config.font = wezterm.font("FiraMono nerd font", { weight = "Regular" })
-config.font_size = 20.0
+config.font_size = 14.0
 
 config.keys = require("keys")
 
