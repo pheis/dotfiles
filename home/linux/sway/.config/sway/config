@@ -1,14 +1,3 @@
-exec swaymsg "workspace 2; exec firefox;"
-exec swaymsg "workspace 5; exec slack --enable-features=UseOzonePlatform --ozone-platform=wayland;"
-exec swaymsg "workspace 4; exec element-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland"
-exec swaymsg "workspace 1; exec alacritty -e tmux new-session -A -s main;"
-
-# For pipewire?
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-
-
-default_border pixel 1
-
 set $mod Mod4
 
 set $left h
@@ -16,37 +5,77 @@ set $down j
 set $up k
 set $right l
 
-set $term alacritty
-set $menu dmenu_path | bemenu | xargs swaymsg exec --
+set $term wezterm
 
-set $lock_command swaylock -f -c 000000
+set $menu wmenu-run
 
-# output * bg /home/pyry/backgrounds/water.jpg fill
 
-exec swayidle -w \
-         timeout 300 'swaylock -f -i /home/pyry/backgrounds/dark.jpg' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -i /home/pyry/backgrounds/dark.jpg'
+exec_always --no-startup-id gammastep -l 64.5:26.0 -t 6500:3500 &
+exec swaymsg "workspace 1; exec wezterm -e tmux new-session -A;"
+exec swaymsg "workspace 2; exec firefox;"
 
-exec mako
-exec gammastep -l 0:24
-# exec kanshi
+smart_borders on
+default_border pixel 2
 
-exec_always {
-    kanshi
-    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
-    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
+seat seat0 xcursor_theme Adwaita 24
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
+output * bg #000000 solid_color
+# output * bg ~/wp/animu.jpg fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+# input "2:14:SynPS/2_Synaptics_TouchPad" {
+input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
+		dwt enabled
+		natural_scroll enabled
+	  accel_profile "flat"
+		scroll_factor 0.5
+    pointer_accel 0.1
+
+		# tap enabled
+		#   tap_button_map lrm
 }
 
-input * {
-    xkb_layout "us,fi"
-    xkb_options "grp:win_space_toggle"
-    natural_scroll enabled
+input 1133:45091:Logitech_Wireless_Mouse_MX_Master_3 {
+		dwt enabled
+		natural_scroll enabled
+	  accel_profile "flat"
+    pointer_accel 0.5
 }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
 
-
+### Key bindings
+#
+# Basics:
+#
     # Start a terminal
-    bindsym $mod+Return exec $lock_command
+    bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -54,13 +83,18 @@ input * {
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
     floating_modifier $mod normal
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -69,6 +103,11 @@ input * {
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
@@ -144,62 +183,68 @@ input * {
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
-    bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-    bindsym XF86AudioPlay exec playerctl play-pause
-    bindsym XF86AudioNext exec playerctl next
-    bindsym XF86AudioPrev exec playerctl previous
-    bindsym XF86Search exec bemenu-run
 #
 # Resizing containers:
 #
-
-
-set $resize_step 60px
-
 mode "resize" {
-    bindsym $left resize shrink width $resize_step
-    bindsym $down resize grow height $resize_step
-    bindsym $up resize shrink height $resize_step
-    bindsym $right resize grow width $resize_step
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10ppt
+    bindsym $down resize grow height 10ppt
+    bindsym $up resize shrink height 10ppt
+    bindsym $right resize grow width 10ppt
 
-    bindsym Left resize shrink width $resize_step
-    bindsym Down resize grow height $resize_step
-    bindsym Up resize shrink height $resize_step
-    bindsym Right resize grow width $resize_step
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10ppt
+    bindsym Down resize grow height 10ppt
+    bindsym Up resize shrink height 10ppt
+    bindsym Right resize grow width 10ppt
 
+    # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+#
+# Utilities:
+#
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    # Special key to take a screenshot with grim
+    bindsym Print exec grim
 
-bar {
-    position top
-    # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-    status_command i3status-rs
-    font pango:Fira Mono, FontAwesome 10
-    colors {
-        separator #666666
-        background #000000
-        statusline #dddddd
-        # focused_workspace #0088CC #0088CC #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #000000 #000000 #888888
-        urgent_workspace #2f343a #900000 #ffffff
-    }
-
-    # colors {
-    #     statusline #ffffff
-    #     background #000000
-    #     inactive_workspace #000000 #000000 #777777
-    # }
-}
-
-hide_edge_borders smart
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+# bar {
+#     position bottom
+# 		# mode
+# 		mode hide
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+#
+# 		font pango:Fira Mono, FontAwesome 10
+#     colors {
+#         separator #666666
+#         background #000000
+#         statusline #dddddd
+#         # focused_workspace #0088CC #0088CC #ffffff
+#         active_workspace #333333 #333333 #ffffff
+#         inactive_workspace #000000 #000000 #888888
+#         urgent_workspace #2f343a #900000 #ffffff
+#     }
+#
+# }
 
 include /etc/sway/config.d/*
