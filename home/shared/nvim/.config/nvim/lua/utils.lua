@@ -4,7 +4,10 @@ return {
   "tpope/vim-fugitive",
   "tpope/vim-repeat",
   "tpope/vim-abolish",
-
+  { -- comment hl via TS
+    "dariuscorvus/tree-sitter-language-injection.nvim",
+    opts = {}, -- calls setup()
+  },
   -- themes
   "shaunsingh/solarized.nvim",
   "sjl/badwolf",

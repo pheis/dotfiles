@@ -1,4 +1,4 @@
-local dark_theme = "gruvbox"
+local dark_theme = "kanagawa"
 local light_theme = "solarized"
 vim.cmd("colo " .. dark_theme)
 
