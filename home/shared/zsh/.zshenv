@@ -1,5 +1,6 @@
 if (( $+commands[cargo] )); then
-  . "$HOME/.cargo/env"
+	# This is not generated on nixos 2025-10-09
+  # . "$HOME/.cargo/env"
 fi
 
 if (( $+commands[brew] )); then
