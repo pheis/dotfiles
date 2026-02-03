@@ -1,1 +1,1 @@
-vim.lsp.enable("postgres_lsp")
+-- vim.lsp.enable("postgres_lsp")

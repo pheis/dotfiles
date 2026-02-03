@@ -12,7 +12,9 @@ return {
   "shaunsingh/solarized.nvim",
   "sjl/badwolf",
   "webhooked/kanso.nvim",
+  "webhooked/kanso.nvim",
   "rebelot/kanagawa.nvim",
+  "catppuccin/nvim",
   {
     "ellisonleao/gruvbox.nvim",
     config = true,

@@ -1,5 +1,5 @@
-local dark_theme = "kanso-mist"
-local light_theme = "kanso-pearl"
+local dark_theme = "gruvbox"
+local light_theme = "gruvbox"
 vim.cmd("colo " .. dark_theme)
 
 local keymaps = {
