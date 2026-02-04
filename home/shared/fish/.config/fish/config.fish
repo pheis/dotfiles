@@ -58,7 +58,6 @@ if test (uname) = "Darwin"
 end
 
 
-abbr -a -- f fuck
 abbr -a -- g git
 abbr -a -- gs 'git status'
 abbr -a -- ls eza
@@ -73,6 +72,5 @@ abbr -a -- wta create_git_worktree
 
 direnv hook fish | source
 zoxide init fish | source
-thefuck --alias | source
 starship init fish | source
 atuin init fish | source
