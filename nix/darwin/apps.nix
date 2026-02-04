@@ -105,7 +105,8 @@
       "aichat"
       "oath-toolkit"
       "ansible"
-			"nmap"
+      "nmap"
+      "cloud-sql-proxy"
     ];
 
     casks = [
@@ -128,11 +129,10 @@
       "visual-studio-code"
       "sioyek"
       "vmware-fusion"
-      "ollama"
       "chromium"
       "pgadmin4"
-			"google-cloud-sdk"
-			"spotify"
+      "google-cloud-sdk"
+      "spotify"
     ];
   };
 }
