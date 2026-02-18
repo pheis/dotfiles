@@ -1,2 +1,27 @@
-#!/usr/bin/env sh
-osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+#!/usr/bin/env bash
+
+OS_TYPE="$(uname)"
+
+case "$OS_TYPE" in
+	"Darwin")
+		osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+		;;
+	"Linux")
+		if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+		  CURRENT_THEME=$(grep "LookAndFeelPackage=" "$HOME/.config/kdeglobals" | cut -d'=' -f2)
+		  if [[ "$CURRENT_THEME" == *"dark"* ]]; then
+		  		lookandfeeltool -a org.kde.breeze.desktop
+		  		echo "Switched to Light Mode"
+		  else
+		  		lookandfeeltool -a org.kde.breezedark.desktop
+		  		echo "Switched to Dark Mode"
+		  fi
+		else
+    	echo "Detected Linux, but not running KDE Plasma."
+    fi
+		;;
+	*)
+		echo "Unsupported OS: $OS_TYPE"
+    exit 1
+    ;;
+esac
