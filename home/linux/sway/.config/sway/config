@@ -74,6 +74,10 @@ input 1133:45091:Logitech_Wireless_Mouse_MX_Master_3 {
 #
 # Basics:
 #
+		# alt tab
+		bindsym Mod1+Tab workspace back_and_forth
+
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -207,6 +211,8 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+
 #
 # Utilities:
 #
