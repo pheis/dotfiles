@@ -38,10 +38,14 @@
       "koekeishiya/homebrew-formulae" # yabai skhd
       "FelixKratz/formulae" # sketchybar
       "shaunsingh/SFMono-Nerd-Font-Ligaturized"
+      "oven-sh/bun"
     ];
 
     brews = [
+      "bun"
+      "go-task"
       "fswatch"
+      "opencode"
       "openssl@3" # required for native openssl stuff
       "tokei"
       "gh"
