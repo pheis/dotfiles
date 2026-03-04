@@ -10,6 +10,7 @@ set $term wezterm
 set $menu wmenu-run
 
 
+exec kanshi;
 exec_always --no-startup-id gammastep -l 64.5:26.0 -t 6500:3500 &
 exec swaymsg "workspace 1; exec wezterm -e tmux new-session -A;"
 exec swaymsg "workspace 2; exec firefox;"
@@ -232,12 +233,12 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 
-bindsym $mod+minus bar mode toggle
+bindsym $mod+minus exec ~/.config/sway/toggle_bar.sh
 
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position bottom
-    mode hide
+    mode invisible
 		status_command $HOME/.config/sway/status.sh
     font pango:Fira Mono, FontAwesome 10
     colors {
