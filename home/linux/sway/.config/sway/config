@@ -19,6 +19,8 @@ smart_borders on
 default_border pixel 2
 
 seat seat0 xcursor_theme Adwaita 24
+seat * hide_cursor 3000
+bindsym $mod+Shift+m exec swaymsg input "2362:628:PIXA3854:00_093A:0274_Touchpad" events toggle enabled disabled
 
 ### Output configuration
 #
@@ -237,7 +239,7 @@ bindsym $mod+minus exec ~/.config/sway/toggle_bar.sh
 
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position bottom
+    position top
     mode invisible
 		status_command $HOME/.config/sway/status.sh
     font pango:Fira Mono, FontAwesome 10
