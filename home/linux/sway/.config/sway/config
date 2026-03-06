@@ -231,6 +231,8 @@ bindsym $mod+r mode "resize"
     # bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     bindsym --locked XF86MonBrightnessDown exec ~/.config/sway/brightness.sh down
     bindsym --locked XF86MonBrightnessUp exec ~/.config/sway/brightness.sh up
+		bindsym --locked Pause exec ~/.config/sway/brightness.sh up
+		bindsym --locked Scroll_Lock exec ~/.config/sway/brightness.sh down
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
